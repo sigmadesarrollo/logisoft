@@ -1,0 +1,349 @@
+/* CSS Document */
+body{
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+table{
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+input{
+	font:tahoma;
+	font-size:9px; 
+	text-transform:uppercase;
+}
+select{
+	font-size:9px; 
+	text-transform:uppercase;
+	font:tahoma;
+}
+.ebtn_guardar{
+	background-image:url(img/Boton_Guardar.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_buscar{
+	background-image:url(img/Buscar_24.gif);
+	width:24px;
+	height:23px;
+	cursor:hand;
+}
+.ebtn_agregardir{
+	background-image:url(img/Boton_Agregarchico.gif);
+	width:20px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_agregar{
+	background-image:url(img/Boton_Agregari.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_nuevo{
+	background-image:url(img/Boton_Nuevo.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_cancelar{
+	background-image:url(img/Boton_Cancelar.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_cerrar{
+	background-image:url(img/Boton_Cerrar.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_eliminar{
+	background-image:url(img/Boton_Eliminar.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_aceptar{
+	background-image:url(img/Boton_Aceptar.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+
+.ebtn_imprimir{
+	background-image:url(img/Boton_Imprimir.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_imprimirguia{
+	background-image:url(img/impguias.gif);
+	width:210px; 
+	height:25px;
+	cursor:hand;
+}
+.ebtn_iniciar{
+	background-image:url(img/Boton_Iniciar.gif);
+	width:85px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_iniciarcaja{
+	background-image:url(img/Boton_Iniciarc.gif);
+	width:102px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_cerrar{
+	background-image:url(img/Boton_Cerrar.gif);
+	width:85px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_parcial{
+	background-image:url(img/Boton_Parcial.gif);
+	width:110px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_cancelado{
+	background-image:url(img/Boton_Cancelado.gif);
+	width:85px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_reprogramado{
+	background-image:url(img/Boton_Reprogramar.gif);
+	width:100px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_realizado{
+	background-image:url(img/Boton_Realizado.gif);
+	width:85px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_transmitir{
+	background-image:url(img/Boton_Transmitir.gif);
+	width:85px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_atraz{
+	background-image:url(img/Boton_Atraz.gif);
+	width:25px;
+	height:26px;
+	cursor:hand;
+}
+.ebtn_adelante{
+	background-image:url(img/Boton_Adelante.gif);
+	width:25px;
+	height:27px;
+	cursor:hand;
+}
+.ebtn_pagar{
+	background-image:url(img/Boton_Pagar.gif);
+	width:64px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_renovarp{
+	background-image:url(img/Boton_Renovarp.gif);
+	width:145px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_autorizarp{
+	background-image:url(img/Boton_Autorizarp.gif);
+	width:145px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_noautorizarp{
+	background-image:url(img/Boton_Noautorizarp.gif);
+	width:167px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Imprimirp{
+	background-image:url(img/Boton_Imprimirp.gif);
+	width:145px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Enviarp{
+	background-image:url(img/Boton_Enviarp.gif);
+	width:141px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_renovar{
+	background-image:url(img/Boton_Renovar.gif);
+	width:72px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_imprimirconvenio{
+	background-image:url(img/Boton_Imprimirc.gif);
+	width:130px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_activarconvenio{
+	background-image:url(img/Boton_Activarc.gif);
+	width:119px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_cancelarconvenio{
+	background-image:url(img/Boton_Cancelarc.gif);
+	width:132px;
+	height:20px;
+	cursor:hand;
+}
+.ebtn_autorizarcredito{
+	background-image:url(img/Boton_Autorizarcredito.gif);
+	width:122px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_activarcredito{
+	background-image:url(img/Boton_Activarcredito.gif);
+	width:113px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_imprimircontrato{
+	background-image:url(img/Boton_Imprimircontrato.gif);
+	width:126px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_peso{
+	background-image:url(img/Boton_Peso.gif);
+	width:39px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_imprimirep{
+	background-image:url(img/Boton_Imprimirr.gif);
+	width:142px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Generarrepo{
+	background-image:url(img/Boton_GenerarReposicion.gif);
+	width:119px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Exportarexcel{
+	background-image:url(img/Boton_Exportarexcel.gif);
+	width:101px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Cerrarreporte{
+	background-image:url(img/Boton_Cerrarreporte.gif);
+	width:111px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Solucionado{
+	background-image:url(img/Boton_Solucionado.gif);
+	width:103px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Imprimirbitacora{
+	background-image:url(img/Boton_Imprimibit.gif);
+	width:126px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Cancelar_Factura{
+	background-image:url(img/Boton_Cancelar_Factura.gif);
+	width:128px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Sustituir_Factura{
+	background-image:url(img/Boton_Sustituir_Factura.gif);
+	width:128px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Revision{
+	background-image:url(img/Boton_Revision.gif);
+	width:70px; 
+	height:20px;
+	cursor:hand;
+}
+.ebtn_Cierre_Definitivo{
+	background-image:url(img/Boton_Cierre_Definitivo.gif);
+	width:118px; 
+	height:20px;
+	cursor:hand;
+}
+.formato_fuente{
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.formato_columnas_izq{
+	background-image:url(img/borde1_1.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.formato_columnas_der{
+	background-image:url(img/borde1_3.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.formato_columnas{
+	background-image:url(img/borde1_2.jpg);
+	font-family: tahoma;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: bold;
+	color:#FFF;
+}
+.formato_columnas_izqg{
+	background-image:url(img/bordeb1_1.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.formato_columnas_derg{
+	background-image:url(img/bordeb1_3.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.formato_columnasg{
+	background-image:url(img/bordeb1_2.jpg);
+	font-family: tahoma;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: bold;
+	color:#FFF;
+}
+.formato_cajagrid{
+	background:none;
+ 	border:0;
+	font-family: tahoma;
+	font-size:8px;
+	font-style: normal;
+	font-weight: bold;
+	color:#000000;
+}
+.formato_chk{
+	height:8px;
+	width: 8px;
+}

@@ -1,0 +1,21 @@
+[13-Apr-2010 11:23:33] PHP Parse error:  syntax error, unexpected T_VAR in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 6
+[13-Apr-2010 11:24:11] PHP Parse error:  syntax error, unexpected T_VAR in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 6
+[13-Apr-2010 11:24:27] PHP Parse error:  syntax error, unexpected ')' in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 7
+[13-Apr-2010 11:32:53] PHP Parse error:  syntax error, unexpected ')' in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 7
+[13-Apr-2010 11:33:21] PHP Fatal error:  Cannot use [] for reading in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 67
+[13-Apr-2010 11:35:11] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 46
+[13-Apr-2010 11:35:11] PHP Warning:  Missing argument 2 for f_adelante(), called in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 73 and defined in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 11
+[13-Apr-2010 11:35:11] PHP Warning:  Missing argument 3 for f_adelante(), called in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 73 and defined in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 11
+[13-Apr-2010 11:35:45] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 45
+[13-Apr-2010 11:35:45] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 46
+[13-Apr-2010 11:35:45] PHP Warning:  Missing argument 2 for f_adelante(), called in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 73 and defined in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 11
+[13-Apr-2010 11:35:45] PHP Warning:  Missing argument 3 for f_adelante(), called in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 73 and defined in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 11
+[13-Apr-2010 11:35:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 45
+[13-Apr-2010 11:35:59] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 46
+[13-Apr-2010 11:35:59] PHP Warning:  Missing argument 2 for f_adelante(), called in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 73 and defined in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 11
+[13-Apr-2010 11:35:59] PHP Warning:  Missing argument 3 for f_adelante(), called in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 73 and defined in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 11
+[13-Apr-2010 11:37:03] PHP Warning:  Wrong parameter count for mysql_num_rows() in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 45
+[13-Apr-2010 11:37:03] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 46
+[13-Apr-2010 11:42:04] PHP Parse error:  syntax error, unexpected ')', expecting '&' or T_VARIABLE in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 18
+[14-Apr-2010 09:18:11] PHP Parse error:  syntax error, unexpected $end in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 231
+[14-Apr-2010 09:18:29] PHP Parse error:  syntax error, unexpected $end in /home/pmm/public_html/web_pruebas/general/cobranza/reporteCobranza_con.php on line 231

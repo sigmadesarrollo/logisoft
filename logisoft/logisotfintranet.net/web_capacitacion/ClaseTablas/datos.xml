@@ -1,0 +1,29 @@
+<xml version="1.0" encoding="utf-8">
+<datos>
+	<folio>1</folio>
+	<nombre>Isai</nombre>
+	<materno>Partida</materno>
+	<paterno>Allerdi</paterno>
+	<precio>350.53</precio>
+	<folio>2</folio>
+	<nombre>Jose</nombre>
+	<materno>Jimenez</materno>
+	<paterno>Cabrera</paterno>
+	<precio>456</precio>
+	<folio>3</folio>
+	<nombre>Pedro</nombre>
+	<materno>Allerdi</materno>
+	<paterno>Nogueda</paterno>
+	<precio>766.00</precio>
+	<folio>4</folio>
+	<nombre>Stephani</nombre>
+	<materno>partida</materno>
+	<paterno>Allerdi</paterno>
+	<precio>99999.00</precio>
+	<folio>5</folio>
+	<nombre>Hernan</nombre>
+	<materno>Allerdi</materno>
+	<paterno>ibarra</paterno>
+	<precio>999999.00</precio>
+</datos>
+</xml>

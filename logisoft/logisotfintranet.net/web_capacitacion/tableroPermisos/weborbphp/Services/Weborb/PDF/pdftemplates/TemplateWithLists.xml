@@ -1,0 +1,27 @@
+<Document width="500" height="600" marginTop="10" marginBottom="10">
+  <PDFMetadata>
+    <properties>
+      <Property name="PageMargins" value="10" />
+    </properties>
+  </PDFMetadata>
+  <Page>
+    <Text x="10" y="10" value="List component with embedded data source:"/>
+    <List y="30" left="10" right="10" height="227" contentPageRollover="true">
+      <dataProvider>
+        <label>Alabama</label>
+        <label>Alaska</label>
+        <label>Arizona</label>
+        <label>Arkansas</label>
+        <label>California</label>
+        <label>Colorado</label>
+        <label>Connecticut</label>
+      </dataProvider>      
+    </List>
+    <HRule y="265" left="10" right="10"/>
+
+    <Text x="10" y="275" value="List component with dynamic data source:"/> 
+    <List y="301" left="10" right="10" height="248">
+        <dataProvider>method:Weborb.Examples.InvocationTests.CollectionsTest.getList()</dataProvider>
+    </List>
+  </Page>   
+</Document>

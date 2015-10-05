@@ -1,0 +1,79 @@
+[17-Feb-2010 18:22:18] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/generacionconvenio_con.php on line 704
+[23-Mar-2010 12:30:31] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/generacionconvenio_con.php on line 707
+[17-Apr-2010 10:23:46] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 147
+[17-Apr-2010 10:26:09] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 163
+[17-Apr-2010 10:26:37] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 163
+[17-Apr-2010 10:27:21] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 164
+[17-Apr-2010 10:29:28] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 160
+[17-Apr-2010 10:32:27] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:32:57] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:34:07] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:35:07] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:35:51] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:38:22] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:51:18] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 10:58:12] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 11:00:54] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 161
+[17-Apr-2010 11:12:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 194
+[17-Apr-2010 12:28:40] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 196
+[17-Apr-2010 12:29:28] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:29:35] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:30:12] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:43:25] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:44:50] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:45:20] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:45:46] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:47:54] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:49:31] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:52:34] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 12:59:20] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:00:23] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:02:35] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:03:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:04:52] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:06:51] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:08:01] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:08:55] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:12:06] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:15:29] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:18:02] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 197
+[17-Apr-2010 13:35:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1330
+[17-Apr-2010 13:38:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1345
+[17-Apr-2010 13:49:55] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1346
+[17-Apr-2010 13:58:17] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1353
+[17-Apr-2010 14:01:48] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1353
+[17-Apr-2010 14:03:21] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1353
+[17-Apr-2010 14:04:00] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1353
+[17-Apr-2010 14:15:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1355
+[17-Apr-2010 14:17:38] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1355
+[17-Apr-2010 14:19:16] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1355
+[17-Apr-2010 14:23:30] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1358
+[17-Apr-2010 14:24:02] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1358
+[17-Apr-2010 14:25:44] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1361
+[17-Apr-2010 14:26:38] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1360
+[17-Apr-2010 14:29:18] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1360
+[17-Apr-2010 14:32:00] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1362
+[17-Apr-2010 14:34:02] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1362
+[17-Apr-2010 14:37:29] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1361
+[17-Apr-2010 14:39:19] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1360
+[17-Apr-2010 14:40:16] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1360
+[17-Apr-2010 14:41:47] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1360
+[17-Apr-2010 14:44:52] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/creditoNuevo.php on line 1362
+[28-Apr-2010 14:53:54] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_capacitacion/convenio/generacionconvenio_con.php on line 728
+[03-May-2010 17:30:44] PHP Parse error:  syntax error, unexpected $end in /home/pmm/public_html/web_capacitacion/convenio/propuestaconvenio_con.php on line 677
+[05-Jun-2010 13:54:59] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/generacionconvenio_con.php on line 749
+[29-Jun-2010 14:03:21] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/convenio/generacionconvenio_con.php on line 797
+[07-Sep-2010 10:39:25] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Lost connection to MySQL server at 'reading initial communication packet', system error: 104 in /home/pmm/public_html/web_capacitacion/clases/CPermisos.php on line 5
+[08-Sep-2010 13:58:47] PHP Fatal error:  Out of memory (allocated 262144) (tried to allocate 79 bytes) in Unknown on line 0
+[09-Sep-2010 18:53:10] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 13:29:22] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 13:29:22] PHP Warning:  Cannot load module 'pdo_sqlite' because required module 'pdo' is not loaded in Unknown on line 0
+[11-Sep-2010 13:41:13] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 13:41:13] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo_sqlite.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo_sqlite.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 13:41:13] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 13:41:13] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo_mysql.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo_mysql.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 13:41:13] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/ixed.5.2.lin' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/ixed.5.2.lin: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 15:12:49] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 15:12:49] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo_sqlite.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo_sqlite.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[11-Sep-2010 15:12:49] PHP Warning:  Cannot load module 'SQLite' because required module 'pdo' is not loaded in Unknown on line 0
+[13-Sep-2010 19:47:50] PHP Fatal error:  Out of memory (allocated 524288) (tried to allocate 491520 bytes) in /home/pmm/public_html/web_capacitacion/clases/ValidaConvenio.php on line 488

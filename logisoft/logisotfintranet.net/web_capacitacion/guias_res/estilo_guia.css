@@ -1,0 +1,29 @@
+/* CSS Document */
+.style1 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.style2 {
+	color: #464442;
+	font-size:9px;
+	border: 0px none;
+	background:none
+}
+.style3 {
+	font-size: 9px;
+	color: #464442;
+}
+.style4 {color: #025680;font-size:9px }
+.style5 {color: #FFFFFF ; font-size:9px}
+.Balance {background-color: #FFFFFF; border: 0px none}
+.Balance2 {background-color: #DEECFA; border: 0px none;}
+.Estilo1 {
+	font-family: tahoma;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.Estilo2 {
+	color: #FFFFFF;
+	font-weight: bold;
+}

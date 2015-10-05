@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background: url(images/pmm1.jpg) top center #333 fixed;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+#cuerpo{
+	margin:auto;
+	width:1024px;
+	height:768px;
+}
+#contenedorp{
+	width:100%;
+	height:100%;
+	background: url(images/fondomenu.gif) top  repeat-x;
+}
+#logo{
+	float:left;
+	background:url(images/logo.png) no-repeat;
+	width:156px;
+	height:113px;
+}
+#menus{
+	float:left;
+	margin:10px 10px auto 0;
+	width:640px;
+	height:24px;
+}
+#menus1{
+	float:left;
+	margin:10px 10px auto 0;
+	width:640px;
+	height:40px;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:30px;
+	padding-left:20px;
+}
+#menus ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	padding-top:0px;
+	font-weight:bold;
+	color:#FFF;
+}
+#menus li{
+	margin:0;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	padding-left:0px;
+}
+#menus li a {
+	display:block;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	width:80px;
+	padding:0px 0 5px 22px;
+	text-decoration:none;
+}
+/* el login */
+#cuadroFotos{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:1024px;
+	height:470px;
+}
+#contenedorlogin{
+	float:left;
+	margin:15px 0px 0px 0px;
+	width:220px;
+	height:290px;
+}
+#contenedorloginfondo{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:280px;
+}
+#loginimg{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:103px;
+	background:url(images/loginLlave.png) no-repeat center;
+}
+#rastreoimg{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:103px;
+	background:url(images/iconoRastreo.png) no-repeat center;
+}
+#logincontenido{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:205px;
+	padding-left:15px;
+	height:200px;
+	background:url(images/cuadronegro.png) repeat;
+}
+#logincontenido h1{
+	color:#D57D09;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#logincontenido #cajaslogin{
+	float:left;
+	width:180px;
+	height:80px;
+}
+#logincontenido label{
+	text-align:left;
+	float:left;
+	color:#FFF;
+	width:180px;
+	padding-bottom:2px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#logincontenido input{
+	float:left;
+	width:180px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#logincontenido #mitexto a{
+	text-align:right;
+	color:#CCC;
+	margin-top:10px;
+	float:left;
+	width:180px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#cuadroIconos{
+	float:right;
+	margin:52px 0px 0px 0px;
+	width:770px;
+	height:500px;
+	background:url(images/cuadronegro.png) repeat;
+}
+
+#filaiconos{
+	float:top;
+	margin:0px 0px 0px 0px;
+	width:770px;
+	height:160px;
+}
+
+#cuadroIconos #icono{
+	float:right;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10;
+	font-weight:normal;
+	list-style-type:none;
+	margin:5px 0px 0px 0px;
+	width:128px;
+	height:140px;
+	padding-top:5px;
+	color:#FFF;
+	cursor:hand;
+}
+
+#cuadroIconos #icono:hover{
+	background:url(../images/cuadronegro.png) repeat;
+}

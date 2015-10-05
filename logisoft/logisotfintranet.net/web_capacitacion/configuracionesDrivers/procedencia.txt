@@ -1,0 +1,7 @@
+
+procedencia         tipo
+G - GUIAS            E - EMPRESARIAL
+A - ABONOS           V - VENTANILLA
+M - LIQ. MERCA
+C - COBRANZA
+O - ENTRE. OCURRE

@@ -1,0 +1,61 @@
+<Document>
+	<PDFMetadata>
+	    <properties>
+			<Property name="PageMargins" value="10" />
+			<Property name="PageFormat" value="A4album" />
+	    </properties>
+	</PDFMetadata>
+ 
+	<Page>
+		<Text value="DataGrid with static (embedded) data:" x="0" y="0"/>
+		<DataGrid top="40" left="10" right="10" height="132" >
+			<!--columns-->
+				<DataGridColumn headerText="Name" dataField="name"/>
+				<DataGridColumn headerText="Phone" dataField="phone"/>
+				<DataGridColumn headerText="Email" dataField="email"/>
+				<DataGridColumn headerText="Active" dataField="active"/>
+			<!--/columns-->
+			<dataProvider>
+		        <employee>
+		            <name>James Bond</name>
+		            <phone>555-000-007</phone>
+		            <email>james@mi5.co.uk</email>
+		            <active>true</active>
+		        </employee>
+		        <employee>
+		            <name>Rambo</name>
+		            <phone>555-xxx-xxx</phone>
+		            <email>ram@bo.com</email>
+		            <active>true</active>
+		        </employee>
+		        <employee>
+		            <name>Ivan Frago</name>
+		            <phone>555-123-4567</phone>
+		            <email>ivan@lafatness.com</email>
+		            <active>false</active>
+		        </employee>
+		        <employee>
+		            <name>Pall Mall</name>
+		            <phone>555-987-6543</phone>
+		            <email>pmall@smokewillkillya.com</email>
+		            <active>true</active>
+		        </employee>				
+			</dataProvider>
+		</DataGrid>
+	</Page>
+	<Page>
+		<Text x="10" y="19" height="25" width="100" value="Name:"/>
+		<Text x="10" y="50" height="25" width="100" value="Phone Number:"/>
+		<TextInput x="115" y="17" height="25" width="150"/>
+		<TextInput x="115" y="47" height="25" width="150"/>
+		<Text x="10" y="80" height="25" width="100" value="Notes:"/>
+		<TextInput x="115" y="79" height="101" width="150" multiline="true"/>
+		<Button x="115" y="188" height="25" width="100" label="Submit" id="submit" isSubmit="true"/>
+	</Page>
+	<Page>
+		<Text value="PDF Generator evaluation copy is limited to 2 pages. This page will show only with the registered version." fontSize="12" fontWeight="bold"/>
+		<!--Image source="http://www.google.com/intl/en_ALL/images/logo.gif" y="20" />
+		<Image source="http://www.microsoft.com/presspass/images/gallery/logos/thumbnails/mslogo1_thumb.jpg" y="100" />
+		<Image source="http://www.themidnightcoders.com/fileadmin/templates/images/mclogo.png" y="200" /-->
+	</Page>  
+</Document>

@@ -1,0 +1,12 @@
+<Document width="574" height="360" marginTop="10" marginBottom="10">
+	<PDFMetadata>
+	    <Property name="PageMargins" value="10" />
+	</PDFMetadata>
+	<Page>
+	    <DataGrid id="customersGrid" left="10" right="10" bottom="10" top="73" dataProvider="method:Weborb.Examples.DataBinding.getCustomers()" > 
+		    <DataGridColumn dataField="COMPANYNAME" headerText="Company" fontColor="0xFF0033" />
+		    <DataGridColumn dataField="CONTACTNAME" headerText="Name" />
+		    <DataGridColumn dataField="PHONE" headerText="Phone Number" />
+	   </DataGrid>
+	</Page>   
+</Document>

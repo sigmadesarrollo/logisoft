@@ -1,0 +1,37 @@
+[11-Feb-2010 22:30:10] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web/Caja/iniciodia_con.php on line 8
+[11-Feb-2010 22:30:15] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web/Caja/iniciodia_con.php on line 8
+[12-Feb-2010 02:07:03] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web/Caja/iniciodia_con.php on line 8
+[12-Feb-2010 02:08:23] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web/Caja/iniciodia_con.php on line 8
+[12-Feb-2010 02:18:12] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web/Caja/iniciodia_con.php on line 8
+[12-Feb-2010 02:25:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web/Caja/cierrededia.php on line 14
+[12-Feb-2010 02:25:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web/Caja/cierrededia.php on line 17
+[12-Feb-2010 02:25:59] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web/Caja/cierrededia.php on line 19
+[12-Feb-2010 02:25:59] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web/Caja/cierrededia.php on line 21
+[12-Feb-2010 16:49:14] PHP Fatal error:  Call to undefined function  cambio_texto() in /home/pmm/public_html/web_pruebas/Caja/reporteVerificarCaja.php on line 91
+[13-Feb-2010 11:38:34] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[13-Feb-2010 11:38:38] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[13-Feb-2010 11:38:44] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[13-Feb-2010 11:38:54] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[13-Feb-2010 12:07:13] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[15-Feb-2010 16:12:13] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[15-Feb-2010 16:12:20] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[15-Feb-2010 17:49:31] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[15-Feb-2010 17:49:35] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[16-Feb-2010 09:35:14] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[16-Feb-2010 09:35:27] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[16-Feb-2010 10:22:09] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[16-Feb-2010 10:22:16] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[16-Feb-2010 10:27:32] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[18-Feb-2010 18:44:04] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[18-Feb-2010 18:48:09] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[18-Feb-2010 18:48:44] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[18-Feb-2010 20:08:15] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[18-Feb-2010 20:09:20] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[18-Feb-2010 20:15:33] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[18-Feb-2010 20:16:22] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[18-Feb-2010 20:18:00] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/cierrecaja.php on line 29
+[23-Feb-2010 10:14:22] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[23-Feb-2010 10:14:29] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[08-Mar-2010 13:34:27] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[08-Mar-2010 13:34:36] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8
+[08-Mar-2010 13:35:32] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/Caja/iniciodia_con.php on line 8

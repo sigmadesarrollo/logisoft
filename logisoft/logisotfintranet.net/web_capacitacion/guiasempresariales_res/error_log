@@ -1,0 +1,2 @@
+[04-Feb-2010 11:58:58] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/guiasempresariales/imprecionguiasempresariales.php on line 8
+[22-Feb-2010 12:29:02] PHP Parse error:  syntax error, unexpected $end in /home/pmm/public_html/web_pruebas/guiasempresariales/solicitudguiasempresariales_con.php on line 494

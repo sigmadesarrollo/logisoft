@@ -1,0 +1,7 @@
+[14-May-2010 17:23:30] PHP Parse error:  syntax error, unexpected ';' in /home/pmm/public_html/web_pruebas/historialCliente/pages/historialCliente_con.php on line 128
+[14-May-2010 17:24:16] PHP Parse error:  syntax error, unexpected ';' in /home/pmm/public_html/web_pruebas/historialCliente/pages/historialCliente_con.php on line 128
+[28-May-2010 13:57:21] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Unable to save result set in /home/pmm/public_html/web_pruebas/historialCliente/pages/historialCliente_con.php on line 71
+[11-Aug-2010 13:39:40] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Unable to save result set in /home/pmm/public_html/web_capacitacion/historialCliente/pages/historialCliente_con.php on line 73
+[11-Aug-2010 13:39:50] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Unable to save result set in /home/pmm/public_html/web_capacitacion/historialCliente/pages/historialCliente_con.php on line 73
+[11-Aug-2010 13:49:51] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Unable to save result set in /home/pmm/public_html/web_capacitacion/historialCliente/pages/historialCliente_con.php on line 73
+[11-Aug-2010 13:50:04] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Unable to save result set in /home/pmm/public_html/web_capacitacion/historialCliente/pages/historialCliente_con.php on line 73

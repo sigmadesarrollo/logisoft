@@ -1,0 +1,318 @@
+-- para acualizar el RM de Cliente http://www.pmmintranet.net/web_capacitacion/general/clientes/consultas.php?accion=14
+-- USE pmm_curso;
+UPDATE catalogounidad SET enuso=0, embarcado='N', recepcionado='N';
+UPDATE catalogoempleado SET enunidad=0;
+TRUNCATE TABLE abonodecliente;
+TRUNCATE TABLE abonodecliente_detalle;
+TRUNCATE TABLE abonodecliente_detalle_ori;
+TRUNCATE TABLE abonodecliente_detalle_tmp;
+TRUNCATE TABLE actividadesusuariodetalle;
+TRUNCATE TABLE actividadesusuariodetalle_tmp;
+TRUNCATE TABLE actividadusuario;
+TRUNCATE TABLE asientocontable;
+TRUNCATE TABLE asientocontableasignacion;
+TRUNCATE TABLE asientocontabledetalle;
+TRUNCATE TABLE asignacionbolsas;
+TRUNCATE TABLE asignacionbolsasdetalle;
+TRUNCATE TABLE asignacionmanual_temp;
+TRUNCATE TABLE asignacionpapeletas;
+TRUNCATE TABLE asignacionpapeletasrecdetalle;
+TRUNCATE TABLE asignacionprecintos;
+TRUNCATE TABLE asignacionprecintosdetalle;
+TRUNCATE TABLE bitacorasalida;
+TRUNCATE TABLE cajachica_cheques;
+TRUNCATE TABLE cancelacionguiasempresariales;
+TRUNCATE TABLE cancelacionguiasventanilla;
+TRUNCATE TABLE capturagastoscajachica;
+TRUNCATE TABLE carteramorosadetalle;
+TRUNCATE TABLE carteramorosadetalle_tmp;
+TRUNCATE TABLE cierrecaja;
+TRUNCATE TABLE cierrecajaabonocliente;
+TRUNCATE TABLE cierrecajaocurre;
+TRUNCATE TABLE cierredia;
+TRUNCATE TABLE cierreprincipal;
+TRUNCATE TABLE cierreprincipal_fechas;
+TRUNCATE TABLE cobranza30dias_tmp;
+TRUNCATE TABLE cobranza60dias_tmp;
+TRUNCATE TABLE comentarios_guias;
+TRUNCATE TABLE comprobantedeliquidaciondebitacora;
+TRUNCATE TABLE comprobantedeliquidaciondebitacoradetalle;
+TRUNCATE TABLE configuradorfoliosbolsas;
+TRUNCATE TABLE configuradorfoliospapeletas;
+TRUNCATE TABLE configuradorfoliosprecintos;
+TRUNCATE TABLE configuradorpromociones;
+TRUNCATE TABLE configurarrecoleccionesprogramadas;
+TRUNCATE TABLE consultaconvenios;
+TRUNCATE TABLE correointerno;
+TRUNCATE TABLE correointernodetalle;
+TRUNCATE TABLE deposito;
+TRUNCATE TABLE depositodetalle;
+TRUNCATE TABLE depositodetalletmp;
+TRUNCATE TABLE depositoscajachica;
+TRUNCATE TABLE detallefoliosgastoscajachica;
+TRUNCATE TABLE devolucionguia;
+TRUNCATE TABLE devolucionguiadetalle;
+TRUNCATE TABLE devolucionmercancia;
+TRUNCATE TABLE embarquedemercancia_faltante;
+TRUNCATE TABLE devolucionmercancia_detalle;
+TRUNCATE TABLE devolucionmercancia_tmp;
+TRUNCATE TABLE devolucionmercanciapaquetes;
+TRUNCATE TABLE devyliqautomatica;
+TRUNCATE TABLE embarquedemercancia;
+TRUNCATE TABLE embarquedemercanciadetalle;
+TRUNCATE TABLE embarquedemercanciapaquetes;
+TRUNCATE TABLE embarques_tmp;
+TRUNCATE TABLE entradaysalidadealmacen;
+TRUNCATE TABLE entradaysalidadealmacen_tmp;
+TRUNCATE TABLE entradaysalidadealmacendetalle;
+TRUNCATE TABLE entregasespecialesead;
+TRUNCATE TABLE entregasocurre;
+TRUNCATE TABLE entregasocurre_detalle;
+TRUNCATE TABLE entregasocurre_guias;
+TRUNCATE TABLE entregasocurrealmacen;
+TRUNCATE TABLE entregasocurrealmacen_detalle;
+TRUNCATE TABLE entregasocurrealmacen_tmp;
+TRUNCATE TABLE entregasocurrefirma;
+TRUNCATE TABLE evaluacionmercancia;
+TRUNCATE TABLE evaluacionmercanciadetalle;
+TRUNCATE TABLE facturacion;
+TRUNCATE TABLE facturadetalle;
+TRUNCATE TABLE facturadetalleguias;
+TRUNCATE TABLE foliosgastoscajachica;
+TRUNCATE TABLE formapago;
+TRUNCATE TABLE formapago_temp;
+TRUNCATE TABLE guia_rastreo;
+TRUNCATE TABLE guia_temporaldetalle;
+TRUNCATE TABLE guiacliente_temporaldetalle;
+TRUNCATE TABLE guiasempresariales;
+TRUNCATE TABLE guiasempresariales_detalle;
+TRUNCATE TABLE guiasempresariales_temporaldetalle;
+TRUNCATE TABLE guiasempresariales_unidades;
+TRUNCATE TABLE guiasventanilla;
+TRUNCATE TABLE guiasventanilla_cs;
+TRUNCATE TABLE guiasventanillaclientes;
+TRUNCATE TABLE guiasventanillaclientes_detalle;
+TRUNCATE TABLE guiaventanilla_detalle;
+TRUNCATE TABLE guiaventanilla_detalle_cs;
+TRUNCATE TABLE guiaventanilla_unidades;
+TRUNCATE TABLE guiaventanilla_unidades_cs;
+TRUNCATE TABLE historial_cancelacionysustitucion;
+TRUNCATE TABLE historialdetraspaso;
+TRUNCATE TABLE historialmovimientos;
+TRUNCATE TABLE iniciocaja;
+TRUNCATE TABLE iniciocajaabonocliente;
+TRUNCATE TABLE iniciocajaocurre;
+TRUNCATE TABLE iniciodia;
+TRUNCATE TABLE inventariomorosodetalle;
+TRUNCATE TABLE inventariomorosodetalle_tmp;
+TRUNCATE TABLE liquidacion_detalle;
+TRUNCATE TABLE liquidacion_detalle_tmp;
+TRUNCATE TABLE liquidacion_detalleead;
+TRUNCATE TABLE liquidacion_detalleead_copy;
+TRUNCATE TABLE liquidacioncobranza;
+TRUNCATE TABLE liquidacioncobranzadetalle;
+TRUNCATE TABLE liquidacioncobranzadetalle_tmp;
+TRUNCATE TABLE liquidacioncobranzadetalle_tmp_ori;
+TRUNCATE TABLE liquidacionead;
+TRUNCATE TABLE liquidacioneaddatospersonales;
+TRUNCATE TABLE liquidaciongastos;
+TRUNCATE TABLE liquidaciongastosdetalle;
+TRUNCATE TABLE moduloconcesiones;
+TRUNCATE TABLE moduloquejasdanosfaltantes;
+TRUNCATE TABLE notacredito;
+TRUNCATE TABLE notacreditodetalle;
+TRUNCATE TABLE notacreditodetalle_tmp;
+TRUNCATE TABLE pagoguias;
+TRUNCATE TABLE preliquidaciondebitacora;
+TRUNCATE TABLE preliquidaciondebitacoradetalle;
+TRUNCATE TABLE programacionrecepciondiaria;
+TRUNCATE TABLE programacionrecepciondiaria_log;
+TRUNCATE TABLE recepcion_tmp;
+TRUNCATE TABLE recepcionmercancia;
+TRUNCATE TABLE recepcionmercanciadetalle;
+TRUNCATE TABLE recepcionregistroprecintos;
+TRUNCATE TABLE recepcionregistroprecintosdetalle;
+TRUNCATE TABLE recepcionregistroprecintosdetalle_tmp;
+TRUNCATE TABLE recoleccion;
+TRUNCATE TABLE recolecciondetalle;
+TRUNCATE TABLE recolecciondetalle_c_tmp;
+TRUNCATE TABLE recolecciondetalle_tmp;
+TRUNCATE TABLE recolecciondetallefolioempresariales;
+TRUNCATE TABLE recolecciondetallefoliorecoleccion;
+TRUNCATE TABLE recoleccionmotivocancelacion;
+TRUNCATE TABLE recoleccionmotivoreprogramacion;
+TRUNCATE TABLE registrodecontrarecibos;
+TRUNCATE TABLE registroscompromisos;
+TRUNCATE TABLE relacioncobranza;
+TRUNCATE TABLE relacioncobranzadetalle;
+TRUNCATE TABLE relacioncobranzadetalle_tmp;
+TRUNCATE TABLE repartomercanciadetalle;
+TRUNCATE TABLE repartomercanciadetallepaquetes;
+TRUNCATE TABLE repartomercanciaead;
+TRUNCATE TABLE repartomercanciaead_temp;
+TRUNCATE TABLE reporte_auditoria_ajustes;
+TRUNCATE TABLE reporte_auditoria_depositos;
+TRUNCATE TABLE reporte_auditoria_facturascanceladas;
+TRUNCATE TABLE reporte_auditoria_faltantesobrantes;
+TRUNCATE TABLE reporte_auditoria_faltantesobrantes_det;
+TRUNCATE TABLE reporte_auditoria_guiascanceladas;
+TRUNCATE TABLE reporte_auditoria_leido;
+TRUNCATE TABLE reporte_auditoria_liquidacion;
+TRUNCATE TABLE reporte_auditoria_liquidacion_detalle;
+TRUNCATE TABLE reporte_auditoria_notacredito;
+TRUNCATE TABLE reporte_auditoria_principal;
+TRUNCATE TABLE reporte_auditorias_fac;
+TRUNCATE TABLE reporte_auditorias_paq;
+TRUNCATE TABLE reporte_auditoria_sistemainvcar;
+TRUNCATE TABLE facturacion_fechapago;
+TRUNCATE TABLE reporte_cobranza1;
+TRUNCATE TABLE reporte_cobranza2;
+TRUNCATE TABLE reporte_cobranza3;
+TRUNCATE TABLE reporte_cobranza4;
+TRUNCATE TABLE reporte_cobranza5;
+TRUNCATE TABLE reporte_concesiones;
+TRUNCATE TABLE reporte_concesionestmp;
+TRUNCATE TABLE reporte_logistica1;
+TRUNCATE TABLE reporte_logistica2;
+TRUNCATE TABLE reporte_logistica3;
+TRUNCATE TABLE reporte_logistica4;
+TRUNCATE TABLE reporte_vendedores_cobrado;
+TRUNCATE TABLE reporte_vendedores_ventas;
+TRUNCATE TABLE reporte_veralmacen_paq;
+TRUNCATE TABLE reportecliente1;
+TRUNCATE TABLE reportecliente2;
+TRUNCATE TABLE reportecliente3;
+TRUNCATE TABLE reportecliente4;
+TRUNCATE TABLE reportecliente5;
+TRUNCATE TABLE reportedanosfaltante;
+TRUNCATE TABLE reportedanosfaltanteocurre;
+TRUNCATE TABLE reporteoperaciones1;
+TRUNCATE TABLE reporteoperaciones2;
+TRUNCATE TABLE reporteoperaciones3;
+TRUNCATE TABLE reporteproductividad1;
+TRUNCATE TABLE reporteproductividad2;
+TRUNCATE TABLE reporteproductividad_cliente1;
+TRUNCATE TABLE reporteproductividad_cliente2;
+TRUNCATE TABLE reportes_ventas;
+TRUNCATE TABLE segmentoscont;
+TRUNCATE TABLE seguimiento_guias;
+TRUNCATE TABLE sobrantes;
+TRUNCATE TABLE solicitudguiasempresariales;
+TRUNCATE TABLE solicitudguiasempresarialesnw;
+TRUNCATE TABLE solicitudtelefonica;
+TRUNCATE TABLE traspasarmercancia;
+TRUNCATE TABLE traspasocredito;
+TRUNCATE TABLE traspasocreditoconcre;
+
+
+TRUNCATE TABLE pmm_curso.catalogocliente;
+INSERT INTO pmm_curso.catalogocliente
+SELECT NULL AS id,personamoral,tipocliente,nombre,paterno,materno,rfc,email,
+celular,web,convenio,poliza,npoliza,aseguradora,vigencia,clasificacioncliente,
+activado,pagocheque,foliocredito,saldo,disponible,ventames,limitecredito,diascredito,
+diarevision,diapago,sucursalcredito,activacion,vencimiento,vendedor,tipoclientepromociones,
+sucursal,(SELECT comisiongeneral FROM pmm_curso.configuradorgeneral) AS comision,usuario,folioconvenio,fecha,fechainicioconvenio,fechafinconvenio,NULL AS fecharegistro,NULL AS cambiado 
+FROM pmm_weba.catalogocliente;
+
+TRUNCATE TABLE pmm_curso.catalogoclientenick;
+INSERT INTO pmm_curso.catalogoclientenick
+SELECT NULL AS id,cliente,nick,usuario,fecha FROM pmm_weba.catalogoclientenick;
+
+TRUNCATE TABLE pmm_curso.direccion;
+INSERT INTO pmm_curso.direccion
+SELECT NULL AS id,origen,codigo,calle,numero,crucecalles,cp,
+colonia,poblacion,municipio,estado,pais,telefono,fax,facturacion,
+usuario,fecha FROM pmm_weba.direccion;
+
+TRUNCATE TABLE pmm_curso.solicitudcredito;
+INSERT INTO pmm_curso.solicitudcredito
+SELECT folio,fechasolicitud,estado,folioconvenio,fechaautorizacion,
+fechaactivacion,solicitante,personamoral,cliente,nick,rfc,nombre,paterno,
+materno,calle,numero,cp,colonia,poblacion,municipio,estadoc,pais,celular,
+telefono,email,giro,antiguedad,representantelegal,actaconstitutiva,numeroacta,
+fechaescritura,fechainscripcion,identificacionlegal,numeroidentificacion,hacienda,
+fechainiciooperaciones,rfc2,comprobante,comprobanteluz,estadocuenta,banco,cuenta,solicitud,
+semanapago,lunespago,martespago,miercolespago,juevespago,viernespago,sabadopago,horariopago,
+apago,responsablepago,celularpago,telefonopago,faxpago,semanarevision,lunesrevision,martesrevision,
+miercolesrevision,juevesrevision,viernesrevision,sabadorevision,horariorevision,arevision,montosolicitado,
+montoautorizado,diascredito,observaciones,usuario,idusuario,idsucursal,fecha FROM pmm_weba.solicitudcredito;
+
+TRUNCATE TABLE pmm_curso.solicitudcreditobancodetalle;
+INSERT INTO pmm_curso.solicitudcreditobancodetalle
+SELECT NULL AS id,solicitud,banco,sucursal,cuenta,telefono,idusuario,fecha FROM pmm_weba.solicitudcreditobancodetalle;
+
+TRUNCATE TABLE pmm_curso.solicitudcreditocomercialesdetalle;
+INSERT INTO pmm_curso.solicitudcreditocomercialesdetalle
+SELECT NULL AS id,solicitud,empresa,contacto,telefono,idusuario,fecha FROM pmm_weba.solicitudcreditocomercialesdetalle;
+
+TRUNCATE TABLE pmm_curso.solicitudcreditopersonadetalle;
+INSERT INTO pmm_curso.solicitudcreditopersonadetalle
+SELECT NULL AS id,solicitud,persona,idusuario,fecha FROM pmm_weba.solicitudcreditopersonadetalle;
+
+TRUNCATE TABLE pmm_curso.solicitudcreditosucursaldetalle;
+INSERT INTO pmm_curso.solicitudcreditosucursaldetalle
+SELECT NULL AS id,solicitud,idsucursal,sucursal,idusuario,fecha FROM pmm_weba.solicitudcreditosucursaldetalle;
+
+
+
+TRUNCATE TABLE pmm_curso.generacionconvenio;
+INSERT INTO pmm_curso.generacionconvenio
+SELECT folio,renovacionde,fecharenovacion,credito,consumomensual,fecha,estadoconvenio,
+tipoautorizacion,vigencia,sucursal,vendedor,nvendedor,personamoral,idcliente,nick,rfc,
+nombre,apaterno,amaterno,calle,numero,colonia,cp,poblacion,municipio,estado,pais,celular,
+telefono,email,precioporkg,precioporcaja,descuentosobreflete,cantidaddescuento,limitekg,
+costo,preciokgexcedente,prepagadas,consignacionkg,consignacioncaja,consignaciondescuento,
+consignaciondescantidad,usuario,idusuario,valordeclarado,limite,porcada,costoextra,propuesta, 
+'' AS legal FROM pmm_weba.generacionconvenio;
+
+TRUNCATE TABLE pmm_curso.cconvenio_configurador_caja;
+INSERT INTO pmm_curso.cconvenio_configurador_caja
+SELECT idconvenio,descripcion,zona,kmi,kmf,tipo,precio,usuario,idusuario,fecha,pesolimite,preciokgexcedente FROM pmm_weba.cconvenio_configurador_caja;
+
+TRUNCATE TABLE pmm_curso.cconvenio_configurador_preciokg;
+INSERT INTO pmm_curso.cconvenio_configurador_preciokg
+SELECT idconvenio,zona,kmi,kmf,valor,tipo,usuario,idusuario,fecha FROM pmm_weba.cconvenio_configurador_preciokg;
+
+TRUNCATE TABLE pmm_curso.cconvenio_servicios;
+INSERT INTO pmm_curso.cconvenio_servicios
+SELECT idconvenio,idservicio,servicio,cobro,precio,tipo,usuario,idusuario,fecha FROM pmm_weba.cconvenio_servicios;
+
+TRUNCATE TABLE pmm_curso.cconvenio_servicios_sucursales;
+INSERT INTO pmm_curso.cconvenio_servicios_sucursales
+SELECT idconvenio,clave,nombre,tipo,usuario,idusuario,fecha FROM pmm_weba.cconvenio_servicios_sucursales;
+
+/* FLETES
+TRUNCATE TABLE pmm_curso.configuraciondetalles;
+INSERT INTO pmm_curso.configuraciondetalles
+SELECT renglon,columna,costo,kgi,kgf,zoi,zof,vazio FROM pmm_weba.configuraciondetalles;
+
+TRUNCATE TABLE pmm_curso.configuracion;
+INSERT INTO pmm_curso.configuracion
+SELECT zonai,zonaf,intervalozona,tarifai,tarifaf,intervalotarifa FROM pmm_weba.configuracion;
+*/
+
+-- PROPUESTAS
+TRUNCATE TABLE pmm_curso.propuestaconvenio;
+INSERT INTO pmm_curso.propuestaconvenio
+SELECT folio,renovacionde,fecha,estadopropuesta,tipoautorizacion,vigencia,sucursal,vendedor,
+nvendedor,personamoral,idprospecto,tipo,nick,rfc,nombre,apaterno,amaterno,calle,numero,colonia,
+cp,poblacion,municipio,estado,pais,celular,telefono,email,precioporkg,precioporcaja,descuentosobreflete,
+cantidaddescuento,limitekg,costo,preciokgexcedente,prepagadas,consignacionkg,consignacioncaja,
+consignaciondescuento,consignaciondescantidad,usuario,idusuario,valordeclarado,limite,porcada,
+costoextra, '' AS legal FROM pmm_weba.propuestaconvenio;
+
+TRUNCATE TABLE pmm_curso.convenio_configurador_caja;
+INSERT INTO pmm_curso.convenio_configurador_caja
+SELECT idconvenio,descripcion,zona,kmi,kmf,tipo,precio,usuario,idusuario,fecha,pesolimite,preciokgexcedente FROM pmm_weba.convenio_configurador_caja;
+
+TRUNCATE TABLE pmm_curso.convenio_configurador_preciokg;
+INSERT INTO pmm_curso.convenio_configurador_preciokg
+SELECT idconvenio,zona,kmi,kmf,valor,tipo,usuario,idusuario,fecha FROM pmm_weba.convenio_configurador_preciokg;
+
+TRUNCATE TABLE pmm_curso.convenio_servicios;
+INSERT INTO pmm_curso.convenio_servicios
+SELECT idconvenio,idservicio,servicio,cobro,precio,tipo,usuario,idusuario,fecha FROM pmm_weba.convenio_servicios;
+
+TRUNCATE TABLE pmm_curso.convenio_servicios_sucursales;
+INSERT INTO pmm_curso.convenio_servicios_sucursales
+SELECT idconvenio,clave,nombre,tipo,usuario,idusuario,fecha FROM pmm_weba.convenio_servicios_sucursales;

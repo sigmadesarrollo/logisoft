@@ -1,0 +1,11 @@
+name = WebOrb
+description = Provides an WebOrb server.
+package = Services - servers
+dependencies = services
+
+
+; Information added by drupal.org packaging script 
+version = "0.x-1.x-dev"
+project = "weborb"
+datestamp = "1184544056"
+

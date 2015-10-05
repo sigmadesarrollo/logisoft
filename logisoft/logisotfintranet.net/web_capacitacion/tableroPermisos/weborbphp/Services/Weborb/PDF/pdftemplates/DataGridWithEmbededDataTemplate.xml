@@ -1,0 +1,41 @@
+<Document>
+	<PDFMetadata>
+		<Property name="PageFormat" value="A4" />
+		<Property name="PageMargins" value="10" />
+	</PDFMetadata>
+	<Page>
+		<Text value="DataGrid with static (embedded) data:" x="10" y="10"/>
+		<DataGrid left="10" right="10" bottom="10" top="37">
+			<DataGridColumn headerText="Name" dataField="name"/>
+			<DataGridColumn headerText="Phone" dataField="phone"/>
+			<DataGridColumn headerText="Email" dataField="email"/>
+			<DataGridColumn headerText="Active" dataField="active"/>
+			<dataProvider>
+		        <employee>
+		            <name>James Bond</name>
+		            <phone>555-000-007</phone>
+		            <email>james@mi5.co.uk</email>
+		            <active>true</active>
+		        </employee>
+		        <employee>
+		            <name>Rambo</name>
+		            <phone>555-xxx-xxx</phone>
+		            <email>ram@bo.com</email>
+		            <active>true</active>
+		        </employee>
+		        <employee>
+		            <name>Ivan Drago</name>
+		            <phone>555-123-4567</phone>
+		            <email>ivan@lafatness.com</email>
+		            <active>false</active>
+		        </employee>
+		        <employee>
+		            <name>Pall Mall</name>
+		            <phone>555-987-6543</phone>
+		            <email>pmall@smokewillkillya.com</email>
+		            <active>true</active>
+		        </employee>			
+			</dataProvider>
+		</DataGrid>
+	</Page>
+</Document>	

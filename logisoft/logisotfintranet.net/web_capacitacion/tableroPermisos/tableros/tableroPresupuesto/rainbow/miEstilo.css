@@ -1,0 +1,101 @@
+/* CSS file */
+Application{
+	backgroundColor:#f9f6d9;
+	backgroundRepeat:repeat-x;
+	background-image:Embed(source='imagenes/main_bg.png') repeat-x;
+	color: #ffffff;
+	
+	fontSharpness:21;
+	fontThickness:-120;
+	themeColor:#d5610d;
+}
+Panel {
+   borderStyle: solid;
+   borderColor: #d5610d;
+   borderAlpha: 1;
+   roundedBottomCorners: true;
+   cornerRadius: 10;
+   headerHeight: 25;
+   backgroundAlpha: 1;
+   highlightAlphas: 0.44, 0.08;
+   headerColors: #D7F205, #C0D904;
+   backgroundColor: #f2f6f9;/*#E2E7E6;*/
+   dropShadowEnabled: true;
+   shadowDistance: 0;
+   shadowDirection: right;
+   /*titleBackgroundSkin:Embed(source='imagenes/panelHeader.png', scaleGridLeft=12, scaleGridRight=13, scaleGridTop=30,scaleGridBottom=31);*/
+}
+
+.mypanelTitle {
+	fontFamily: Arial;
+	fontSize: 10;
+	fontWeight: bold;
+}
+.closeBtn {
+	upSkin:        Embed('/assets/img/closeButton.png');
+	overSkin:      Embed('/assets/img/closeButton.png');
+	downSkin:      Embed('/assets/img/closeButton.png');
+	disabledSkin:  Embed('/assets/img/closeButton.png');
+}
+.increaseBtn {
+	upSkin:        Embed('/assets/img/increaseButton.png');
+	overSkin:      Embed('/assets/img/increaseButton.png');
+	downSkin:      Embed('/assets/img/increaseButton.png');
+	disabledSkin:  Embed('/assets/img/increaseButton.png');
+}
+.decreaseBtn {
+	upSkin:        Embed('/assets/img/decreaseButton.png');
+	overSkin:      Embed('/assets/img/decreaseButton.png');
+	downSkin:      Embed('/assets/img/decreaseButton.png');
+	disabledSkin:  Embed('/assets/img/decreaseButton.png');
+}
+.minBtn {
+	upSkin:        Embed('/assets/img/increaseButton.png');
+	overSkin:      Embed('/assets/img/increaseButton.png');
+	downSkin:      Embed('/assets/img/increaseButton.png');
+	disabledSkin:  Embed('/assets/img/increaseButton.png');
+}
+.resizeHndlr {
+	upSkin:        Embed('/assets/img/resizeHandler.png');
+	overSkin:      Embed('/assets/img/resizeHandler.png');
+	downSkin:      Embed('/assets/img/resizeHandler.png');
+	disabledSkin:  Embed('/assets/img/resizeHandler.png');
+}
+
+PieChart{
+	color: #000000;
+	fontThickness:-120;
+	fontSizw:12;
+	themeColor:#d5610d;
+	fontFamily: "Arial";
+}
+
+LineChart{
+	color: #000000;
+	fontThickness:-120;
+	fontSizw:12;
+	themeColor:#d5610d;
+	fontFamily: "Arial";
+	backgroundColor: #FFFFFF;
+}
+
+Legend{
+	color: #000000;
+	fontThickness:-120;
+	fontSizw:12;
+	themeColor:#d5610d;
+	fontFamily: "Arial";
+}
+
+DataGrid{
+	themeColor: #73715c;
+	alternatingItemColors:#C6E1F0,#ECF5FB;
+	verticalScrollBarStyleName: scroll;
+	headerColors: #dddcd1, #bfbdac;
+	headerStyleName:headerGrid;
+	color: #545345;
+}
+.headerGrid{
+	color:#716f5b;
+	fontWeight:bold;
+}

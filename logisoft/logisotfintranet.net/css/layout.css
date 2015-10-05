@@ -1,0 +1,84 @@
+/*======= index.html =======*/
+#page1 #content .line-ver { background-position:745px top;}
+#page1 #content .row-1 .col-1 {width:736px;}
+#page1 #content .row-1 .col-2 { width:244px;}
+#page1 #content .row-2 .line-ver {background-position:428px top;}
+#page1 #content .row-2 .line-ver1 {background-position:718px top;}
+#page1 #content .row-2 .col-1 {width:408px; margin-right:21px;}
+#page1 #content .row-2 .col-2 { width:271px; margin-right:46px;}
+#page1 #content .row-2 .col-3 { width:234px;}
+#page1 #content .row-2 .col-1 .col-1 { width:192px; margin-right:18px;}
+#page1 #content .row-2 .col-1 .col-2 { width:166px; margin-right:0;}
+
+/*======= index-1.html =======*/
+#page2 #content .row-1 .line-ver { background-position:718px top;}
+#page2 #content .row-1 .line-ver1 { background-position:745px top;}
+#page2 #content .row-1 .col-1 {width:703px; margin-right:33px;}
+#page2 #content .row-1 .col-2 { width:244px;}
+#page2 #content .row-2 .line-ver {background-position:428px top;}
+#page2 #content .row-2 .col-1 {width:412px; margin-right:17px;}
+#page2 #content .row-2 .col-2 { width:530px;}
+
+/*======= index-2.html =======*/
+#page3 #content .line-ver { background-position:718px top;}
+#page3 #content .line-ver1 { background-position:745px top;}
+#page3 #content .row-1 .col-1 {width:710px; margin-right:26px;}
+#page3 #content .row-1 .col-2 { width:244px;}
+#page3 #content .row-1 .col-1 .col-1 { width:199px; margin-right:30px;}
+#page3 #content .row-1 .col-1 .col-2 { width:199px; margin-right:30px;}
+#page3 #content .row-1 .col-1 .col-3 { width:199px;}
+#page3 #content .row-2 .line-ver {background-position:428px top;}
+#page3 #content .row-2 .col-1 {width:408px; margin-right:21px;}
+#page3 #content .row-2 .col-2 { width:271px; margin-right:46px;}
+#page3 #content .row-2 .col-3 { width:234px;}
+
+/*======= index-3.html =======*/
+#page4 #content .row-1 .line-ver { background-position:718px top;}
+#page4 #content .row-1 .line-ver1 { background-position:745px top;}
+#page4 #content .row-1 .col-1 {width:703px; margin-right:33px;}
+#page4 #content .row-1 .col-2 { width:244px;}
+#page4 #content .row-1 .col-1 .col-1 { width:310px; margin-right:50px;}
+#page4 #content .row-1 .col-1 .col-2 { width:305px;}
+#page4 #content .row-2 .line-ver {background-position:428px top;}
+#page4 #content .row-2 .col-1 {width:412px; margin-right:17px;}
+#page4 #content .row-2 .col-2 { width:530px;}
+#page4 #content .row-2 .col-2 .col-1 { width:233px; margin-right:38px;}
+#page4 #content .row-2 .col-2 .col-2 { width:232px;}
+
+/*======= index-4.html =======*/
+#page5 #content .line-ver { background-position:718px top;}
+#page5 #content .line-ver1 { background-position:745px top;}
+#page5 #content .row-1 .col-1 {width:700px; margin-right:36px;}
+#page5 #content .row-1 .col-2 { width:244px;}
+#page5 #content .row-1 .col-1 .col-1 { width:199px; margin-right:30px;}
+#page5 #content .row-1 .col-1 .col-2 { width:199px; margin-right:30px;}
+#page5 #content .row-1 .col-1 .col-3 { width:199px;}
+#page5 #content .row-2 .line-ver {background-position:428px top;}
+#page5 #content .row-2 .col-1 {width:408px; margin-right:21px;}
+#page5 #content .row-2 .col-2 { width:271px; margin-right:46px;}
+#page5 #content .row-2 .col-3 { width:234px;}
+
+/*======= index-5.html =======*/
+#page6 #content .line-ver { background-position:718px top;}
+#page6 #content .line-ver1 { background-position:745px top;}
+#page6 #content .row-1 .line-ver {background-position:428px top;}
+#page6 #content .row-1 .col-1 {width:408px; margin-right:20px;}
+#page6 #content .row-1 .col-2 { width:270px; margin-right:38px;}
+#page6 #content .row-1 .col-3 { width:244px;}
+#page6 #content .row-1 .col-1 .col-1 { width:199px; margin-right:30px;}
+#page6 #content .row-1 .col-1 .col-2 { width:199px; margin-right:30px;}
+#page6 #content .row-1 .col-1 .col-3 { width:199px;}
+#page6 #content .row-2 .line-ver {background-position:428px top;}
+#page6 #content .row-2 .col-1 {width:408px; margin-right:21px;}
+#page6 #content .row-2 .col-2 { width:271px; margin-right:46px;}
+#page6 #content .row-2 .col-3 { width:234px;}
+
+/*======= index-6.html =======*/
+#page7 #content .line-ver { background-position:718px top;}
+#page7 #content .line-ver1 { background-position:745px top;}
+#page7 #content .col-1 { width:696px; margin-right:40px;} 
+#page7 #content .col-2 { width:244px;}
+
+/*=========================*/
+
+

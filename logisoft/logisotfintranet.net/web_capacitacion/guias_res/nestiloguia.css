@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+.azul_ezqder_up{
+	background: bottom no-repeat url(imgestguia/titulo_azul_derup.gif);
+	width:11px;
+	height:29px;
+}
+.azul_ezqcen_up{
+	background: bottom repeat-x url(imgestguia/titulo_azul_cenup.gif);
+	height:29px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bolder;
+	color:#FFF;
+}
+.azul_ezqizq_up{
+	background: bottom no-repeat url(imgestguia/titulo_azul_izqup.gif);
+	width:11px;
+	height:29px;
+}
+
+.azul_ezqder_dw{
+	background: top no-repeat url(imgestguia/titulo_azul_derdw.gif);
+	width:11px;
+	height:29px;
+}
+.azul_cen{
+	background:#317DC2;
+}
+.azul_ezqizq_dw{
+	background: top no-repeat url(imgestguia/titulo_azul_izqdw.gif);
+	width:11px;
+	height:29px;
+}
+
+.gris_ezqder_up{
+	background: bottom no-repeat url(imgestguia/titulo_gris_derup.gif);
+	width:11px;
+	height:29px;
+}
+.gris_ezqizq_up{
+	background: bottom no-repeat url(imgestguia/titulo_gris_izqup.gif);
+	width:11px;
+	height:29px;
+}
+.gris_ezqder_dw{
+	background: top no-repeat url(imgestguia/titulo_gris_derdw.gif);
+	width:11px;
+	height:29px;
+}
+.gris_cen{
+	background:#EBEBEB;
+}
+.gris_ezqizq_dw{
+	background: top no-repeat url(imgestguia/titulo_gris_izqdw.gif);
+	width:11px;
+	height:29px;
+}
+
+.fuenteBlanca{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	color:#FFF;
+}
+.fuentePloma{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	color:#333;
+}
+.estiloCajas{
+	font:Tahoma, Geneva, sans-serif; 
+	border:none;
+	font-size:10px; 
+	width:125px;
+	height:16px;
+	background: no-repeat url(imgestguia/fondocaja16.gif);
+}

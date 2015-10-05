@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+.formato_columnas_izq{
+	background-image:url(../img/borde1_1.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.formato_columnas_der{
+	background-image:url(../img/borde1_3.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.formato_columnas{
+	background-image:url(../img/borde1_2.jpg);
+	font-family: tahoma;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: bold;
+	color:#FFF;
+}
+.formato_columnas_izqg{
+	background-image:url(../img/bordeb1_1.jpg);
+	background-position:right;
+	background-repeat:no-repeat;
+}
+.formato_columnas_derg{
+	background-image:url(../img/bordeb1_3.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+.formato_columnasg{
+	background-image:url(../img/bordeb1_2.jpg);
+	font-family: tahoma;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: bold;
+	color:#FFF;
+}
+.formato_cajagrid{
+	background:none;
+ 	border:0;
+	font-family: tahoma;
+	font-size:8px;
+	font-style: normal;
+	font-weight: bold;
+	color:#000000;
+}
+.formato_chk{
+	height:8px;
+	width: 8px;
+}
+.fila1{
+	background-color:#C7F0FC;
+}
+.fila2{
+	background-color:#FFFFFF;
+}
+.sobreFila{
+	background-color:#CCC;
+}
+.seleccionarFila{
+	background-color:#128FB4;
+	color:#FFFFFF;
+	font-weight:bold;
+}

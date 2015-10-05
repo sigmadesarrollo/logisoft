@@ -1,0 +1,41 @@
+WebORB for PHP
+===============
+
+Current release: 3.6.0
+
+Release history is available at:
+http://www.themidnightcoders.com/weborb/php/releaseHistory.htm
+
+
+What is WebORB for PHP:
+-------------------------
+WebORB for PHP is server-side technology enabling connectivity 
+between Flex and Flash Remoting clients and PHP applications. 
+WebORB for PHP can be installed into any PHP5 application to 
+expose PHP classes as remote services. The product provides a 
+complete implementation of the Adobe's AMF0 and AMF3 messaging 
+protocols and thus supports any Flash Remoting or Flex client.
+
+
+Getting Started:
+------------------------
+Detailed 'Quick Start' guide is available at:
+http://www.themidnightcoders.com/weborb/php/gettingstarted.htm
+
+
+Launching Management Console
+------------------------
+To start the management console load index.php located in the root
+directory of the product distribution.
+
+
+Support
+-----------------------
+Consider purchasing professional support from Midnight Coders.
+We offer guaranteed support as well as product training and
+assistance with deployment. For details visit:
+http://www.themidnightcoders.com/weborb/weborb_support_packages.shtm
+http://www.themidnightcoders.com/licensing/
+
+Product discussion forums are available at:
+http://www.themidnightcoders.com/forum/default.aspx?g=forum&c=2

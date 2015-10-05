@@ -1,0 +1,8 @@
+[18-May-2010 12:51:04] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 33557849 bytes) in /home/pmm/public_html/web_pruebas/catalogos/presupuesto/presupuesto.php on line 14
+[18-May-2010 12:54:08] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 33557849 bytes) in /home/pmm/public_html/web_pruebas/catalogos/presupuesto/presupuesto.php on line 14
+[18-May-2010 12:55:09] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12584621 bytes) in /home/pmm/public_html/web_pruebas/catalogos/presupuesto/presupuesto.php on line 11
+[18-May-2010 12:55:35] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/Conectar.php on line 24
+[18-May-2010 12:59:25] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/Conectar.php on line 24
+[18-May-2010 13:00:15] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/Conectar.php on line 24
+[18-May-2010 13:00:18] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/Conectar.php on line 24
+[18-May-2010 13:00:22] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/Conectar.php on line 24

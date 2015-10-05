@@ -1,0 +1,368 @@
+@charset "utf-8";
+body,td,th {
+	color: #000000;
+}
+body {
+	background-color: #FFFFFF;
+	background: url(../img/body_bg.jpg) top center;
+	background-repeat: repeat-x;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+#contenedorp{
+	width:100%;
+	height:100%;
+	background: url(../img/fondomenu.gif) top  repeat-x;
+}
+#cuadrocontenido{
+	align:center;
+	background:url(../img/fondox.png);
+	text-align:center;
+	width:900px;
+	height:650px;
+	margin:auto;
+}
+#logo{
+	float:left;
+	background:url(../img/logo.png) no-repeat;
+	width:156px;
+	height:113px;
+}
+
+#headerp{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:900px;
+	height:113px;
+}
+
+#menus li a {
+	display:block;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	width:80px;
+	padding:0px 0 5px 22px;
+	text-decoration:none;
+}
+
+#menus2{
+	float:right;
+	margin:10px 10px auto 0;
+	width:710px;
+	height:24px;
+}
+
+#menus2 #menunombrecliente{
+	float:left;
+	text-align:left;
+	margin:0px 10px auto 0;
+	width:400px;
+	height:24px;
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+}
+
+#menus2 ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:#FFF;
+}
+#menus2 li{
+	margin:0;
+	float:right;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	padding-left:0px;
+}
+#menus2 li a {
+	display:block;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	width:100px;
+	padding:0px 0 5px 0px;
+	text-decoration:none;
+}
+
+#menus3{
+	float:right;
+	margin:10px 10px auto 0;
+	width:720px;
+	height:24px;
+}
+
+#menus3 ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	color:#FFF;
+}
+#menus3 li{
+	margin:0;
+	float:right;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	padding-left:0px;
+}
+#menus3 li a {
+	display:block;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	width:130px;
+	height:33px;
+	padding:0px 0 5px 0px;
+	text-decoration:none;
+}
+
+#menus3 li a:hover {
+	background:url(../img/cuadronegro.png) repeat;
+}
+
+#contenedorlogin{
+	float:right;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:290px;
+}
+#contenedorloginfondo{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:280px;
+}
+#loginimg{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:103px;
+	background:url(../img/loginLlave.png) no-repeat center;
+}
+#rastreoimg{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:220px;
+	height:103px;
+	background:url(../img/iconoRastreo.png) no-repeat center;
+}
+#logincontenido{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:205px;
+	padding-left:15px;
+	height:200px;
+	background:url(../img/cuadronegro.png) repeat;
+}
+#logincontenido h1{
+	color:#D57D09;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#logincontenido #cajaslogin{
+	float:left;
+	width:180px;
+	height:80px;
+}
+#logincontenido label{
+	text-align:left;
+	float:left;
+	color:#FFF;
+	width:180px;
+	padding-bottom:2px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#logincontenido input{
+	float:left;
+	width:180px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#logincontenido #mitexto a{
+	text-align:right;
+	color:#CCC;
+	margin-top:10px;
+	float:left;
+	width:180px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+/* el cuerpo de la pagina*/
+#cuadroboddyizq{
+	float:left;
+	align:center;
+	text-align:center;
+	width:300px;
+	height:500px;
+	margin:auto;
+}
+#cuadroboddyizq #logotipo2{
+	float:left;
+	background:url(../img/logo2.png) no-repeat center;
+	width:300px;
+	height:156px;
+	margin:auto;
+}
+#cuadroboddyder{
+	float:right;
+	align:center;
+	text-align:center;
+	width:600px;
+	height:500px;
+	margin:auto;
+}
+
+#cuadroFotos{
+	float:left;
+	margin:0px 0px 0px 0px;
+	width:660px;
+	height:470px;
+}
+
+#cuadroFotos #logincontenido{
+	text-align:left;
+	float:left;
+	margin:39px 0px 0px 0px;
+	width:630px;
+	padding:0px 15px;
+	height:430px;
+	background:url(../img/cuadronegro.png) repeat;
+}
+
+#cuadroFotos #logincontenido #unafoto{
+	float:left;
+	width:238px;
+	height:162px;
+}
+
+#cuadroFotos #logincontenido #texto1{
+	float:left;
+	padding-left:15px;
+	width:368px;
+	height:162px;
+	color:#FFF;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#cuadroFotos #logincontenido #unafoto2{
+	float:right;
+	padding-top:15px;
+	width:238px;
+	height:162px;
+}
+
+#cuadroFotos #logincontenido #texto2{
+	float:left;
+	padding-top:15px;
+	width:368px;
+	height:162px;
+	color:#FFF;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#cuadroFotos #logincontenido h1{
+	color:#FFF;
+	font-size:24px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#barraizquierda{
+	text-align:left;
+	float:left;
+	margin:15px 0px 0px 0px;
+	width:130px;
+	padding:0px 15px;
+	height:770px;
+	background:url(../img/cuadronegro.png) repeat;
+}
+
+#barraizquierda #imagen{
+	float:left;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10;
+	font-weight:normal;
+	list-style-type:none;
+	margin:5px 0px 0px 0px;
+	width:128px;
+	height:140px;
+	padding-top:5px;
+	color:#FFF;
+	cursor:hand;
+}
+
+#barraizquierda #imagen:hover{
+	background:url(../img/cuadronegro.png) repeat;
+}
+
+#barraizquierda #texto{
+	margin:auto;
+	padding-top:4px;
+	color:#FFF;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#barraizquierda #unafoto{
+	margin:15px 0px 0px 0px;
+	float:left;
+	width:150px;
+	height:162px;
+}
+
+#barraderecha{
+	text-align:left;
+	float:right;
+	margin:15px 0px 0px 0px;
+	width:730px;
+	height:900px;
+	background:url(../img/cuadronegro.png) repeat;
+	padding-bottom: 10px;
+}
+
+#barraderecha #texto{
+	margin:auto;
+	padding-top:4px;
+	color:#FFF;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	background:url(../img/cuadronegro.png);
+}
+
+#barraderecha #texto h1{
+	color:#FFF;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#barraderecha #texto td{
+	color:#FFF;
+	font-size:10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+td input{
+	border:1px #333 solid;
+}
+
+#barraderecha #texto td button{
+	border:1px #000 solid;
+	background:url(img/parabotones.png);
+	height:21px;
+	width:90px;
+	color:#FFF;
+}
+
+#barraderecha #texto .cabecera1{
+	background:url(img/cuadronegro.png);
+	height:20px;
+	font-size:12px;
+}

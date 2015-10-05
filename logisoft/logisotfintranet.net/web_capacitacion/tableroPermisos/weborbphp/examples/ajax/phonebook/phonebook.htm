@@ -1,0 +1,484 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>WebORB Presentation Server AJAX Client Examples - Phone Book Example</title>
+<script language="javascript" src="WebORB.js"></script>
+<script>
+	var proxy;
+	var curPage;
+
+	function loadPhoneBook()
+	{
+		/*
+		 * Create a proxy to the instance of the weborb.examples.primer.PhoneBook class.
+		 * Notice the "?activate=application" parameter in the server URL. By adding the parameter, the client
+		 * requests application activation of the requested object. With application activation only one instance
+		 * of the class will be created per application. As a result, any state maintained in the object will
+		 * be shared between all clients.
+		 *
+		 * JAVA SERVER: In the case of the PhoneBook class, it maintains an in-memory database.
+		 * As a result, it is imperative that all invocation from any connected client are sent to the same instance.
+		 *
+		 * .NET SERVER: The .NET implementation uses Access database to store all the contacts. The implementation
+		 * is stateless, so using the application activation is helpful only to save object creation time.
+		 */
+		proxy = webORB.bind( "Weborb.Examples.Data.PhoneBook", "weborb.php?activate=application" );
+		proxy.getAllContacts( new Async( processContacts ) );
+	}
+
+	/*
+	 * Process the response here. The server's method returns a ResultSet or DataSet.
+	 * Extract all the data from the response and render it using DHTML
+	 */
+	function processContacts( contacts )
+	{
+		//var initialPage = contacts.getInitialPage();
+		var columnNames = new Array("Contact Name", "Phone Number", "Email Address");
+
+		var tableObj = document.createElement( "TABLE" );
+		var tBodyObj = document.createElement( "TBODY" );
+		tBodyObj.id = "phoneBookBody";
+
+		tableObj.appendChild( tBodyObj );
+		tableObj.border = "1pt";
+		tableObj.cellSpacing = 0;
+		tableObj.cellPadding = 3;
+		tableObj.style.borderCollapse = "collapse"
+		tableObj.style.borderStyle = "solid";
+		tableObj.borderColor = "#C0C0C0";
+		tableObj.width = "100%";
+
+		var headerRowObj = document.createElement( "TR" );
+		tBodyObj.appendChild( headerRowObj );
+
+        // render columns
+		for( var i = 0; i < columnNames.length; i++ )
+		{
+			var colNameCell = document.createElement( "TD" );
+			colNameCell.style.backgroundColor = "#C0C0C0";
+			colNameCell.style.color = "#000000";
+			var colName = columnNames[ i ];
+
+			if( colName == "ID" )
+				colName = "";
+
+			colNameCell.innerHTML = "<font size='2'>" + colName + "</font>";
+			headerRowObj.appendChild( colNameCell );
+		}
+		
+		var dynamicTableContent = document.getElementById( "dynamicTableContent" );
+		
+		if( dynamicTableContent.childNodes.length > 0 )
+			dynamicTableContent.replaceChild( tableObj, dynamicTableContent.firstChild );
+		else
+			dynamicTableContent.appendChild( tableObj );
+		
+
+		var pager = document.getElementById( "pager" );
+		
+		while( pager.childNodes.length > 0 )
+			pager.removeChild( pager.firstChild );
+		
+		/*var totalRows = contacts.getTotalRowCount();
+		var pageSize = contacts.getPageSize();
+		var pageCount = 1;*/
+		
+		renderContacts( contacts, "undefined" );
+
+        // if there are any rows in the response, create pager
+		/*while( totalRows > 0 )
+		{
+			var linkElement = document.createElement( "A" );
+			linkElement.innerHTML = "<font size='2'>" + pageCount + "</font>";
+
+			// create a dynamic function which will fetch data for the selected page
+			linkElement.onclick = function()
+			{
+				var result = contacts.getRecords( (arguments.callee.pageCount - 1) * pageSize + 1, pageSize );
+				renderContacts( result.Page, arguments.callee.owner );
+				curPage = arguments.callee.pageCount;
+			}
+
+			linkElement.onclick.pageCount = pageCount;
+			linkElement.onclick.owner = linkElement;
+
+			linkElement.href = "javascript:dummyFunction();";
+			pageCount++;
+			totalRows -= pageSize;
+
+			pager.appendChild( linkElement );
+			pager.appendChild( document.createTextNode( " " ) );
+		}
+
+		if( curPage == undefined )
+			renderContacts( initialPage, pager.firstChild );
+		else
+		{
+			var result;
+			var done = false;
+
+            // if this function is called when a user was on a particular page,
+            // make sure to fetch data for that page. scale down in case when no
+            // more data in available for the page
+			while( !done )
+			{
+				result = contacts.getRecords( (curPage - 1) * pageSize + 1, pageSize );
+				done = result.Page != undefined;
+
+				if( !done )
+				{
+				  if( curPage > 1 )
+				  	curPage--;
+				  else
+				  	done = true;
+				}
+			}
+
+			if( result.Page != undefined )
+				renderContacts( result.Page, pager.childNodes[ (curPage - 1) * 2 ] );
+		}*/
+	}
+
+	function renderContacts( page, linkElement )
+	{
+		
+		var phoneBookBody = document.getElementById( "phoneBookBody" );
+
+		while( phoneBookBody.childNodes.length > 1 )
+			phoneBookBody.removeChild( phoneBookBody.lastChild );
+
+		if( page != undefined )
+		for( var i = 0; i < page.length; i++ )
+		{
+			
+			var rowObj = document.createElement( "TR" );
+			phoneBookBody.appendChild( rowObj );
+
+			var cellObjName = document.createElement( "TD" );
+			cellObjName.style.fontSize = "10pt";
+			cellObjName.appendChild( document.createTextNode( page[ i ].name ) );
+
+			var cellObjPhone = document.createElement( "TD" );
+			cellObjPhone.style.fontSize = "10pt";
+			cellObjPhone.appendChild( document.createTextNode( page[ i ].phoneNumber ) );
+
+			var cellObjEmail = document.createElement( "TD" );
+			cellObjEmail.style.fontSize = "10pt";
+			cellObjEmail.appendChild( document.createTextNode( page[ i ].emailAddress ) );
+
+			var actionLinkCell = document.createElement( "TD" );
+
+			var deleteLinkObj = document.createElement( "A" );
+			deleteLinkObj.innerHTML = "<font size='1'>Delete</font>";
+			deleteLinkObj.onclick = function()
+			{
+				if( arguments.callee.cancelMode )
+					proxy.getAllContacts( new Async( processContacts ) );
+				else
+					proxy.deleteContact( arguments.callee.contactId, new Async( contactDeleted, contactDeletionFailed ) );
+			}
+			deleteLinkObj.onclick.contactId = page[ i ].ID;
+			deleteLinkObj.onclick.cancelMode = false;
+			deleteLinkObj.href = "javascript:dummyFunction();";
+
+			var editLinkObj = document.createElement( "A" );
+			editLinkObj.innerHTML = "<font size='1'>Edit</font>";
+			editLinkObj.onclick = function()
+			{
+				if( arguments.callee.editMode )
+				{
+					var name = arguments.callee.nameField.firstChild.value;
+					var phone = arguments.callee.phoneField.firstChild.value;
+					var email = arguments.callee.emailField.firstChild.value;
+
+					if( name.length == 0 || phone.length == 0 || email.length == 0 )
+						alert( "cannot update contact without any data for a field" );
+					else
+					{
+						proxy.editContact( arguments.callee.contactId, name, phone, email );
+						proxy.getAllContacts( new Async( processContacts ) );
+
+						convertToTextField( arguments.callee.nameField );
+						convertToTextField( arguments.callee.phoneField );
+						convertToTextField( arguments.callee.emailField );
+						arguments.callee.editMode = false;
+					}
+				}
+				else
+				{
+					arguments.callee.editLinkObj.innerHTML = "<font size='1'>Submit</font>";
+					arguments.callee.deleteLinkObj.innerHTML = "<font size='1'>Cancel</font>";
+					arguments.callee.deleteLinkObj.onclick.cancelMode = true;
+					convertToInputField( arguments.callee.nameField );
+					convertToInputField( arguments.callee.phoneField );
+					convertToInputField( arguments.callee.emailField );
+					arguments.callee.editMode = true;
+				}
+			}
+
+			editLinkObj.onclick.contactId = page[ i ].ID;
+			editLinkObj.onclick.nameField = cellObjName;
+			editLinkObj.onclick.phoneField = cellObjPhone;
+			editLinkObj.onclick.emailField = cellObjEmail;
+			editLinkObj.onclick.editLinkObj = editLinkObj;
+			editLinkObj.onclick.deleteLinkObj = deleteLinkObj;
+			editLinkObj.onclick.editMode = false;
+			editLinkObj.href = "javascript:dummyFunction();";
+
+			actionLinkCell.appendChild( editLinkObj );
+			actionLinkCell.appendChild( document.createTextNode( " " ) );
+			actionLinkCell.appendChild( deleteLinkObj );
+
+			rowObj.appendChild( cellObjName );
+			rowObj.appendChild( cellObjPhone );
+			rowObj.appendChild( cellObjEmail );
+			rowObj.appendChild( actionLinkCell );
+		}
+
+		var pager = document.getElementById( "pager" );
+
+		for( var i = 0; i < pager.childNodes.length; i++ )
+			if( pager.childNodes[ i ].style != undefined )
+				pager.childNodes[ i ].style.fontWeight = "normal";
+
+		if( linkElement != undefined )
+			linkElement.style.fontWeight = "bold";
+	}
+
+	function convertToInputField( cell )
+	{
+		var value = cell.firstChild.data;
+		cell.removeChild( cell.firstChild );
+		var inputElement = document.createElement( "INPUT" );
+		inputElement.value = value;
+		inputElement.width = 80;
+		inputElement.size = 10;
+		cell.appendChild( inputElement );
+	}
+
+	function convertToTextField( cell )
+	{
+		var value = cell.firstChild.value;
+		cell.removeChild( cell.firstChild );
+		cell.appendChild( document.createTextNode( value ) );
+	}
+
+	function addContact()
+	{
+		var name = document.getElementById( "nameField" ).value;
+		var email = document.getElementById( "emailField" ).value;
+		var phone = document.getElementById( "phoneField" ).value;
+
+		if( name.length > 0 && email.length > 0 && phone.length > 0 )
+			proxy.createNewContact( name, phone, email, new Async( contactCreated, contactCreationFailed ) );
+		else
+			alert( "cannot create a contact with blank fields" );
+	}
+
+	function contactCreated( result )
+	{
+		proxy.getAllContacts( new Async( processContacts ) );
+	}
+
+	function contactCreationFailed( exception )
+	{
+		alert( "contact creation failed" );
+	}
+
+	function contactDeleted( result )
+	{
+		proxy.getAllContacts( new Async( processContacts ) );
+	}
+
+	function contactDeletionFailed( exception )
+	{
+		alert( "contact deletion failed" );
+	}
+
+	function dummyFunction()
+	{
+	}
+
+</script>
+</head>
+
+<body style="font-family: Tahoma; font-size: 10pt; border-collapse:collapse" onLoad="loadPhoneBook();">
+
+<table border="0" cellpadding="0" cellspacing="0" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td>
+    <img border="0" src="../../../images/topCornLeft.gif" width="9"></td>
+    <td background="../../../images/topMid.gif"></td>
+    <td width="12">
+    <img border="0" src="../../../images/rightCornTop.gif" width="12"></td>
+  </tr>
+  <tr>
+    <td background="../../../images/leftSide.gif" width="9"></td>
+    <td>
+    <table cellpadding="3" cellspacing="3" style="border-collapse: collapse; padding: 1" bordercolor="#111111" width="600" id="AutoNumber2">
+      <tr>
+        <td bordercolor="#C0C0C0" width="374">
+        <font face="Tahoma" size="2"><b>WebORB Presentation Server</b><br>
+        </font><font face="Tahoma" size="1">Rich Client Primer - AJAX Client</font></td>
+        <td style="border-style:dotted; border-width:1; padding:1; " bordercolor="#C0C0C0" width="204">
+        <p align="center"><font size="2">Phone Book Example</font></td>
+      </tr>
+      <tr>
+        <td style="border-left-width: 1; border-right-width: 1; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1" bordercolor="#C0C0C0" width="578" colspan="2"></td>
+      </tr>
+      <tr>
+        <td width="375" align="center" valign="top">
+            <form method="POST" action="--WEBBOT-SELF--" onSubmit="location.href='_derived/nortbots.htm';return false;" webbot-onSubmit>
+
+        <table bordercolor="#C0C0C0" id="AutoNumber9" cellpadding="3" border="1" width="360" style="border-collapse: collapse">
+          <tr>
+            <td bgcolor="#FFFFCC" colspan="2"><font size="2">Create New Contact</font></td>
+          </tr>
+          <tr>
+            <td><font size="2">Name </font></td>
+            <td>
+            <input type="text" ID="nameField" name="nameField" size="20" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1"></td>
+          </tr>
+          <tr>
+            <td><font size="2">Phone Number</font></td>
+            <td>
+            <input type="text" ID="phoneField" name="phoneField" size="20" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1"></td>
+          </tr>
+          <tr>
+            <td><font size="2">Email Address</font></td>
+            <td>
+            <input type="text" ID="emailField" name="emailField" size="20" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+            <p align="center">
+              <input type="button" value="Create Contact" name="createContactButton" style="border-style:solid; border-width:1; width: 150; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" onClick="addContact()"></td>
+          </tr>
+          <tr>
+            <td style="border-style: solid; border-width: 0; padding: 0" colspan="2">
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table bordercolor="#C0C0C0" id="AutoNumber3" cellpadding="3" border="1" cellspacing="0" width="360" style="border-collapse: collapse">
+          <tr>
+            <td bgcolor="#FFFFCC"><font size="2">Phone Book</font></td>
+          </tr>
+          <tr>
+            <td><DIV ID="dynamicTableContent"></DIV></td>
+          </tr>
+          <tr>
+            <td><DIV ID="pager"></DIV></td>
+          </tr>
+        </table>
+            </form>
+
+        </td>
+        <td width="204" align="left" valign="top" bordercolor="#C0C0C0" style="border-left-style: dotted; border-left-width: 1; border-right-width: 1; border-top-width: 1; border-bottom-width: 1; padding-left: 6; border-right-style:dotted; padding-right:6">
+        <font face="Tahoma" style="font-size: 9pt">
+        <b>Instructions:</b><br>
+        Enter data in the fields on the left and click 'Create Contact'. When
+        you click the button, the data is sent to the server object which
+        updates the database. New contacts are added to the and of table.</font><p>
+        <span style="font-size: 9pt">Each contact can be edited using the Edit
+        button or deleted using the Delete buttons. All actions immediately
+        update the database.</span><font style="font-size: 9pt"><br>
+        <br>
+        </font><font face="Tahoma" style="font-size: 9pt">
+        <b>Notes:</b><br>
+        This example demonstrates the usage of the data binding API available in
+        Rich Client System. Specifically it explores the following capabilities:<br>
+        - Database records retrieval<br>
+        - Database update using remote method invocation<br>
+        
+        </font></td>
+      </tr>
+      <tr>
+        <td width="579" align="center" valign="top" colspan="2" bordercolor="#C0C0C0" style="border-style:dotted; border-width:1; padding:6; ">
+        <p align="left"><b><span style="font-size: 9pt">Code review</span></b></p>
+        <p align="left"><font style="font-size: 9pt">The client imports the Rich Client System's™
+        JavaScript library:</font></p>
+        <div align="center">
+          <center>
+          <table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="90%" id="AutoNumber4" bgcolor="#FFFFCC">
+            <tr>
+              <td width="100%" bordercolor="#C0C0C0">
+              <p align="left">
+        <font face="Courier New" size="2">&lt;script language=&quot;javascript&quot; src=&quot;<b>WebORB.js</b>&quot;&gt;&lt;/script&gt;</font></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+        <p align="left"><span style="font-size: 9pt">As soon browser loads the
+        page, it executes the function where initial object binding takes place:</span></p>
+          <table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="90%" id="AutoNumber10" bgcolor="#FFFFCC">
+            <tr>
+              <td width="100%" bordercolor="#C0C0C0">
+              <p align="left">
+        <font face="Courier New" size="2">&lt;body <b>onLoad=&quot;loadPhoneBook();&quot;</b>&gt;</font></td>
+            </tr>
+          </table>
+        <p align="left"><span style="font-size: 9pt">The loadPhoneBook()
+        function binds to a server side object and performs asynchronous remote
+        method invocation to load the contacts. The Async object in the
+        arguments list of getAllContacts() causes the method to be invoked
+        asynchronously. When the response becomes available, Rich Client System
+        invokes the processContacts method.</span></p>
+        <table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="90%" id="AutoNumber11" bgcolor="#FFFFCC">
+            <tr>
+              <td width="100%" bordercolor="#C0C0C0">
+              <p align="left">
+        <font size="2" face="Courier New">proxy = <b>webORB.bind</b>( <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weborb.examples.primer.PhoneBook&quot;,&nbsp;&nbsp;&nbsp;&nbsp;
+        <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weborb.php?activate=application&quot; );<br>
+        proxy.getAllContacts( new Async( processContacts ) );</font></td>
+            </tr>
+          </table>
+        <p align="left">
+        <span style="font-size: 9pt">The client-server interaction for the first
+        invocation consists of the following steps:<br>
+        <br>
+        (1). Client invokes the getAllContacts() method on a remote object via
+        WebORB server, WebORB<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; server dispatches the invocation to the
+        phonebook object (</span><font style="font-size: 9pt">weborb.examples.primer.PhoneBook</font><span style="font-size: 9pt">)<br>
+        (2). The object executes a database query and returns a data set<br>
+        (3). WebORB caches the result for subsequent paging requests and
+        serializes the first page back to <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the client<br>
+        (4). Rich Client System processes the response and invokes the
+        processContacts function. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The function was specified in the Async object
+        passed to the original invocation. The<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; processContacts function contains the logic
+        for rendering the data in the browser.</span><p>
+        <img border="0" src="step1.gif" width="467" height="128"><h4 align="left">
+      
+        </td>
+      </tr>
+      <tr>
+        <td width="579" align="center" valign="top" colspan="2"><font size="1">
+        Copyright <span style="font-family:''">© Midnight Coders, Inc, 2003-2008. All
+        Rights Reserved</span></font></td>
+      </tr>
+    </table>
+    </td>
+    <td background="../../../images/rightMid.gif"></td>
+  </tr>
+  <tr>
+    <td>
+    <img border="0" src="../../../images/leftCornBot.gif" width="9" height="10"></td>
+    <td background="../../../images/botMid.gif"></td>
+    <td>
+    <img border="0" src="../../../images/botCornLeft.gif" width="12" height="10"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

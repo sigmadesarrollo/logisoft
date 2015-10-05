@@ -1,0 +1,20 @@
+[25-Mar-2010 22:24:13] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 33
+[25-Mar-2010 22:25:13] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 33
+[25-Mar-2010 22:27:17] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 33
+[07-Apr-2010 18:14:09] PHP Parse error:  syntax error, unexpected $end in /home/pmm/public_html/web_pruebas/embarque/embarquedemercancia_con.php on line 246
+[07-Apr-2010 18:16:13] PHP Parse error:  syntax error, unexpected $end in /home/pmm/public_html/web_pruebas/embarque/embarquedemercancia_con.php on line 246
+[21-Apr-2010 10:55:13] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE or '$' in /home/pmm/public_html/web_pruebas/embarque/embarquedemercanciaautomatica_con.php on line 311
+[21-Apr-2010 10:56:29] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE or '$' in /home/pmm/public_html/web_pruebas/embarque/embarquedemercanciaautomatica_con.php on line 311
+[21-Apr-2010 11:19:09] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/embarque/embarquedemercanciaautomatico.php on line 16
+[21-Apr-2010 11:20:18] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/embarque/embarquedemercanciaautomatico.php on line 16
+[21-Apr-2010 11:30:39] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE or '$' in /home/pmm/public_html/web_pruebas/embarque/programacionRecepcionDiaria_con.php on line 453
+[21-Apr-2010 11:30:55] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE or '$' in /home/pmm/public_html/web_pruebas/embarque/programacionRecepcionDiaria_con.php on line 453
+[21-Apr-2010 11:31:27] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE or '$' in /home/pmm/public_html/web_pruebas/embarque/programacionRecepcionDiaria_con.php on line 453
+[21-Apr-2010 11:32:58] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE or '$' in /home/pmm/public_html/web_pruebas/embarque/programacionRecepcionDiaria_con.php on line 453
+[29-Jun-2010 20:47:36] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/pmm/public_html/web_pruebas/embarque/embarquedemercancia_con.php on line 453
+[29-Jun-2010 20:49:39] PHP Warning:  mysql_fetch_object(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/embarque/embarquedemercancia_con.php on line 447
+[29-Jun-2010 20:52:34] PHP Parse error:  syntax error, unexpected ')' in /home/pmm/public_html/web_pruebas/embarque/embarquedemercancia_con.php on line 455
+[30-Jun-2010 19:37:58] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 43
+[30-Jun-2010 19:38:11] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 43
+[30-Jun-2010 19:38:21] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 43
+[30-Jun-2010 19:39:33] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/embarque/consultasembarque.php on line 43

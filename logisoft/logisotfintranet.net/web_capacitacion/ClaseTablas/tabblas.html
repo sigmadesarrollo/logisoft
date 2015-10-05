@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=EmulateIE7" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Untitled Document</title>
+
+<script language="javascript" src="../javascript/ClaseTabla.js"></script>
+
+<link href="estilos_estandar.css" rel="stylesheet" type="text/css" />
+
+<script src="ajaxGen.js" language="javascript"></script>
+
+<script>
+
+	var tabla1 = new ClaseTabla();
+
+	
+
+	tabla1.setAttributes({
+
+		nombre:"tablaregistros",
+
+		campos:[
+
+			{nombre:"FOLIO", medida:80, alineacion:"left", datos:"folio"},
+
+			{nombre:"NOMBRE", medida:140, alineacion:"left", datos:"nombre"},
+
+			{nombre:"PATERNO", medida:140, alineacion:"left", datos:"paterno"},
+
+			{nombre:"MATERNO", medida:140, alineacion:"left", datos:"materno"},
+
+			{nombre:"PRECIO", medida:90, tipo:"moneda", alineacion:"right", datos:"precio"}
+
+		],
+
+		filasInicial:4,
+
+		alto:200,
+
+		seleccion:true,
+
+		ordenable:true,
+
+		nombrevar:"tabla1"
+
+	});
+
+	
+
+	/*function formatNumber(num,prefix){
+
+		prefix = prefix || '';
+
+		num += '';
+
+		if(num.indexOf('.')<0){
+
+			num += ".00";
+
+		}
+
+		var splitStr = num.split('.');
+
+		alert( splitStr[0] + " - " +  splitStr[1]);
+
+		var splitLeft = splitStr[0];
+
+		var splitRight = splitStr.length > 1 ? '.' + splitStr[1] : '';
+
+		alert( splitLeft + " - " +  splitRight);
+
+		var regx = /(\d+)(\d{3})/;
+
+		while (regx.test(splitLeft)) {
+
+			//alert(splitLeft+"-"+splitLeft.replace(regx, '$1' + ',' + '$2'));
+
+			splitLeft = splitLeft.replace(regx, '$1' + ',' + '$2');
+
+		}
+
+		
+
+		var cantidad = parseFloat(splitLeft + splitRight).toFixed(2);
+
+		return prefix + cantidad;
+
+	}*/
+
+	
+
+	function formatNumber(num,prefix){
+
+		prefix = prefix || '';
+
+		num += '';
+
+		if(num.indexOf('.')<0){
+
+			num += ".00";
+
+		}
+
+		var splitStr = num.split('.');
+
+		var splitLeft = splitStr[0];
+
+		var splitRight = splitStr.length > 1 ? '.' + splitStr[1] : '';
+
+		var regx = /(\d+)(\d{3})/;
+
+		while (regx.test(splitLeft)) {
+
+			splitLeft = splitLeft.replace(regx, '$1' + ',' + '$2');
+
+		}
+
+		
+
+		return prefix + splitLeft + parseFloat(splitRight).toFixed(2).toString().substr(1,3);
+
+	}
+
+	
+
+	
+
+	//alert(formatNumber("3800.5","$"));
+
+	var test1 = formatNumber('4252',"$"); // devuelve 5,123,456,789.25
+
+	var test2 = formatNumber(4252.55856,'$'); // devuelve $1,234.15
+
+	var test3 = formatNumber(1343234.4,'$'); // devuelve $1,234.15
+
+
+
+	alert(test1+" .. .. "+test2+" .. .. "+test3);
+
+</script>
+
+</head>
+
+
+
+<body>
+
+	<table border="0" cellpadding="0" cellspacing="0" id="tablaregistros">
+
+    </table>
+
+    <input type="button" name="cargardatos" value="enviar" onclick="consulta('datosregresa','datos.xml');"/>
+
+	<input type="button" value="obtenermetodos" onclick="obtener()"/>
+
+    <input type="button" value="seleccionar de caja" onclick="selecciona(document.all.idselec.value)"/>
+
+    <input type="text" name="idselec" value="tablaregistros_id"/>
+
+    <input type="button" value="insertar fila" onclick="aderir()"/>
+
+    <input type="button" value="borrar fila por id" onclick="borrar1()"/>
+
+    <input type="button" value="borrar fila por indice" onclick="borrar2()"/>
+
+    <input type="button" value="filtrar por nombre" onclick="filtrar(true)"/>
+
+    <input type="button" value="quitar filtro nombre" onclick="filtrar(false)"/>
+
+    <input type="button" value="filtrar por dinero" onclick="filtrarNum(true)"/>
+
+    <input type="button" value="quitar filtro dinero" onclick="filtrarNum(false)"/>
+
+    <input type="button" value="ordenar" onclick="func_ordernar()"/>
+
+    <input type="button" value="agregar Variables" onclick="agregarVar()"/>
+
+    <input type="button" value="agregar Variables" onclick="agregar()"/>
+
+    <input type="button" value="agregar Variables" onclick="ponerDatosJson()"/>
+
+</body>
+
+<script>	
+
+	
+
+	window.onload = function(){
+
+		tabla1.create();
+
+	}
+
+	
+
+	function ponerDatosJson(){
+
+		
+
+		var registro = [{folio:157,nombre:"Juanito",paterno:"soto",materno:"avila",precio:500},
+
+						{folio:250,nombre:"Pepe",paterno:"Markez",materno:"Sarabia",precio:150}];
+
+		//alert(registro.length);
+
+		tabla1.setJsonData(registro);
+
+	}
+
+	
+
+	function agregarVar(){
+
+		var registro = new Object();
+
+		registro.folio = 156;
+
+		registro.nombre = "Pepe";
+
+		registro.paterno = "pecas";
+
+		registro.materno = "papas";
+
+		registro.precio = 800;
+
+		tabla1.add(registro);
+
+		
+
+		var registro1 = {folio:157,nombre:"Juanito",paterno:"soto",materno:"avila",precio:500};
+
+		tabla1.add(registro1);
+
+	}
+
+	
+
+	function func_ordernar(){
+
+		tabla1.sortRows("nombre");
+
+	}
+
+	
+
+	function filtrarNum(valor){
+
+		if(valor)
+
+			tabla1.setFilter("precio","500",">");
+
+		else
+
+			tabla1.setFilter("","none");
+
+	}
+
+	
+
+	function filtrar(valor){
+
+		if(valor)
+
+			tabla1.setFilter("paterno","Allerdi");
+
+		else
+
+			tabla1.setFilter("","none");
+
+	}
+
+	
+
+	function borrar1(){
+
+		tabla1.deleteById(tabla1.getSelectedIdRow());
+
+	}
+
+	
+
+	function borrar2(){
+
+		tabla1.deleteByIndex(tabla1.getSelectedIndex());
+
+	}
+
+	
+
+	function datosregresa(datos){
+
+		tabla1.setXML(datos);
+
+		//tabla1.setJsonData();
+
+	}
+
+	
+
+	function obtener(){
+
+		alert(tabla1.getSelectedIdRow());
+
+		alert(tabla1.getRecordCount());
+
+		alert(tabla1.getSelectedRow());
+
+		alert(tabla1.getSelectedIndex());
+
+	}
+
+	
+
+	function selecciona(valor){
+
+		tabla1.setSelectedById(valor);
+
+	}
+
+	
+
+	function aderir(){
+
+		tabla1.add(tabla1.getSelectedRow());
+
+	}
+
+	
+
+	function agregar(){
+
+		var registro = new Object();
+
+		registro.folio = 1647;
+
+		
+
+		tabla1.add(registro);
+
+	}
+
+</script>
+
+</html>
+

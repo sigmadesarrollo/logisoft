@@ -1,0 +1,1 @@
+[18-Feb-2010 10:55:18] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/pmm/public_html/web_pruebas/Conectar.php on line 5

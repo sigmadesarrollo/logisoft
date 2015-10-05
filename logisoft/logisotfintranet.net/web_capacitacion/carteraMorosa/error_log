@@ -1,0 +1,11 @@
+[05-Feb-2010 09:54:56] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Unknown MySQL server host 'DBSERVER' (1) in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 7
+[05-Feb-2010 09:54:56] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 8
+[05-Feb-2010 09:54:56] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 20
+[05-Feb-2010 09:56:47] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Unknown MySQL server host 'DBSERVER' (1) in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 7
+[05-Feb-2010 09:56:47] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 8
+[05-Feb-2010 09:56:47] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 20
+[05-Feb-2010 09:56:57] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Unknown MySQL server host 'DBSERVER' (1) in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 7
+[05-Feb-2010 09:56:57] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 8
+[05-Feb-2010 09:56:57] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/carteraMorosa/impresionActividades.php on line 20
+[23-Mar-2010 18:40:39] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 72 bytes) in /home/pmm/public_html/web_pruebas/carteraMorosa/carteraMorosa_con.php on line 213
+[24-Mar-2010 18:25:30] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/pmm/public_html/web_pruebas/carteraMorosa/carteraMorosa_con.php on line 181

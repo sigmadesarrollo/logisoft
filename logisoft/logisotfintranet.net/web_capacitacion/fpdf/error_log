@@ -1,0 +1,43 @@
+[08-Feb-2010 12:57:58] PHP Fatal error:  Call to a member function addReglement() on a non-object in /home/pcliente/public_html/web/fpdf/ex.php on line 29
+[08-Feb-2010 13:01:08] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:01:08] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:03:14] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:03:14] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:06:22] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:06:22] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:09:36] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:09:36] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:11:14] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:11:14] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:11:14] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:11:14] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:11:14] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:11:26] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:11:26] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:11:57] PHP Catchable fatal error:  Object of class PDF_Invoice could not be converted to string in /home/pcliente/public_html/web/fpdf/ex.php on line 93
+[08-Feb-2010 13:12:17] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:12:17] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:93) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:17:10] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:17:10] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:92) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:17:41] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:17:41] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:92) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:17:55] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:17:55] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:92) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:18:03] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:92) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:18:05] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:92) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:18:19] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/ex.php:92) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 13:19:24] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 13:19:24] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[08-Feb-2010 16:37:55] PHP Warning:  Division by zero in /home/pcliente/public_html/web/fpdf/invoice.php on line 132
+[08-Feb-2010 16:37:55] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcliente/public_html/web/fpdf/invoice.php:132) in /home/pcliente/public_html/web/fpdf/fpdf.php on line 1022
+[09-Apr-2010 14:19:57] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/fpdf/relacionEmbarque.php on line 91
+[09-Apr-2010 14:20:13] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/fpdf/relacionEmbarque.php on line 91
+[09-Apr-2010 18:51:48] PHP Warning:  Missing argument 1 for FPDF::GetStringWidth(), called in /home/pmm/public_html/web_pruebas/fpdf/relacionEmbarque.php on line 144 and defined in /home/pmm/public_html/web_pruebas/fpdf/fpdf.php on line 424
+[09-Apr-2010 18:51:48] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pmm/public_html/web_pruebas/fpdf/fpdf.php:424) in /home/pmm/public_html/web_pruebas/fpdf/fpdf.php on line 1022
+[09-Apr-2010 19:45:51] PHP Warning:  Missing argument 5 for PDF::addFirma(), called in /home/pmm/public_html/web_pruebas/fpdf/relacionEmbarque.php on line 183 and defined in /home/pmm/public_html/web_pruebas/fpdf/relacionEmbarque.php on line 153
+[09-Apr-2010 19:45:51] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pmm/public_html/web_pruebas/fpdf/relacionEmbarque.php:153) in /home/pmm/public_html/web_pruebas/fpdf/fpdf.php on line 1022
+[25-Apr-2010 15:35:09] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_capacitacion/fpdf/ex.php on line 37
+[25-Apr-2010 15:35:09] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_capacitacion/fpdf/ex.php on line 48
+[25-Apr-2010 15:36:11] PHP Warning:  mysql_select_db(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_capacitacion/fpdf/ex.php on line 37
+[25-Apr-2010 15:36:11] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_capacitacion/fpdf/ex.php on line 48
+[07-Sep-2010 14:45:14] PHP Parse error:  syntax error, unexpected '[' in /home/pmm/public_html/web_capacitacion/fpdf/ex_2.php on line 128

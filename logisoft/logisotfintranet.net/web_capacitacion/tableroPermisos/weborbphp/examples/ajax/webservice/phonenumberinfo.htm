@@ -1,0 +1,355 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>WebORB Presentation Server AJAX Client Examples - Web Service Invocation</title>
+<script language="javascript" src="WebORB.js"></script>
+<script>
+	var proxy;
+
+	function bindToService()
+	{
+		proxy = webORB.bind( "http://ws.cdyne.com/phoneverify/phoneverify.asmx?wsdl", "weborb.php");
+	}
+
+	function invokeService()
+	{
+		var phoneNum = document.getElementById( "phoneNumber" ).value;
+
+		if( phoneNum.length == 0 )
+		{
+		   alert( "Enter a phone number and click a button to invoke the web service" );
+		   return;
+		}
+
+		proxy.CheckPhoneNumber( phoneNum, "38277D69-4F65-453F-9133-7F71AF41DEE0", new Async( handleResponse, handleFault ) );
+	}
+
+	function handleFault( fault )
+	{
+		alert( "Server reported an error: " + fault.description );
+	}
+
+	function handleResponse( responseObj )
+	{
+		if( responseObj.CheckPhoneNumberResult.Valid == "false" )
+		{
+			alert( "This is not a valid phone number" );
+  			document.getElementById( "company" ).innerHTML = "";
+			document.getElementById( "valid" ).innerHTML = "";
+			document.getElementById( "use" ).innerHTML = "";
+			document.getElementById( "state" ).innerHTML = "";
+			document.getElementById( "switch" ).innerHTML = "";
+			document.getElementById( "rc" ).innerHTML = "";
+			document.getElementById( "ocn" ).innerHTML = "";
+			document.getElementById( "originalNumber" ).innerHTML = "";
+			document.getElementById( "cleanNumber" ).innerHTML = "";		}
+		else
+		{
+  			var companyField = document.getElementById( "company" );
+			companyField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.Company + "</font>";
+
+			var validField = document.getElementById( "valid" );
+			validField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.Valid + "</font>";
+
+			var useField = document.getElementById( "use" );
+			useField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.Use + "</font>";
+
+			var stateField = document.getElementById( "state" );
+			stateField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.State + "</font>";
+
+			var switchField = document.getElementById( "switch" );
+			switchField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.Switch + "</font>";
+
+			var rcField = document.getElementById( "rc" );
+			rcField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.RC + "</font>";
+
+			var ocnField = document.getElementById( "ocn" );
+			ocnField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.OCN + "</font>";
+
+			var originalNumberField = document.getElementById( "originalNumber" );
+			originalNumberField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.OriginalNumber + "</font>";
+
+			var cleanNumberField = document.getElementById( "cleanNumber" );
+			cleanNumberField.innerHTML = "<font size=\"2\">" + responseObj.CheckPhoneNumberResult.CleanNumber + "</font>";
+		}
+	}
+
+	function invokeServiceFromTextField()
+	{
+		invokeService();
+		return false;
+	}
+</script>
+</head>
+
+<body style="font-family: Tahoma; font-size: 10pt; border-collapse:collapse" onLoad="bindToService();">
+
+<table border="0" cellpadding="0" cellspacing="0" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td>
+    <img border="0" src="../../../images/topCornLeft.gif" width="9"></td>
+    <td background="../../../images/topMid.gif"></td>
+    <td width="12">
+    <img border="0" src="../../../images/rightCornTop.gif" width="12"></td>
+  </tr>
+  <tr>
+    <td background="../../../images/leftSide.gif" width="9"></td>
+    <td>
+    <table cellpadding="3" cellspacing="3" style="border-collapse: collapse; padding: 1" bordercolor="#111111" width="600" id="AutoNumber2">
+      <tr>
+        <td bordercolor="#C0C0C0" width="374">
+        <font face="Tahoma" size="2"><b>WebORB Presentation Server</b><br>
+        </font><font face="Tahoma" size="1">AJAX Client Examples</font></td>
+        <td style="border-style:dotted; border-width:1; padding:1; " bordercolor="#C0C0C0" width="204">
+        <p align="center"><font size="2">Web Service Invocation</font></td>
+      </tr>
+      <tr>
+        <td style="border-left-width: 1; border-right-width: 1; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1" bordercolor="#C0C0C0" width="578" colspan="2"></td>
+      </tr>
+      <tr>
+        <td width="579" align="center" valign="top" colspan="2">
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="90%" id="AutoNumber3">
+          <tr>
+            <td width="30%" valign="top">
+        <table bordercolor="#C0C0C0" cellpadding="3" border="1" cellspacing="0" width="100%" style="border-collapse: collapse">
+          <tr>
+            <td bgcolor="#FFFFCC"><font size="2">Enter Phone Number:</font></td>
+          </tr>
+          <tr>
+            <form onsubmit="return invokeServiceFromTextField()">
+            <td>
+              <input type="text" name="phoneNumber" id="phoneNumber" size="20">
+           </td>
+            </form>
+
+          </tr>
+          </table>
+           <form method="POST" action="--WEBBOT-SELF--">
+           <p align="center">
+            <input type="button" value="Get Number Info" name="SendRequestButton2" style="width: 150" onClick="invokeService()"></p>
+            <p></td>
+           </form>
+            <td width="15"></td>
+            <td width="69%">
+        <table bordercolor="#C0C0C0" cellpadding="3" border="1" cellspacing="0" width="100%" style="border-collapse: collapse">
+          <tr>
+            <td bgcolor="#FFFFCC" colspan="2"><font face="Tahoma" size="2">
+            Server responded:</font></td>
+          </tr>
+          <tr>
+            <td>
+            <p align="left"><font size="2"><b>Phone Company</b></font><b><font size="2">:</font></b></td>
+            <td><p align="center"><DIV ID="company"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>Is Valid Number:</b></font></td>
+            <td><p align="center"><DIV ID="valid"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>Use:</b></font></td>
+            <td><p align="center"><DIV ID="use"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>State:</b></font></td>
+            <td><p align="center"><DIV ID="state"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>Switch:</b></font></td>
+            <td><p align="center"><DIV ID="switch"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>RC:</b></font></td>
+            <td><p align="center"><DIV ID="rc"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>OCN:</b></font></td>
+            <td><p align="center"><DIV ID="ocn"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>Original Number</b></font></td>
+            <td><p align="center"><DIV ID="originalNumber"></DIV></td>
+          </tr>
+          <tr>
+            <td>
+            <font size="2"><b>Clean Number</b></font></td>
+            <td><p align="center"><DIV ID="cleanNumber"></DIV></td>
+          </tr>
+        </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="579" align="center" valign="top" colspan="2" bordercolor="#C0C0C0" style="border-style:dotted; border-width:1; padding:6;>
+        dfgdfgd</td>
+      </tr>
+    </table>
+    </td>
+    <td background="../../../images/rightMid.gif">
+        <p align="left"><span style="font-size: 9pt; font-weight: 700">
+        Instructions</span></p>
+        <p align="left"><span style="font-size: 9pt">Type in a phone number and
+        press Enter. The client script connect to the WebORB server and requests
+        a method invocation on an XML Web Service. The service provides
+        information for the given phone number. </span></p>
+        <p align="left"><span style="font-size: 9pt">Note that the client script
+        does not connect to the service directly - WebORB handles the
+        communication between the client and service.</span></p>
+        <p align="left"><span style="font-size: 9pt; font-weight: 700">Code
+        review</span></p>
+        <p align="left"><span style="font-size: 9pt">This example uses a service
+        provided by <a href="http://www.cdyne.com">CDYNE Corporation</a>. Service WSDL document located at:
+        <a href="http://ws.cdyne.com/phoneverify/phoneverify.asmx?wsdl">
+        http://ws.cdyne.com/phoneverify/phoneverify.asmx?wsdl</a>. The
+        CheckPhoneNumber operation receives a phone number on the input and
+        returns a complex type with the information about the number.</span></p>
+        <p align="left"><span style="font-size: 9pt">As soon as the browser
+        loads the web page, the client script binds to the web service using the
+        Rich Client System binding API:</span></p>
+        <table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="90%" id="AutoNumber11" bgcolor="#FFFFCC">
+            <tr>
+              <td width="100%" bordercolor="#C0C0C0">
+              <p align="left">
+        <font face="Courier New" style="font-size: 8pt">function bindToService()<br>
+        {<br>
+&nbsp;&nbsp; proxy = <b>webORB.bind</b>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;<a href="http://ws.cdyne.com/phoneverify/phoneverify.asmx?wsdl">http://ws.cdyne.com/phoneverify/phoneverify.asmx?wsdl</a>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;weborb.php&quot;);<br>
+        }</font></td>
+            </tr>
+          </table>
+        <p align="left"><span style="font-size: 9pt">When a user presses the
+        &quot;Get Number Info&quot; button, the script executes a function that executes
+        the CheckPhoneNumber method on the web service. The code invokes the
+        method on the same proxy object obtained in the bindToService() function
+        shown above. Note the last argument in the CheckPhoneNumber method -
+        async. The argument is a special object, when it is present, Rich Client
+        System executes the method asynchronously. When WebORB returns a
+        successful response, Rich Client System invokes the handleResponse
+        function (from the async object). In case when server returns a fault,
+        Rich Client System invokes the handleFault function.</span></p>
+        <table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="90%" id="AutoNumber12" bgcolor="#FFFFCC">
+            <tr>
+              <td width="100%" bordercolor="#C0C0C0">
+              <p align="left">
+        <font face="Courier New" style="font-size: 8pt">function invokeService()<br>
+        {<br>
+&nbsp;&nbsp; var phoneNum = document.getElementById( &quot;phoneNumber&quot; ).value;<br>
+        <br>
+&nbsp; if( phoneNum.length == 0 )<br>
+&nbsp; {<br>
+&nbsp;&nbsp;&nbsp; alert( &quot;Enter a phone number and click &quot; + <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;a button to invoke
+        the web&nbsp; service&quot; );<br>
+&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp; }<br>
+        <br>
+&nbsp; var async = new Async( <b>handleResponse, handleFault</b> );<br>
+&nbsp; <b>proxy.CheckPhoneNumber( phoneNum, 0, async )</b>;<br>
+        }</font></td>
+            </tr>
+          </table>
+        <p align="left"><span style="font-size: 9pt; font-weight: 700">Content
+        Rendering</span><p align="left"><span style="font-size: 9pt">The code
+        renders the response in the handleResponse function. Since Rich Client
+        System invokes the method asynchronously, it delivers the return value
+        from the remote method invocation. The responseObj argument is the same
+        complex type returned by the web service converted into a JavaScript
+        object. The object has the same fields as its remote counterpart.</span></p>
+        <p align="left"><span style="font-size: 9pt">The script checks if the
+        phone number is valid. If it is, the script populates the table with the
+        data from the object, otherwise, it informs the user with a message and
+        resets all the fields:</span></p>
+        <table border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse" bordercolor="#C0C0C0" width="90%" id="AutoNumber13" bgcolor="#FFFFCC">
+            <tr>
+              <td width="100%" bordercolor="#C0C0C0">
+              <p align="left">
+        <font face="Courier New" style="font-size: 8pt">function handleResponse(
+        responseObj )<br>
+        {<br>
+&nbsp; if( !responseObj.valid )<br>
+&nbsp; {<br>
+&nbsp;&nbsp;&nbsp; alert( &quot;This is not a valid phone number&quot; );<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;company&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;valid&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;use&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;state&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;switch&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;rc&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;ocn&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;originalNumber&quot; ).innerHTML = &quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp; document.getElementById( &quot;cleanNumber&quot; ).innerHTML = &quot;&quot;; }<br>
+&nbsp; else<br>
+&nbsp; {<br>
+&nbsp;&nbsp;&nbsp; var fs = &quot;&lt;font size=\&quot;2\&quot;&gt;&quot;;<br>
+&nbsp;&nbsp;&nbsp; var fe = &quot;&lt;/font&gt;&quot;;<br>
+&nbsp;&nbsp;&nbsp; var companyField = document.getElementById( &quot;company&quot; );<br>
+&nbsp;&nbsp;&nbsp; companyField.innerHTML = fs + responseObj.company + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var validField = document.getElementById( &quot;valid&quot; );<br>
+&nbsp;&nbsp;&nbsp; validField.innerHTML = fs + responseObj.valid + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var useField = document.getElementById( &quot;use&quot; );<br>
+&nbsp;&nbsp;&nbsp; useField.innerHTML = fs+ responseObj.use + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var stateField = document.getElementById( &quot;state&quot; );<br>
+&nbsp;&nbsp;&nbsp; stateField.innerHTML = fs + responseObj.state + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var switchField = document.getElementById( &quot;switch&quot; );<br>
+&nbsp;&nbsp;&nbsp; switchField.innerHTML = fs + responseObj._switch + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var rcField = document.getElementById( &quot;rc&quot; );<br>
+&nbsp;&nbsp;&nbsp; rcField.innerHTML = fs + responseObj.RC + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var ocnField = document.getElementById( &quot;ocn&quot; );<br>
+&nbsp;&nbsp;&nbsp; ocnField.innerHTML = fs + responseObj.OCN + fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var origNumberField = document.getElementById( &quot;originalNumber&quot;
+        );<br>
+&nbsp;&nbsp;&nbsp; origNumberField.innerHTML = fs + responseObj.originalNumber +
+        fe;<br>
+        <br>
+&nbsp;&nbsp;&nbsp; var cleanNumberField = document.getElementById( &quot;cleanNumber&quot;
+        );<br>
+&nbsp;&nbsp;&nbsp; cleanNumberField.innerHTML = fs + responseObj.cleanNumber +
+        fe;<br>
+&nbsp; }<br>
+        }</font></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td width="579" align="center" valign="top" colspan="2"><font size="1">
+        Copyright <span style="font-family:''">© Midnight Coders, Inc, 2003-2008. All
+        Rights Reserved</span></font></td>
+      </tr>
+    </table>
+    </td>
+    <td background="../../../images/rightMid.gif"></td>
+  </tr>
+  <tr>
+    <td>
+    <img border="0" src="../../../images/leftCornBot.gif" width="9" height="10"></td>
+    <td background="../../../images/botMid.gif"></td>
+    <td>
+    <img border="0" src="../../../images/botCornLeft.gif" width="12" height="10"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

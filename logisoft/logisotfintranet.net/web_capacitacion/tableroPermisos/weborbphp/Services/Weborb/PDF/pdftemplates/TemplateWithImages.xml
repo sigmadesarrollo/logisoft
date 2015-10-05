@@ -1,0 +1,14 @@
+<Document width="400" height="600" marginTop="10" marginBottom="10">
+  <PDFMetadata>
+    <properties>
+      <Property name="PageMargins" value="10" />
+    </properties>
+  </PDFMetadata>
+  <Page>
+   <Text value="Image referenced via file path" x="10" y="10"/>
+   <Image source="pdftemplates/../pdftemplates/snowman.png" x="10" y="34"/>
+
+   <Text x="10" y="200" value="Image rendered in PDF from URL"/>
+   <!--Image x="10" y="220" source="http://www.themidnightcoders.com/fileadmin/templates/images/mclogo.png"/--> 
+  </Page>   
+</Document>

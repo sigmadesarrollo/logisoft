@@ -1,0 +1,187 @@
+@charset "utf-8";
+.tituloSucursal {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	background-color:none;
+	text-align:center;
+	width: 154px;
+	height: 140px;
+	vertical-align:bottom;
+	padding-bottom:10px;
+	background: url(imagen/imagen/logocuadro.jpg) no-repeat;
+}
+.tituloCentral {
+	background: url(imagen/lineaTitulo.gif) repeat-x;
+	vertical-align:middle;
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	text-align:center;
+	height:20px
+}
+.tituloAzul {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	background-color:none;
+	width: 152px;
+	height: 27px;
+	text-align:right;
+	padding-top: 10px;
+	padding-right:4px;
+	background-image:url(imagen/tituloTrabajo.gif);
+}
+.tituloBuscar {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	background-color:none;
+	width: 152px;
+	height: 27px;
+	text-align:right;
+	padding-top: 10px;
+	padding-right:4px;
+	background-image:url(imagen/tituloBuscar.gif);
+}
+.tituloAlerta {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	background-color:none;
+	width: 152px;
+	height: 27px;
+	text-align:right;
+	padding-top: 10px;
+	padding-right:4px;
+	background-image:url(imagen/tituloAlerta.gif);
+}
+.tituloVerde {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	background-color:none;
+	width: 152px;
+	height: 27px;
+	text-align:right;
+	padding-top: 10px;
+	padding-right:4px;
+	background-image:url(imagen/tituloVerde.gif);
+}
+.tituloVerde {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #FFF;
+	font-style:normal;
+	font-weight:bold;
+	background-color:none;
+	width: 152px;
+	height: 27px;
+	text-align:right;
+	padding-top: 10px;
+	padding-right:4px;
+	background-image:url(imagen/tituloVerde.gif);
+}
+.fondoVerdePalo {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	background-color: #e1e2be;
+}
+.fondoCuadro1 {
+	background: url(imagen/cuadro1.gif) no-repeat right #f4f4ec;
+	border: #999 thin;
+	height: 90px;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.fondoCuadro2 {
+	background: url(imagen/cuadro2.gif) no-repeat right #f4f4ec;
+	border: #999 thin;
+	height: 100px;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.fondoCuadro3 {
+	background: url(imagen/cuadro3.gif) no-repeat right #f4f4ec;
+	border: #999 thin;
+	height: 100px;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.fondoCuadro4 {
+	background: url(imagen/cuadro4.gif) no-repeat right #f4f4ec;
+	border: #999 thin;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.fondoCuadro5 {
+	background: #f4f4ec;
+	border: #999 thin;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.fondoCuadrosTextoA{
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight:bold;
+	color:#06F
+}
+.filaR {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	font-style: normal;
+	background-color: #f2e6a9;
+}
+.filaR2 {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	font-style: normal;
+	background-color: none;
+}
+.filaAz {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	font-style: normal;
+	background-color: #abe7f2;
+}
+.filaAz2 {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	font-style: normal;
+	background-color: none;
+}
+.filaAm {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	font-style: normal;
+	background-color: #fdfec4;
+}
+.filaAm2 {
+	font-family: tahoma;
+	font-size: 9px;
+	color: #025680;
+	font-style:normal;
+	background-color: none;
+}
+
+.total {
+	font-weight: bold;
+}

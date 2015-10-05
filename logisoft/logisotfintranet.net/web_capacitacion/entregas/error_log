@@ -1,0 +1,31 @@
+[08-Apr-2010 19:22:57] PHP Warning:  mysql_insert_id(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/entregas/devoluciondemercanciaaalmacen_con.php on line 130
+[16-Jul-2010 02:51:18] PHP Parse error:  syntax error, unexpected ',' in /home/pmm/public_html/web_pruebas/entregas/entregaocurre_con.php on line 194
+[16-Jul-2010 02:51:23] PHP Parse error:  syntax error, unexpected ',' in /home/pmm/public_html/web_pruebas/entregas/entregaocurre_con.php on line 194
+[10-Sep-2010 10:51:27] PHP Fatal error:  Out of memory (allocated 262144) (tried to allocate 7680 bytes) in /home/pmm/public_html/web_capacitacion/Conectar.php on line 19
+[13-Sep-2010 14:48:03] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (111) in /home/pmm/public_html/web_capacitacion/clases/CPermisos.php on line 5
+[14-Sep-2010 01:52:20] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:44:59] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:45:10] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:45:45] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:45:54] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:55:12] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:55:35] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:55:56] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:56:07] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:56:07] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:56:13] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 09:56:18] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:03:08] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:04:39] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:05:22] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:03] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:05] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:09] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:23] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:27] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:32] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:37] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:42] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:06:52] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:07:12] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280
+[14-Sep-2010 10:07:16] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/pmm/public_html/web_capacitacion/entregas/repartoMercanciaEad_con.php on line 280

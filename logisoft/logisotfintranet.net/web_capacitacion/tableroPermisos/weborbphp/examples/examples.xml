@@ -1,0 +1,47 @@
+<node>
+	<node label="SILVERLIGHT Examples" >
+        <!--<node label="Remoting (RPC)" > -->
+            <node label="Basic RPC invocation" url="examples/silverlight/remoting/basicinvoke/index.htm" />
+            <node label="Sending and receiving complex types" url="examples/silverlight/remoting/echoobject/index.htm" />
+            <node label="Client-server class mapping" url="examples/silverlight/remoting/classmapping/index.htm" />
+            <node label="Tree control with remote data" url="examples/silverlight/remoting/remotetreeview/index.htm" />
+            <node label="Data grid with remote data" url="examples/silverlight/remoting/databinding/index.htm" />
+        <!--</node>-->
+    </node>
+    <node label="Flex Examples">
+        <node label="Remoting (AMF3)">
+            <node label="Basic invocation (MXML)" url="examples/flex/remoting/basicinvoke/index.htm" />
+            <node label="Basic invocation (ActionScript)" url="examples/flex/remoting/basicinvokescript/index.htm" />
+            <node label="Sending and receiving an object" url="examples/flex/remoting/echoobject/index.htm"/>
+            <node label="Client-server class mapping" url="examples/flex/remoting/classmapping/index.htm"/>
+            <node label="Secure invocation with credentials" url="examples/flex/remoting/setcredentials/index.htm"/>
+            <node label="Tree control with remote data source" url="examples/flex/remoting/remotetreeview/index.htm"/>
+            <node label="DataGrid with remote data source" url="examples/flex/remoting/databinding/index.htm"/>
+            <node label="Server-side exception handling" url="examples/flex/remoting/exceptionhandling/index.htm"/>
+            <node label="Flex Remoting invocation test suite" url="examples/flex/remoting/testsuite/index.htm"/>
+            <!-- <node label="Server object auto update" url="examples/flex/remoting/autoupdate/index.htm"/>-->
+            <node label="File uploading" url="examples/flex/remoting/uploadfile/index.htm"/>
+            <node label="DataGrid with remote xml source" url="examples/flex/remoting/xmlexample/index.htm"/>
+            <node label="Picture creation and uploading" url="examples/flex/remoting/snapshot/index.htm"/>
+            <node label="Login and password checking" url="examples/flex/remoting/login/index.htm"/>
+        </node>            
+        <node label="Data Management (WDMF)">
+            <node label="Database Setup" url="examples/flex/datamanagement/gettingstarted/databasesetup.htm" />                
+            <node label="Data search and retrieval" url="examples/flex/datamanagement/retrieval/index.htm" />
+            <node label="Data creation, inserting new records" url="examples/flex/datamanagement/creation/index.htm" />
+            <node label="Data update, changing existing data" url="examples/flex/datamanagement/update/index.htm" />                    
+            <node label="Data paging, chunked data retrieval" url="examples/flex/datamanagement/paging/index.htm" />
+            <node label="Data removal" url="examples/flex/datamanagement/removal/index.htm" />
+            <node label="Full CRUD" url="examples/flex/datamanagement/completeexample/index.htm" />
+        </node>
+        <node label="Messaging">
+            <node label="WebORB Chat" url="examples/flex/messaging/chat/index.htm" />                            
+        </node>
+    </node>    
+    <node label="AJAX Examples">
+        <node label="Data binding - Phone book"  url="examples/ajax/phonebook/phonebook.htm"/>
+        <node label="Session scope for server-objects" url="examples/ajax/sessionscope/session-activation.htm"/>
+        <node label="Application scope for server-objects" url="examples/ajax/applicationscope/application-activation.htm"/>                
+        <node label="Web service invocation via WebORB" url="examples/ajax/webservice/phonenumberinfo.htm"/>                
+    </node>
+</node>

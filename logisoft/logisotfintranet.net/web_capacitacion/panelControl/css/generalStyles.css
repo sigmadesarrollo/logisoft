@@ -1,0 +1,215 @@
+@charset "utf-8";
+/* CSS Document */
+
+.stlTextFor {
+	font-family: Tahoma;
+	font-size: 9px;
+	color: #3162A4;
+	border: none;
+	padding: 1px 3px;
+	text-align: right; 
+	font-weight:bold;
+}
+
+.stlTextForb {
+	font-family: Tahoma;
+	font-size: 9px;
+	color: #3162A4;
+	border: none;
+	padding: 1px 3px;
+	text-align: center;
+	vertical-align:middle;
+	font-weight:bold;
+}
+
+.stlTextForc {
+	font-family: Tahoma;
+	font-size: 9px;
+	color: #3162A4;
+	border: none;
+	padding: 1px 3px;
+	text-align: left; 
+	font-weight:bold;
+}
+
+.stlText1 {	
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #004080;
+	border: none;
+	padding: 1px 3px;
+}
+
+.stlText1b {	
+	font-family: Tahoma;
+	font-size: 14px;
+	color: #FFFFFF;
+	border: none;
+	padding: 1px 3px;
+	text-align: center; 
+	font-weight:bold;
+}
+
+.stlText1c {	
+	font-family: Tahoma;
+	font-size: 16px;
+	color: #FFFFFF;
+	background:#3162A4;
+	border: none;
+	padding: 1px 3px;
+	text-align: center; 
+	font-weight:bold;
+}
+
+.stlTextAB {
+		font-family: Tahoma;
+		font-size: 20px;
+		font-weight:bold;
+		color: #3162A4;
+		border: none;
+		padding: 1px 3px;
+		text-align: center; 	
+}
+
+.stlText2 {
+		font-family: Arial;
+		font-size: 32px;
+		font-weight:bold;
+		color: #FFFFFF;
+		border: none;
+		padding: 1px 3px;
+		text-align: center; 	
+}
+
+.stlText2ba {
+		font-family: Arial;
+		font-size: 16px;
+		font-weight:bold;
+		color: #FFFFFF;
+		border: none;
+		padding: 1px 3px;
+		text-align: center; 	
+}
+
+.stlText2ba2 {
+		font-family: Arial;
+		font-size: 24px;
+		font-weight:bold;
+		color: #FFFFFF;
+		border: none;
+		padding: 1px 3px;
+		text-align: center; 	
+}
+
+.stlText2b {
+		font-family: Arial;
+		font-size: 14px;
+		font-weight:bold;
+		color: #3162A4;
+		border: none;
+		padding: 1px 3px;
+		text-align: left; 	
+}
+
+.stlText3 {
+		font-family: Tahoma;
+		font-size: 12px;
+		color:#666666;
+		border: none;
+		padding: 1px 3px;
+		text-align: justify; 
+}
+
+.stlText3b {
+		font-family: Tahoma;
+		font-size: 14px;
+		color:#666666;
+		border: none;
+		padding: 1px 3px;
+		text-align: justify; 
+}
+
+.stlText3c {
+		font-family: Tahoma;
+		font-size: 12px;
+		color:#666666;
+		border: none;
+		padding: 1px 3px;
+		text-align: right; 
+}
+
+#wrap { 
+	width: 1000;
+	margin: 20 auto 0 auto;
+	background-color: #FFFFFF;
+	text-align: left; 
+	}
+	
+#wrap2 { 
+	width: 1000px;
+	margin: 20 auto 0 auto;
+	background-color: #FFFFFF;
+	text-align: left; 
+	}
+
+.stlInput {
+	border: 1px solid #C0C0C0;
+	/** remember to change image path **/
+	background: url(../../nuevomenu/css/none) no-repeat  #FCFCFC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: bold;
+	font-size: 12px;
+	color: #00688B;
+}
+
+/** You can use this style for your LABEL elements **/
+.stlLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: bold;
+	font-size: 12px;
+	color: #005E91;
+}
+
+.od {
+		background-color:#f6f6f6;
+}
+
+.odd {  background-color:#f6f6f6;
+		font-family: Tahoma;
+		font-size: 10px;
+		font-weight:bold;
+		color: #3162A4;
+		border: none;
+		padding: 1px 3px;
+		text-align: left; 
+}
+
+.ddo {
+		font-family: Tahoma;
+		font-size: 10px;
+		color: #3162A4;
+		border: none;
+		padding: 1px 3px;
+		text-align: left; 
+}
+
+a:hover {
+	text-decoration:none;
+}
+a {
+	text-decoration:none;
+	color:#3162A4;
+	font-family: Tahoma;
+	font-size: 10px;
+	font-weight:bold;
+}
+
+.textfooter{
+	font-family: Arial;
+	font-size: 9px;
+	color: #3162A4;
+	border: none;
+	padding: 1px 3px;
+	text-align: center; 
+	font-weight: bold;
+}

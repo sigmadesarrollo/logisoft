@@ -1,0 +1,15 @@
+[31-Mar-2010 19:17:05] PHP Parse error:  syntax error, unexpected T_STRING in /home/pmm/public_html/web_pruebas/catalogos/configuradores/permisosgrupo.php on line 89
+[03-Aug-2010 17:18:06] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:19:05] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:20:03] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:20:29] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:20:54] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:21:43] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:22:10] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:22:37] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:22:56] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:23:16] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:24:28] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:25:03] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:25:11] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63
+[03-Aug-2010 17:25:33] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/catalogos/configuradores/configServicio.php on line 63

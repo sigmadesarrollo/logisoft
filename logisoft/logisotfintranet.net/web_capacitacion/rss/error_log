@@ -1,0 +1,32 @@
+[15-Jun-2010 00:59:42] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/rss/php/sessionmanager.php on line 122
+[15-Jun-2010 01:00:32] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/rss/php/sessionmanager.php on line 122
+[15-Jun-2010 01:08:20] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:24:57] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:25:15] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:25:57] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:40:13] PHP Parse error:  syntax error, unexpected '<' in /home/pmm/public_html/web_pruebas/rss/pmm_frontcontroller.php on line 108
+[15-Jun-2010 01:44:49] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:49:00] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:52:52] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:54:39] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:56:38] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:56:54] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 01:57:24] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:47:28] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:47:34] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:49:11] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:50:03] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:51:53] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:52:09] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:52:23] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:53:00] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:53:04] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:53:05] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:53:10] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 09:54:22] PHP Fatal error:  Class 'SessionManager' not found in /home/pmm/public_html/web_pruebas/rss/pmm_frontcontroller.php on line 69
+[15-Jun-2010 09:58:24] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 10:01:25] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 10:02:37] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 10:04:23] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[15-Jun-2010 10:05:26] PHP Warning:  mysql_result() [<a href='function.mysql-result'>function.mysql-result</a>]: Unable to jump to row 0 on MySQL result index 7 in /home/pmm/public_html/web_pruebas/rss/php/sessionmanager.php on line 48
+[15-Jun-2010 10:06:16] PHP Warning:  mysql_result() [<a href='function.mysql-result'>function.mysql-result</a>]: Unable to jump to row 0 on MySQL result index 7 in /home/pmm/public_html/web_pruebas/rss/php/sessionmanager.php on line 48

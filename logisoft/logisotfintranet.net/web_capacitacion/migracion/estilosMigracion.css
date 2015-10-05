@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background: url(../tableroPermisos/img/fondopestana.gif) repeat-x top;
+}
+#error{
+	margin:200px auto auto auto;
+	border:3px #F90 solid;
+	color:#F00;
+	font-size:35px;
+	width:500px;
+	height:200px;
+	text-align:center;
+	vertical-align:middle;
+	background:#CCC;
+}
+#estiloTitulo{
+	color:#FFF;
+	font-size:36px;
+	font-weight:bolder;
+}
+#estiloInstruccion{
+	color:#363A27;
+	font-weight:bold;
+	font-size:14px;
+}
+#estiloDemas td,li{
+	color:#666;
+	font-weight:bold;
+	font-size:12px;
+}
+li{
+	list-style: none;
+	background-image: url(../img/rombo.gif);
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left:14px;
+}
+#acomodoCentrado{
+	background:#FFF url(../../images/fondoMigracion.jpg) repeat-x top;
+	border:#F90 solid 2px;
+	margin:auto;
+	width:993px;
+}
+.button{
+	background:url(../../images/boton.jpg) top repeat-x;
+	border:#999 1px solid;
+	height:30px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size:18px;
+}

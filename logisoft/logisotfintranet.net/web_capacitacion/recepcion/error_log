@@ -1,0 +1,19 @@
+[11-Mar-2010 17:32:34] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 16
+[30-Mar-2010 14:16:45] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 474
+[30-Mar-2010 14:17:44] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 474
+[06-Apr-2010 14:34:15] PHP Parse error:  syntax error, unexpected '}' in /home/pmm/public_html/web_pruebas/recepcion/generarExcelDanosFaltante.php on line 124
+[20-Apr-2010 13:23:28] PHP Fatal error:  Cannot use object of type stdClass as array in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 343
+[27-May-2010 17:49:49] PHP Parse error:  syntax error, unexpected T_ECHO in /home/pmm/public_html/web_pruebas/recepcion/reporteDanoFaltante.php on line 336
+[27-May-2010 17:54:17] PHP Parse error:  syntax error, unexpected T_ECHO in /home/pmm/public_html/web_pruebas/recepcion/reporteDanoFaltante.php on line 336
+[28-May-2010 12:32:41] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[28-May-2010 12:36:11] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[28-May-2010 12:36:17] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[28-May-2010 12:36:21] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[28-May-2010 12:36:45] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[28-May-2010 12:37:04] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[28-May-2010 12:37:19] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_pruebas/recepcion/recepcionMercancia.php on line 9
+[18-Jun-2010 18:08:26] PHP Parse error:  syntax error, unexpected ';' in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 404
+[18-Jun-2010 18:08:48] PHP Parse error:  syntax error, unexpected ';' in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 404
+[18-Jun-2010 18:09:42] PHP Parse error:  syntax error, unexpected ';' in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 404
+[18-Jun-2010 18:10:06] PHP Parse error:  syntax error, unexpected ';' in /home/pmm/public_html/web_pruebas/recepcion/programacionRecepcionDiaria_con.php on line 404
+[01-Sep-2010 16:15:19] PHP Fatal error:  Call to undefined function  cambiaf_a_mysql() in /home/pmm/public_html/web_capacitacion/recepcion/historicoDanosFaltantes_excel.php on line 89

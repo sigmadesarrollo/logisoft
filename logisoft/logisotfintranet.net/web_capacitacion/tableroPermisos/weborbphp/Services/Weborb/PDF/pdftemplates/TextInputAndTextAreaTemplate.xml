@@ -1,0 +1,18 @@
+<Document>
+	<PDFMetadata>
+		<Property name="PageFormat" value="A4" />
+		<Property name="PageMargins" value="10" />
+	</PDFMetadata>
+	<Page>
+		<Text x="10" y="19" value="First Name" />
+		<TextInput x="105" y="17" value="Sample default text" width="248" height="25"/>
+		<Text x="10" y="49" value="Last Name" />
+		<TextInput x="105" y="47" width="248" height="25"/>
+		<Text x="10" y="79" value="Phone Number" />
+		<TextInput x="105" y="77" width="248" height="25"/>
+		<Text x="10" y="110" value="Form field with green border and custom background" />
+		<TextInput x="105" y="128" borderColor="0x01930E" backgroundColor="0xC4A378" width="248" height="25"/>
+		<Button x="105" y="163" label="Submit" id="submit" width="72" height="25" isSubmit="true" url="../examples/flex/pdfgeneration/ComponentExamples/formresults.aspx" />
+		<Button x="195" y="163" label="Clear" id="reset" width="70" height="25" />
+	</Page>
+</Document>

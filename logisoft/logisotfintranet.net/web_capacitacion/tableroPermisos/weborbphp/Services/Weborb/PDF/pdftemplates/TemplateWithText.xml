@@ -1,0 +1,28 @@
+<Document width="500" height="600" marginTop="10" marginBottom="10">
+  <PDFMetadata>
+    <properties>
+      <Property name="PageMargins" value="10" />
+    </properties>
+  </PDFMetadata>
+  <Page>
+    <Text x="10" y="30" value="Static text in the template:"/>
+    <Text x="210" y="24" value="I AM BOLD 20pt TEXT" fontWeight="bold" fontSize="20"/>
+    <HRule y="56" left="10" right="10" height="1"/>
+
+    <!-- Static italic text in the template -->
+    <Text x="10" y="74" value="Static text in the template:"/>
+    <Text x="210" y="75" value="I AM ITALIC 14pt RED TEXT" 
+             fontWeight="normal" fontSize="14" fontColor="#FF0000" fontStyle="italic"/>
+    <HRule y="104" left="10" right="10" height="1"/>
+
+    <!-- Static label in the template --> 
+    <Text x="10" y="121" value="Static label in the template:"/>
+    <Text x="210" y="126" value="I AM BOLD ITALIC 10pt BLUE LABEL" 
+              textDecoration="normal" fontSize="10" fontColor="#0000FF" fontWeight="bold" fontStyle="italic"/>
+    <HRule y="152" left="10" right="10" height="1"/>
+
+    <!-- Static dynamic text in the template --> 
+    <Text x="10" y="170" value="Data-bound text in the template:"/>
+    <Text x="210" y="170" value="method:com.tmc.weborb.pdf.examples.SampleBizLogic.echoString( Hello World )"/>
+  </Page>   
+</Document>

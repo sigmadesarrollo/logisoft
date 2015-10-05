@@ -1,0 +1,66 @@
+@charset "utf-8";
+.titulo_cliente {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.texto_normal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-transform:uppercase;
+}
+.texto_bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.texto_normal2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-transform:uppercase;
+}
+.texto_bold2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.texto_normal3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-transform:uppercase;
+}
+.texto_bold3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.texto_normal4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-transform:uppercase;
+}
+.texto_bold4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.texto_normal5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	text-transform:uppercase;
+}
+.texto_bold5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.texto_codigobarras {
+	font-family: "barcode font";
+	font-size: 100px;
+}

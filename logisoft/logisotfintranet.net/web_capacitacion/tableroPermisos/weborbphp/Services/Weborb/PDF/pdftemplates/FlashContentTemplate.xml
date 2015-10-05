@@ -1,0 +1,9 @@
+<Document width="368" height="420">
+	<PDFMetadata>
+		<Property name="PageMargins" value="10" />
+	</PDFMetadata>
+	<Page>
+		<Text value="Flash content template:" x="10" y="10"/>
+		<FlashContent top="30" left="0" right="0" bottom="0" swfPath="examples\flex\pdfgeneration\ComponentExamples\WeborbChat.swf"/>
+	</Page>
+</Document>	

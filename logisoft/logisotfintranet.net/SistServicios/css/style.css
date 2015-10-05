@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {border: 0; margin: 0; padding: 0;}
+.pmm_body{
+	/*background:url(../js/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png);	*/
+	background:url(../img/bg.png);
+	background-repeat:repeat-x;	
+	/*height:100px;*/
+}
+
+#pmm-cuerpo-principal{
+	width: 61em;
+	margin:auto;
+	text-align:center;
+}

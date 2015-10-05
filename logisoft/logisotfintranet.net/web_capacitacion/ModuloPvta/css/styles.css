@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { 
+	background-image:url(../img/background.png);
+	background-repeat:repeat-x; 
+	text-align : center;  /*IE 6 o anteriores*/
+	margin : 0;
+	padding : 0;
+	
+	
+	
+	scrollbar-3dlight-color: #6699CC;
+    scrollbar-arrow-color: #6699CC;
+    scrollbar-base-color: #6699CC;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-face-color: #FFFFFF;
+    scrollbar-highlight-color: #E3E3E3;
+    scrollbar-shadow-color #000000:
+	}
+
+.stlSubText1 {
+		font-family: Tahoma;
+		font-size: 13px;
+		font-weight:bold;
+		color: #3162A4;
+		border: none;
+		padding: 1px 3px;
+		vertical-align:middle;
+}

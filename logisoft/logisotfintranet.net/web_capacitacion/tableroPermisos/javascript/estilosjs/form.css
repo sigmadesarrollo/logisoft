@@ -1,0 +1,39 @@
+body {
+	font: 0.8em/21px arial,sans-serif;
+}
+span.checkbox {
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(checkbox.gif) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
+span.radio {
+	width: 19px;
+	height: 25px;
+	padding: 0 5px 0 0;
+	background: url(radio.gif) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
+span.select {
+	position: absolute;
+	width: 180px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 3px;
+	color: #FFF;
+	font: 12px/21px arial,sans-serif bold;
+	background: url(select.gif) no-repeat;
+	overflow: hidden;
+}
+
+select {
+	border-bottom-width: 1px;
+	border-bottom-color:#06F;
+	padding: 0 24px 0 8px;
+	font: 12px/21px arial,sans-serif;
+	color:#154080;
+}

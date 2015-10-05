@@ -1,0 +1,84 @@
+<?php
+
+/*
+ * Implementation of hook_requirements()
+ */
+function weborb_requirements($phase) {
+  $t = get_t();
+  
+  // Test WebOrb version 
+  $requirements['weborb'] = array( 
+    'title' => $t('WebOrb'), 
+    'value' => $t('3.5'), 
+  );
+  
+  if (!file_exists(realpath(dirname(__FILE__) . '/weborb/Weborb/ORBHttpHandler.php'))) { 
+    $requirements['weborb']['value'] = $t('Not found or wrong version');
+    $requirements['weborb']['description'] = $t('You must dowload <a href="http://www.themidnightcoders.com/">Weborb for PHP</a>, and extract to modules/weborb/weborb, or respective site modules directory.');
+    $requirements['weborb']['severity'] = REQUIREMENT_ERROR; 
+  }
+  
+  return $requirements;
+}
+
+/*
+ * Implementation of hook_server_info()
+ */
+function weborb_server_info() {
+  return array(
+    '#name' => 'WebOrb',
+    '#path' => 'weborb'
+  );
+}
+
+/*
+ * Implementation of hook_server()
+ * here we include the contents of a gateway.php
+ */
+function weborb_server() {
+  	
+  	$path = drupal_get_path('module', 'weborb');
+  
+  
+  	if (!defined("WebOrb"))
+	{
+	    define("WebOrb", $path . "/weborb/Weborb/");
+	}
+
+	if(ini_get("log_errors") == "")
+	{
+		ini_set("log_errors", "1");
+		ini_set("error_log", WebOrb . "orb_php_errors.txt");
+	}
+	
+	if (!defined("WebOrbCache"))
+	{
+		define("WebOrbCache", $path . "/weborb/Weborb/" . "/PollCache/");
+		if(!file_exists($path . "/weborb/Weborb/" . "/PollCache"))
+		{
+			mkdir($path . "/weborb/Weborb/" . "/PollCache");
+			chmod($path . "/weborb/Weborb/" . "/PollCache", 0777);
+		}
+	}
+	
+	if (!defined("LOGGING"))
+	{
+	    define("LOGGING", true);
+	}
+	
+	require_once $path . "/DrupalHttpHandler.php";
+	require_once $path . "/DrupalDispatcher.php";
+	
+	$m_DrupalHttpHandler = new DrupalHttpHandler();
+    $m_DrupalHttpHandler->processRequest();
+	
+}
+
+
+
+/*
+ * Implementation of hook_server_error()
+ */
+function weborb_server_error($message) {
+  @trigger_error($message, E_USER_ERROR);
+}

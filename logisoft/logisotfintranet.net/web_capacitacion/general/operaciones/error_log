@@ -1,0 +1,1 @@
+[30-Jul-2010 19:25:45] PHP Fatal error:  Call to undefined function  cambio_texto() in /home/pmm/public_html/web_pruebas/general/operaciones/generarExcelConceptos.php on line 102

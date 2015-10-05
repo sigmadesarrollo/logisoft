@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+.fondoGeneral{
+	background:url(../img/cafe1.gif) top repeat #d3d3d3;
+}
+.elcontenido{
+	color:#333;
+}
+.barraCabecera{
+	background: url(../img/sis_fondocafe.png) center repeat-x;
+}
+.fondoNaranjaImg{
+	background: url(../img/sis_fondonar2.png) center right no-repeat;
+}
+.fondoNaranjaRep{
+	background: url(../img/sis_fondonar.png) center repeat-x;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#FFF;
+	font-size:27px;
+}
+
+.fondoNegDeg{
+	background: url(../img/sis_fondon.png) center repeat-x;
+}
+.celdaGrande{
+	background: url(../img/opcion2.png) center bottom no-repeat;
+	font-size:16px;
+	text-align:center;
+	vertical-align:bottom;
+	padding-bottom:3px;
+	font-weight:bold;
+	color:#333;
+}
+.celdaChica{
+	background: url(../img/opcion1.png) center bottom no-repeat;
+	font-size:16px;
+	text-align:center;
+	vertical-align:bottom;
+	padding-bottom:3px;
+	font-weight:bold;
+	color:#333;
+}
+.lineaDetrasCabecera{
+	background: url(../img/fondotopbajocabecera.png) left repeat-x;
+}

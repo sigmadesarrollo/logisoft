@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=EmulateIE7" />
+
+<title>Ejemplo Ventana Modal</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script type="text/javascript" src="js/ventana-modal-1.1.1.js"></script>
+
+<script type="text/javascript" src="js/abrir-ventana-variable.js"></script>
+
+<script type="text/javascript" src="js/abrir-ventana-fija.js"></script>
+
+<link href="css/ventana-modal.css" rel="stylesheet" type="text/css">
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+
+<body>
+
+<table width="100%" border="0" cellspacing="3" cellpadding="0">
+
+  <tr>
+
+    <td class="texto">La raz&oacute;n de este formulario es simplemente comprobar 
+
+      que el documento quedar&aacute; inaccesible al abrir ventana-modal, ya que, 
+
+      como indica su nombre, es una ventana modal.</td>
+
+  </tr>
+
+</table>
+
+<table width="100%" border="0" cellspacing="3" cellpadding="0">
+
+  <tr>
+
+    <td class="texto negrita ancho">Nombre</td>
+
+    <td><input type="text" name="nombre" class="texto"></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="texto negrita">Apellidos</td>
+
+    <td><input type="text" name="apellidos" class="texto"></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="texto negrita">Sexo</td>
+
+    <td><select name="sexo" class="texto">
+
+	  <option value=""></option>
+
+	  <option value="H">Hombre</option>
+
+	  <option value="M">Mujer</option>
+
+      </select></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="texto negrita">Direcci&oacute;n</td>
+
+    <td><input type="text" name="direccion" class="texto"></td>
+
+  </tr>
+
+  <tr>
+
+    <td class="texto negrita">Tel&eacute;fono</td>
+
+    <td><input type="text" name="telefono" class="texto"></td>
+
+  </tr>
+
+</table>
+
+<br>
+
+<table width="100%" border="0" cellspacing="3" cellpadding="0">
+
+  <tr>
+
+    <td class="texto">* <span class="texto enlace" onClick="abrirVentanaVariable('http://www.ruido4design.com', 'ventana', 'Mi web')">Abrir VENTANA-MODAL con tama&ntilde;o variable</span></td>
+
+  </tr>
+
+  <tr><td>&nbsp;</td></tr>
+
+  <tr>
+
+    <td class="texto">** <span class="texto enlace" onClick="abrirVentanaFija('http://www.google.es', 700, 350, 'ventana', 'jose')">Abrir VENTANA-MODAL con tama&ntilde;o fijo</span></td>
+
+  </tr>
+
+  <tr><td>&nbsp;</td></tr>
+
+  <tr><td>&nbsp;</td></tr>
+
+  <tr>
+
+    <td class="texto">* Este ejemplo abrir&aacute; una ventana-modal con tama&ntilde;o 
+
+      variable. La variaci&oacute;n del tama&ntilde;o depender&aacute; de las 
+
+      dimensiones de la ventana del navegador, es decir, cuanto m&aacute;s grande 
+
+      sea la ventana del navegador web, m&aacute;s grande ser&aacute; nuestra 
+
+      ventana-modal y, lo mismo cuando es peque&ntilde;a: cuanto m&aacute;s peque&ntilde;a 
+
+      sea la ventana del navegador, m&aacute;s peque&ntilde;a ser&aacute; nuestra 
+
+      ventana-modal. La variaci&oacute;n de tama&ntilde;o s&oacute;lo se har&aacute; 
+
+      al abrir la ventana-modal, de tal manera que si redimensionamos la ventana 
+
+      del navegador web una vez abierta la ventana-modal, esta &uacute;ltima no 
+
+      variar&aacute; de tama&ntilde;o, pero al volverla a abrir s&iacute; variar&aacute; 
+
+      adapt&aacute;ndose a las nuevas medidas.<br>
+
+      <br>
+
+      La funci&oacute;n que abre esta ventana es <code>abrirVentanaVariable(<span class="negrita">pagina</span>, 
+
+      <span class="negrita">nombre</span>, <span class="negrita">titulo</span>)</code>:<br>
+
+      El par&aacute;metro <code class="negrita">pagina</code> representa el <span class="negrita">nombre 
+
+      del archivo HTML</span> (con diversas extensiones .HTML, .HTM, .JSP, .PHP, 
+
+      .ASP...) o bien la <span class="negrita">ruta absoluta de una url de internet</span> 
+
+      (por ejemplo: &quot;http://www.google.es/&quot;). <br>
+
+      <br>
+
+      El par&aacute;metro <code class="negrita">nombre</code> representa el <span class="negrita">atributo 
+
+      <code>name</code> del <code>iframe</code> </span>(por ejemplo: &quot;ventana-modal&quot;)que 
+
+      insertaremos en la ventana (p&aacute;gina o direcci&oacute;n web que hemos 
+
+      indicado en el par&aacute;metro anterior) de forma que podamos identificar 
+
+      el objeto, para, por ejemplo, acceder a &eacute;ste desde una funci&oacute;n 
+
+      JavaScript. Esto se traducir&aacute; en el siguiente c&oacute;digo HTML: 
+
+      <code>&lt;iframe name=&quot;ventana-modal&quot;&gt;</code>.<br>
+
+      <br>
+
+      El par&aacute;metro <code class="negrita">titulo</code> representa el t&iacute;tulo 
+
+      de la ventana (por ejemplo: &quot;Google&quot;).<br>
+
+      <br>
+
+      <br>
+
+      <br>
+
+      ** Este ejemplo abrir&aacute; una ventana-modal con tama&ntilde;o fijo. 
+
+      El tama&ntilde;o ser&aacute; el que decidamos en la llamada a la funci&oacute;n 
+
+      JavaScript, es decir, es un tama&ntilde;o fijo que no depender&aacute; de 
+
+      la ventana del navegador, pero que s&iacute; podremos variar en cada llamada 
+
+      a la ventana-modal. <br>
+
+      <br>
+
+      <br>
+
+      La funci&oacute;n que abre esta ventana se encuentra en el archivo abrir-ventana-fija.js 
+
+      y es <code>abrirVentanaFija(<span class="negrita">pagina</span>, <span class="negrita">ancho</span>, 
+
+      <span class="negrita">alto</span>, <span class="negrita">nombre</span>, 
+
+      <span class="negrita"></span><span class="negrita">titulo</span>)</code>:<br>
+
+      El par&aacute;metro <code class="negrita">pagina</code> cumple la misma 
+
+      funci&oacute;n que en el caso anterior.<br>
+
+      <br>
+
+      El par&aacute;metro <code class="negrita">ancho</code> representa el ancho 
+
+      que queremos que tome la ventana-modal. Deber&aacute; ser un valor num&eacute;rico 
+
+      (sin comillas simples o dobles). Hemos de procurar que el ancho no sea superior 
+
+      al documento HTML que tenemos para que el dise&ntilde;o no descuadre la 
+
+      ventana-modal. <br>
+
+      <br>
+
+      El par&aacute;metro <code class="negrita">alto</code> representa el alto 
+
+      que queremos que tome la ventana-modal. Deber&aacute; ser un valor num&eacute;rico 
+
+      (sin comillas simples o dobles). Lo mismo ocurre que con el ancho: debemos 
+
+      procurar que no sea superior al alto del documento HTML para que el dise&ntilde;o 
+
+      no se descuadre.<br>
+
+      <br>
+
+      El par&aacute;metro <code class="negrita">nombre</code> cumple la misma 
+
+      funci&oacute;n que en el caso anterior. <br>
+
+      <br>
+
+      El par&aacute;metro <code class="negrita">titulo</code> cumple la misma 
+
+      funci&oacute;n que en el caso anterior. <br>
+
+      <br>
+
+      <br>
+
+      <br>
+
+      Hay que tener presente que estos dos ejemplos son s&oacute;lo eso: ejemplos. 
+
+      La funcionalidad depender&aacute; de las necesidades de cada programador. 
+
+      Se podr&iacute;a utilizar ventana-modal como script para hacer que la p&aacute;gina 
+
+      principal de nuestra web quede en el centro o bien para mostrar un cargador 
+
+      (loading...) en el centro de la pantalla y evitar que el usuario pueda acceder 
+
+      a otro contenido de la web mientras est&aacute; cargando.<br>
+
+      <br>
+
+      El c&oacute;digo es libre y se puede utilizar y modificar tanto como uno 
+
+      quiera. Se recomienda no modificar el esqueleto (ventana-modal-1.1.1.js) 
+
+      ya que en futuras revisiones, mejoras, etc ser&aacute; m&aacute;s dif&iacute;cil 
+
+      el proceso de actualizaci&oacute;n. Las im&aacute;genes y estilos de la 
+
+      ventana-modal no son libres y pertenecen a sus determinados autores, por 
+
+      lo que no debe utilizarse para proyectos propios o comerciales, pero s&iacute; 
+
+      puede servir de gui&oacute;n para crear im&aacute;genes y estilos propios.<br>
+
+      <br>
+
+      Para alguna duda, mejora, errores... contactar en <a class="enlace negrita" href="mailto:contacto@ruido4design.com">contacto@ruido4design.com</a>.</td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>

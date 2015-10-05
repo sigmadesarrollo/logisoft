@@ -1,0 +1,2 @@
+[11-Aug-2010 19:30:11] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_capacitacion/general/ingresos/generarExcelIngresos.php on line 117
+[11-Aug-2010 19:30:30] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pmm/public_html/web_capacitacion/general/ingresos/generarExcelIngresos.php on line 117

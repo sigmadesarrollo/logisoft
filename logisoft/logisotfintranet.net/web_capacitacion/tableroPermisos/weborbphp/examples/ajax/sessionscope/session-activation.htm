@@ -1,0 +1,193 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>WebORB Presentation Server AJAX Client Examples - Application Activation for Server objects</title>
+<script language="javascript" src="WebORB.js"></script>
+<script>
+	var shoppingCartProxy;
+
+	function bindToCart()
+	{
+	    // using named service. "ExamplesActivationSession" is a name assigned to a C# class in weborb.config
+		shoppingCartProxy = webORB.bind( "ExamplesActivationSession", "weborb.php" );
+		shoppingCartProxy.getItems( new Async( cartLoaded ) );
+	}
+
+	function addToCart()
+	{
+		var fruitOptions = document.getElementById( "fruits" );
+
+		if( fruitOptions.selectedIndex == -1 )
+		{
+		   alert( "Nothing is selected" );
+		   return;
+		}
+
+		shoppingCartProxy.addItem( fruitOptions.options[ fruitOptions.selectedIndex ].text, new Async( itemAdded ) );
+	}
+
+	function itemAdded( addedItem )
+	{
+	   var dynamicTableContent = document.getElementById( "shoppingCart" );
+	   var tBody = dynamicTableContent.firstChild.firstChild;
+	   addItemToTable( addedItem, tBody );
+	}
+
+	function cartLoaded( allItems )
+	{
+		var tableObj = document.createElement( "TABLE" );
+		var tBodyObj = document.createElement( "TBODY" );
+
+		tableObj.appendChild( tBodyObj );
+		tableObj.border = "1px";
+		tableObj.cellSpacing = 0;
+		tableObj.cellPadding = 5;
+		tableObj.style.borderCollapse = "collapse"
+		tableObj.style.borderStyle = "solid";
+		tableObj.borderColor = "#C0C0C0";
+
+		var dynamicTableContent = document.getElementById( "shoppingCart" );
+
+		if( dynamicTableContent.childNodes.length > 0 )
+			dynamicTableContent.replaceChild( tableObj, dynamicTableContent.firstChild );
+		else
+			dynamicTableContent.appendChild( tableObj );
+
+		for( var i = 0; i < allItems.length; i++ )
+			addItemToTable( allItems[ i ], tBodyObj );
+
+	}
+
+	function addItemToTable( item, tBody )
+	{
+  	    var countCell = document.getElementById( item );
+
+  	    if( countCell == undefined )
+  	    {
+			var row = document.createElement( "TR" );
+			tBody.appendChild( row );
+
+			var cartItemCell = document.createElement( "TD" );
+			cartItemCell.style.fontSize = "10pt";
+			cartItemCell.appendChild( document.createTextNode( item ) );
+
+			var itemCountCell = document.createElement( "TD" );
+			var divElement = document.createElement( "DIV" );
+			divElement.id = item;
+			divElement.appendChild( document.createTextNode( "1" ) );
+			itemCountCell.appendChild( divElement );
+
+			row.appendChild( cartItemCell );
+			row.appendChild( itemCountCell );
+		}
+		else
+		{
+			countCell.innerHTML = Number( countCell.innerHTML ) + 1;
+		}
+	}
+
+</script>
+</head>
+
+<body style="font-family: Tahoma; font-size: 10pt; border-collapse:collapse" onLoad="bindToCart();">
+
+<table border="0" cellpadding="0" cellspacing="0" bordercolor="#111111" id="AutoNumber1">
+  <tr>
+    <td>
+    <img border="0" src="../../../images/topCornLeft.gif" width="9"></td>
+    <td background="../../../images/topMid.gif"></td>
+    <td width="12">
+    <img border="0" src="../../../images/rightCornTop.gif" width="12"></td>
+  </tr>
+  <tr>
+    <td background="../../../images/leftSide.gif" width="9"></td>
+    <td>
+    <table cellpadding="3" cellspacing="3" style="border-collapse: collapse; padding: 1" bordercolor="#111111" width="600" id="AutoNumber2">
+      <tr>
+        <td bordercolor="#C0C0C0" width="374">
+        <font face="Tahoma" size="2"><b>WebORB Presentation Server</b><br>
+        </font><font face="Tahoma" size="1">AJAX Client Examples</font></td>
+        <td style="border-style:dotted; border-width:1; padding:1; " bordercolor="#C0C0C0" width="204">
+        <p align="center"><font size="2">Session</font><font face="Tahoma" size="2">
+        Activation Example</font></td>
+      </tr>
+      <tr>
+        <td style="border-left-width: 1; border-right-width: 1; border-top-width: 1; border-bottom-style: solid; border-bottom-width: 1" bordercolor="#C0C0C0" width="578" colspan="2"></td>
+      </tr>
+      <tr>
+        <td width="375" align="center" valign="top"><br>
+        <table bordercolor="#C0C0C0" id="AutoNumber3" cellpadding="3" border="1" cellspacing="0" width="338" style="border-collapse: collapse">
+          <tr>
+            <td bgcolor="#FFFFCC" width="133"><font size="2">Available Fruits:</font></td>
+            <td bgcolor="#FFFFCC" width="190"><font size="2">Shopping Cart</font></td>
+          </tr>
+          <tr>
+            <td width="133" valign="top">
+<p align="center"><br>
+<SELECT NAME="fruit" id="fruits" SIZE="5">
+<OPTION>Apples
+<OPTION>Grapes
+<OPTION>Pears
+<option>Kiwi</option>
+<option>Mango</option>
+</SELECT> </p>
+<p align="center">
+            <form method="POST" action="--WEBBOT-SELF--" onSubmit="location.href='_derived/nortbots.htm';return false;" webbot-onSubmit>
+              <p align="center">
+              <input type="button" value="Add" name="SendRequestButton" onClick="addToCart();"></p>
+            </td>
+            </form>
+            <td width="190" align="center">
+            <p align="center"><DIV ID="shoppingCart"></DIV></td>
+          </tr>
+
+        </table>
+
+        </td>
+        <td width="204" align="left" valign="top"><font face="Tahoma" size="1">
+        <b>Instructions:</b><br>
+        'Available Fruits' panel lists all the products you can add to a cart.
+        The cart is maintained in a server-side object. The 'Shopping Cart'
+        panel is a visual representation of the object's 'contents. Select an
+        item in the list and click the 'Add' button to add the item to the cart.
+        </font><font size="1"><br>
+        <br>
+        </font><font face="Tahoma" size="1">
+        <b>Notes:</b><br>
+        In this example, WebORB Rich Client System makes an invocation on
+        a remote object with session activation. As a result, WebORB creates one
+        instance of the class for each browser session. Any time an item is
+        added to the shopping cart, the backend object maintains the state and
+        represents a separate shopping cart for each client.</font><font size="1"><br>
+        <br>
+        <b>Implementation:</b><br>
+        When browser loads the page, it executes the onLoad handler function.
+        The function binds to a server-side object and requests object's session
+        activation via WebORB's URL. When user clicks the 'Add' button, it
+        issues an asynchronous remote method invocation to add the selected item
+        to the shopping cart. Server responds with the name of the item just
+        added to the cart. When the client program receives the response, Rich
+        Client System invokes the callback specified via the Async object passed
+        into the addItem call.&nbsp; The callback updates the page with the new
+        item added to the cart</font></td>
+      </tr>
+      </table>
+    </td>
+    <td background="../../../images/rightMid.gif"></td>
+  </tr>
+  <tr>
+    <td>
+    <img border="0" src="../../../images/leftCornBot.gif" width="9" height="10"></td>
+    <td background="../../../images/botMid.gif"></td>
+    <td>
+    <img border="0" src="../../../images/botCornLeft.gif" width="12" height="10"></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

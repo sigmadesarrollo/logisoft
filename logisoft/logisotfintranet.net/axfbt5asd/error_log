@@ -1,0 +1,19 @@
+[12-Mar-2010 01:49:47] PHP Warning:  require_once(../Conectar.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/pcliente/public_html/axfbt5asd/detallerastreo.php on line 9
+[12-Mar-2010 01:49:47] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../Conectar.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcliente/public_html/axfbt5asd/detallerastreo.php on line 9
+[12-Mar-2010 13:52:39] PHP Parse error:  syntax error, unexpected T_IF in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 11
+[12-Mar-2010 13:53:11] PHP Parse error:  syntax error, unexpected T_IF in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 11
+[12-Mar-2010 14:28:18] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 8
+[12-Mar-2010 18:16:23] PHP Fatal error:  Using $this when not in object context in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 77
+[16-Mar-2010 14:19:21] PHP Warning:  require_once(../Conectar.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/pcliente/public_html/axfbt5asd/logueo.php on line 3
+[16-Mar-2010 14:19:21] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../Conectar.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcliente/public_html/axfbt5asd/logueo.php on line 3
+[16-Mar-2010 14:19:43] PHP Warning:  require_once(../../Conectar.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/pcliente/public_html/axfbt5asd/logueo.php on line 3
+[16-Mar-2010 14:19:43] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required '../../Conectar.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcliente/public_html/axfbt5asd/logueo.php on line 3
+[16-Mar-2010 14:20:02] PHP Warning:  require_once(Conectar.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/pcliente/public_html/axfbt5asd/logueo.php on line 3
+[16-Mar-2010 14:20:02] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'Conectar.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcliente/public_html/axfbt5asd/logueo.php on line 3
+[11-Apr-2010 22:06:14] PHP Parse error:  syntax error, unexpected $end in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 281
+[11-Apr-2010 22:08:08] PHP Warning:  Missing argument 2 for getidSucursal(), called in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 23 and defined in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 13
+[11-Apr-2010 22:08:08] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/pcliente/public_html/axfbt5asd/cotizar.php on line 15
+[03-Aug-2010 11:28:47] PHP Fatal error:  Call to a member function ObtenerFlete() on a non-object in /home/pmm/public_html/axfbt5asd/cotizar.php on line 134
+[03-Aug-2010 11:30:00] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/pmm/public_html/axfbt5asd/cotizar.php:2) in /home/pmm/public_html/web_pruebas/clases/ValidaConvenio.php on line 2
+[03-Aug-2010 11:30:00] PHP Fatal error:  Call to a member function ObtenerFlete() on a non-object in /home/pmm/public_html/axfbt5asd/cotizar.php on line 135
+[03-Aug-2010 11:30:32] PHP Fatal error:  Call to a member function ObtenerFlete() on a non-object in /home/pmm/public_html/axfbt5asd/cotizar.php on line 134

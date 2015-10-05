@@ -1,0 +1,7 @@
+../ModuloPvta/pages/index.php   -- punto de venta
+../moduloOperaciones/pagina/index.php   -- operaciones
+../moduloEmpresa/pagina/index.php   -- pmm en tu empresa
+--- ../moduloCobranza/pagina/index.php   -- cobranza
+---../moduloAdministracion/pagina/index.php   -- administracion
+../moduloVentas/pagina/index.php   -- ventas
+../panelControl/pages/index.php

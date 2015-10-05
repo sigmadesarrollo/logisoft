@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+#menu {
+	background-color:#069;
+}
+
+#pie {
+	background-color:#16615F;
+	height:100%;
+	clear: both;
+	padding: 6px 10px;
+	text-align: right;
+}
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12;
+}
+input{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}

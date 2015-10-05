@@ -1,0 +1,17 @@
+<Document>
+	<PDFMetadata>
+		<Property name="PageMargins" value="10" />
+		<Property name="PageFormat" value="A4" />
+		<Property target="CUSTOMERID" 
+				  name="cellRendererClass" 
+				  value="com.tmc.weborb.pdf.examples.BarCodeCellRenderer" />
+	</PDFMetadata>
+	<Page>
+		<Text x="10" y="10" value="DataGird with custom renderers:"/>
+		<DataGrid left="10" right="10" fontSize="10"
+		         	 dataProvider="method:Weborb.Examples.DataBinding.getCustomers()" top="30" bottom="10">
+	        <DataGridColumn headerText="Customer ID (barcoded)" dataField="CUSTOMERID" />
+	 	    <DataGridColumn headerText="Contact Name" dataField="CONTACTNAME" fontStyle="italic"/>            
+		</DataGrid>
+	</Page>  
+</Document>

@@ -1,0 +1,34 @@
+function objetoAjax(){
+	var xmlhttp=false;
+	try {
+		xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch (e) {
+		try {
+		   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch (E) {
+			xmlhttp = false;
+  		}
+	}
+
+	if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+		xmlhttp = new XMLHttpRequest();
+	}
+	return xmlhttp;
+}
+
+
+//FUNCION QUE VA Y CONSULTA EL PRODUCTO PARA SER INGRESADO A LA TEMPORAL
+function consulta(respuesta,datos){
+
+	var consult = datos;
+	
+	ajax=objetoAjax();
+	ajax.open("GET", consult);
+	
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			eval(respuesta+"(ajax.responseXML)");
+		}
+	}
+	ajax.send(null)
+}

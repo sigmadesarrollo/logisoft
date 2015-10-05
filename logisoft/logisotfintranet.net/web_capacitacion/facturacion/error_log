@@ -1,0 +1,4 @@
+[19-Mar-2010 15:04:54] PHP Parse error:  syntax error, unexpected '}' in /home/pmm/public_html/web_pruebas/facturacion/Facturacion_consulta.php on line 683
+[19-Mar-2010 15:20:40] PHP Parse error:  syntax error, unexpected '}' in /home/pmm/public_html/web_pruebas/facturacion/Facturacion_consulta.php on line 683
+[13-Sep-2010 20:30:57] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20060613/pdo.so: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0
+[13-Sep-2010 20:30:57] PHP Warning:  Cannot load module 'pdo_sqlite' because required module 'pdo' is not loaded in Unknown on line 0

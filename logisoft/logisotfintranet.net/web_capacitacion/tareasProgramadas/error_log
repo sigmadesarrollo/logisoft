@@ -1,0 +1,3 @@
+[10-Aug-2010 20:01:35] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: recursion detected in /home/pmm/public_html/web_pruebas/tareasProgramadas/consultas_con.php on line 592
+[10-Aug-2010 20:01:45] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: recursion detected in /home/pmm/public_html/web_pruebas/tareasProgramadas/consultas_con.php on line 592
+[10-Aug-2010 20:02:16] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: recursion detected in /home/pmm/public_html/web_pruebas/tareasProgramadas/consultas_con.php on line 592

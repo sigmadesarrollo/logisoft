@@ -1,0 +1,12 @@
+.content .breadcrumbs{background:#cfd9e7; width:550px;-moz-border-radius:3px; -webkit-border-radius:3px; padding:5px 10px; margin-top:5px; font-size:10px; float:left;}
+.content ul.tools{height:26px; width:240px; float:left; position:relative; margin:5px 7px;}
+.det-guia{ background:#282828; width:250px; height:190px; float:left; border:solid 1px #4171b5; -moz-border-radius:8px; -webkit-border-radius:8px; position:relative; color:#fff; padding:0px 5px; font-size:11px;}
+a.detalles-guia{background:url(style/detalles-guia.jpg) top left no-repeat; width:98px; height:22px; position:absolute; text-indent:-9999px; top:-5px; left:10px;}
+.det-guia .date{ float:right; font-size:10px;}
+.det-guia div{ float:left; margin-top:16px; position:relative;}
+.det-guia div span{ float:none; width:70px; display:inline; margin-bottom:3px; padding-top:0px; margin-left:1px; position:relative;}
+.det-guia div strong{ float:none; width:250px; display:inline; margin-bottom:3px; padding-top:8px; font-weight:bold; position:relative;}
+.text{ background:url(style/bg-text.jpg) top left repeat-x #fff; width:140px; border:solid 1px #f6f6f6; height:19px; font-size:13px; margin-bottom:4px; float:none;}
+.observaciones{width:380px; height:180px; background:#0F0; float:left; margin-top:5px; margin-left:5px;background:#fafafa; -moz-border-radius:8px; -webkit-border-radius:8px;border:solid 1px #e8e8e8;-moz-border-radius:8px; -webkit-border-radius:8px; position:relative; font-size:11px;}
+.observaciones span{float:none; width:100px; display:inline; margin-bottom:3px; padding-top:3px; margin-left:5px;}
+.observaciones  strong{ float:none; width:300px; display:inline; margin-bottom:3px; padding-top:3px; font-weight:bold;}

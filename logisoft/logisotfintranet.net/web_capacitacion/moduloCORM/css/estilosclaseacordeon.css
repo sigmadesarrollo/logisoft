@@ -1,0 +1,18 @@
+* {margin:0; padding:0; font:10px Tahoma}
+code {font-family:"Courier New",Courier}
+
+#options {width:237px; margin:20px auto;  color:#9ac1c9}
+#options a {text-decoration:none; color:#9ac1c9}
+#options a:hover {color:#033}
+
+#acc {width:200px; list-style:none; color:#033; margin:0 auto 40px}
+#acc h3 {width:200px; height:16px; border:1px solid #9ac1c9; font-weight:bold; cursor:pointer; background: center url(../../img/header.gif)}
+#acc h3:hover {background: center url(../../img/header_over.gif)}
+#acc .acc-section {width:200px; overflow:hidden; background:#fff}
+#acc .acc-content {width:200px; border:1px solid #9ac1c9; border-top:none; background:#fff}
+
+.fila1 { cursor:pointer; font-weight:bold; background-color:#EDF3F5; }
+.fila2 { cursor:pointer; font-weight:bold; background-color:#FFFFFF; }
+
+.fila1:hover { background-color:#128FB4; }
+.fila2:hover { background-color:#128FB4; }

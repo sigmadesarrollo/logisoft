@@ -1,0 +1,7 @@
+[16-Feb-2010 14:26:20] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/notadecredito/notacredito_con.php on line 187
+[07-Apr-2010 09:56:29] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_pruebas/notadecredito/notacredito_con.php on line 187
+[24-Apr-2010 13:28:15] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_capacitacion/notadecredito/notacredito_con.php on line 187
+[24-Apr-2010 13:36:23] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_capacitacion/notadecredito/notacredito_con.php on line 187
+[24-Apr-2010 19:38:57] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_capacitacion/notadecredito/notacredito_con.php on line 187
+[26-Apr-2010 11:17:53] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_capacitacion/notadecredito/notacredito_con.php on line 187
+[26-Apr-2010 13:03:56] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home/pmm/public_html/web_capacitacion/notadecredito/notacredito_con.php on line 187

@@ -1,0 +1,30 @@
+code {
+	font-size: 14px;
+}
+
+.texto {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+.ancho {
+	width: 80px;
+}
+
+.enlace {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.ebtn_cancelado{
+	background-image:url(img/Boton_Cancelado.gif);
+	width:85px; 
+	height:20px;
+	cursor:hand;
+	filter: Alpha(Opacity=80);
+}
+.ebtn_cancelado:hover {
+	filter: Alpha(Opacity=100);

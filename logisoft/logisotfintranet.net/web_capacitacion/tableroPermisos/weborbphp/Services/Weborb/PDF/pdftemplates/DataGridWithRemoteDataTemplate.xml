@@ -1,0 +1,17 @@
+<Document>
+	<PDFMetadata>
+		<Property name="PageFormat" value="A4" />
+		<Property name="PageMargins" value="10" />
+	</PDFMetadata>
+	<Page>
+	    <Text value="DataGird with server-side data:" x="10" y="10"/>
+	    <DataGrid id="customersGrid" left="10" right="10" fontSize="10"
+	        dataProvider="method:Weborb.Examples.DataBinding.getCustomers()"  bottom="10" top="30"> 
+	        <columns>
+	            <DataGridColumn dataField="COMPANYNAME" headerText="Company" />
+	            <DataGridColumn dataField="CONTACTNAME" headerText="Name"/>
+	            <DataGridColumn dataField="PHONE" headerText="Phone Number" />
+	        </columns>
+	    </DataGrid>		
+	</Page>
+</Document>	

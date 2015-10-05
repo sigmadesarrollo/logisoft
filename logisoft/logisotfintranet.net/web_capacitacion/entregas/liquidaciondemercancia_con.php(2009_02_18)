@@ -1,0 +1,411 @@
+<?
+	session_start();
+	/*if(!$_SESSION[IDUSUARIO]!=""){
+		die("<script>parent.document.location.href = 'http://www.pmmentuempresa.com';</script>");
+	}*/
+	require_once("../Conectar.php");
+	$l = Conectarse("webpmm");
+	
+	if($_GET[accion]==1){
+		$s = "select repartomercanciadetalle.idreparto, repartomercanciaead.conductor1,
+		concat_ws(' ',emp1.nombre,emp1.apellidopaterno,emp1.apellidomaterno) as conductorn1,
+		repartomercanciaead.conductor2,
+		concat_ws(' ',emp2.nombre,emp2.apellidopaterno,emp2.apellidomaterno) as conductorn2,
+		catalogounidad.numeroeconomico, repartomercanciaead.liquidado
+		from repartomercanciadetalle
+		inner join repartomercanciaead on repartomercanciaead.id=repartomercanciadetalle.idreparto
+		left join catalogoempleado as emp1 on emp1.id = repartomercanciaead.conductor1
+		left join catalogoempleado as emp2 on emp2.id = repartomercanciaead.conductor2
+		left join catalogounidad on catalogounidad.id = repartomercanciaead.unidad
+		where repartomercanciadetalle.idreparto = $_GET[idreparto]
+		and (repartomercanciaead.liquidado = 0 or repartomercanciaead.liquidado = 1)
+		group by repartomercanciadetalle.idreparto";
+		$r = mysql_query($s,$l) or die($s);
+	
+		$f = mysql_fetch_object($r);
+		//echo "<br>$s<br>";
+		
+		$f->conductorn1 = cambio_texto($f->conductorn1);
+		$f->conductorn2 = cambio_texto($f->conductorn2);
+		echo "(".str_replace("null",'""', json_encode($f)).")";
+	}
+	
+if($_GET[accion]==2){
+		$s = "delete from liquidacion_detalle_tmp where idusuario = $_SESSION[IDUSUARIO]";
+		mysql_query($s,$l) or die($s);
+		
+		$s = "insert into liquidacion_detalle_tmp
+		(select gd.sector, gd.id as guia, cs.descripcion as origen,
+			concat_ws(' ',cc.nombre, cc.paterno, cc.materno) as destinatario,
+			if(gd.tipoflete=0,'PAGADO','POR COBRAR') as tipoflete,
+			if(gd.condicionpago=0,'CONTADO','CREDITO') as condicionpago,
+			gd.total as importe,IF(gd.estado='ENTREGADA','ENTREGADA POR LIQUIDAR',gd.estado)as estado,
+			'1' as seleccion,rm.motivo, $_SESSION[IDUSUARIO],null,null,null,gd.total,0,0,0,0,0
+			from repartomercanciadetalle as rm
+			inner join guiasventanilla as gd on gd.id=rm.guia
+			inner join catalogosucursal as cs on gd.idsucursalorigen = cs.id
+			inner join catalogocliente as cc on gd.iddestinatario = cc.id
+			where rm.idreparto=$_GET[folio])
+		union
+		(select gd.sector, gd.id as guia, cs.descripcion as origen,
+			concat_ws(' ',cc.nombre, cc.paterno, cc.materno) as destinatario,
+			gd.tipoflete,
+			gd.tipopago as condicionpago,
+			gd.total as importe,IF(gd.estado='ENTREGADA','ENTREGADA POR LIQUIDAR',gd.estado),
+			'1' as seleccion,rm.motivo, $_SESSION[IDUSUARIO],null,null,null,gd.total,0,0,0,0,0
+			from repartomercanciadetalle as rm
+			inner join guiasempresariales as gd on gd.id=rm.guia 
+			inner join catalogosucursal as cs on gd.idsucursalorigen = cs.id
+			inner join catalogocliente as cc on gd.iddestinatario = cc.id
+			where rm.idreparto=$_GET[folio])";
+			
+		mysql_query($s,$l) or die($s);
+		
+		$sql="SELECT tm.sector,tm.guia,tm.origen,tm.destinatario,tm.tipoflete,
+		tm.condicionpago,tm.importe,
+		IF(tm.estado='ENTREGADA','ENTREGADA POR LIQUIDAR',tm.estado)as estado,tm.seleccion,tm.motivo,
+		tm.idusuario,IFNULL(tm.nombre,'')AS nombre,IFNULL(tm.identificacion,'')AS identificacion,
+		IFNULL(tm.numero_id,0)AS numero_id,IF(tm.guia=IFNULL(le.guia,''),1,0)AS pagada
+ 		FROM liquidacion_detalle_tmp tm 
+ 		LEFT JOIN 
+ 		(SELECT DISTINCT ld.guia FROM liquidacionead le 
+ 		INNER JOIN liquidacion_detalleead ld ON le.id=ld.idliquidacion 
+		WHERE  le.idreparto=$_GET[folio])le ON tm.guia=le.guia
+ 		WHERE tm.idusuario = $_SESSION[IDUSUARIO] order by tm.guia";
+		$d=mysql_query($sql,$l)or die($sql); 
+		$registros= array();
+		
+		if (mysql_num_rows($d)>0){
+			while ($f=mysql_fetch_object($d))
+			{
+				//$f->cliente=cambio_texto($f->cliente);
+				$registros[]=$f;	
+			}
+			echo str_replace('null','""',json_encode($registros));
+		}else{
+			echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==3){
+	
+		$cerrardevolucion=$_GET[cerrar];
+		if ($cerrardevolucion==1){
+			$concatenacion=',cerro=1';	
+		}else{
+			$concatenacion='';	
+		}
+		
+		$s = "SELECT IFNULL(id,0)as folio FROM liquidacionead WHERE idreparto=".$_GET[idreparto]."";
+		$r = mysql_query($s,$l) or die($s);
+		$f = mysql_fetch_object($r);
+		$folio = $f->folio;
+		if ($folio!=0){
+			$s = "update liquidacionead set idreparto='$_GET[idreparto]', 
+			entregadas='$_GET[entregadas]', devueltas='$_GET[devueltas]', 
+			pagadas_credito='$_GET[pagadas_credito]', pagadas_contado='$_GET[pagadas_contado]',
+			tpagadas_credito='$_GET[tpagadas_credito]', tpagadas_contado='$_GET[tpagadas_contado]', 
+			porcobrar_contado='$_GET[porcobrar_contado]',
+			porcobrar_credito='$_GET[porcobrar_credito]', tporcobrar_credito='$_GET[tporcobrar_credito]', 
+			tporcobrar_contado='$_GET[tporcobrar_contado]', sucursal='$_SESSION[IDSUCURSAL]',
+			entrego='$_GET[entrego]',total=$_GET[total],fecha=current_date,idusuario = '$_SESSION[IDUSUARIO]', 
+			cantidadentregada = '$_GET[cantidadentregada]', diferencia = '".(($_GET[diferencia]<0)?0:$_GET[diferencia])."'
+			$concatenacion where id=$folio";
+			mysql_query($s,$l) or die($s);
+			$idliquidacion = $folio;
+			$sql = "delete from liquidacion_detalleead where idliquidacion=$idliquidacion";
+			mysql_query($sql,$l)or die($sql); 
+		}else{
+		
+			$s="insert into liquidacionead set idreparto=$_GET[idreparto],entregadas=$_GET[entregadas],devueltas=$_GET[devueltas],pagadas_credito=$_GET[pagadas_credito],pagadas_contado=$_GET[pagadas_contado],tpagadas_credito=$_GET[tpagadas_credito],tpagadas_contado=$_GET[tpagadas_contado],porcobrar_contado=$_GET[porcobrar_contado],porcobrar_credito=$_GET[porcobrar_credito],tporcobrar_contado=$_GET[tporcobrar_contado],tporcobrar_credito=$_GET[tporcobrar_credito],sucursal=$_SESSION[IDSUCURSAL],entrego=$_GET[entrego],total=$_GET[total],fecha=CURRENT_DATE,idusuario=$_GET[idusuario],
+cantidadentregada = '$_GET[cantidadentregada]', diferencia = '".(($_GET[diferencia]<0)?0:$_GET[diferencia])."' $concatenacion";
+		mysql_query($s,$l) or die($s);
+		$idliquidacion = mysql_insert_id($l);
+		
+		}
+	
+		$sql="INSERT INTO liquidacion_detalleead
+		SELECT NULL,'$idliquidacion',sector,guia,origen,destinatario,tipoflete,
+		condicionpago,importe,estado,seleccion,motivo,
+		idusuario,nombre,identificacion,numero_id,
+		efectivo,cheque,ncheque,banco,nnotacredito,notacredito
+		FROM liquidacion_detalle_tmp WHERE idusuario = '$_SESSION[IDUSUARIO]' AND estado='ENTREGADA POR LIQUIDAR'";
+		mysql_query($sql,$l) or die($sql);
+		
+		if ($cerrardevolucion==1){
+			/*AQUI VA GUARDAR LA FORMA DE PAGO*/
+			$sql = "INSERT INTO formapago(guia,procedencia,tipo,total,efectivo,
+			tarjeta,transferencia,cheque,ncheque,banco,notacredito,nnotacredito,sucursal,usuario,fecha)
+			SELECT ld.guia,'M','X',ld.importe,ld.efectivo,0 AS tarjeta,0 AS transferencia,ld.cheque,ld.ncheque,
+			ld.banco,ld.notacredito,ld.nnotacredito,lc.sucursal,lc.idusuario,curdate() FROM liquidacionead lc
+			INNER JOIN liquidacion_detalleead ld ON lc.id=ld.idliquidacion 
+			INNER JOIN pagoguias pg ON ld.guia=pg.guia
+			WHERE lc.id='$idliquidacion' AND ld.estado='ENTREGADA POR LIQUIDAR' AND pg.pagado='N'";
+			$t = mysql_query($sql,$l) or die($sql);	
+			
+			$s = "UPDATE guiasventanilla 
+			INNER JOIN liquidacion_detalle_tmp ON guiasventanilla.id = liquidacion_detalle_tmp.guia
+			AND liquidacion_detalle_tmp.idusuario = '$_SESSION[IDUSUARIO]' AND 
+			liquidacion_detalle_tmp.estado='ENTREGADA POR LIQUIDAR'
+			SET guiasventanilla.estado = 'ENTREGADA', guiasventanilla.recibio=liquidacion_detalle_tmp.nombre;";
+			mysql_query($sql,$l) or die($sql);
+			
+			$s = "UPDATE guiasempresariales 
+			INNER JOIN liquidacion_detalle_tmp ON guiasempresariales.id = liquidacion_detalle_tmp.guia
+			AND liquidacion_detalle_tmp.idusuario = '$_SESSION[IDUSUARIO]' AND 
+			liquidacion_detalle_tmp.estado='ENTREGADA POR LIQUIDAR'
+			SET guiasempresariales.estado = 'ENTREGADA', guiasempresariales.recibio=liquidacion_detalle_tmp.nombre;";
+			mysql_query($sql,$l) or die($sql);
+			
+			$s = "update liquidacion_detalleead set estado = 'ENTREGADA' where idliquidacion = $idliquidacion and estado = 'ENTREGADA POR LIQUIDAR'";
+			mysql_query($sql,$l) or die($sql);
+			
+			$q="select * from liquidacion_detalleead where idliquidacion='$idliquidacion'";
+			$m= mysql_query(str_replace("''",'NULL',$q),$l) or die($q);
+			$registros= array();
+			if (mysql_num_rows($m)>0){
+				while ($f=mysql_fetch_object($m))
+				{
+				$sq="UPDATE pagoguias SET pagado='S',fechapago=CURRENT_DATE,usuariocobro='".$_SESSION[IDUSUARIO]."',
+				sucursalcobro='$_SESSION[IDSUCURSAL]' WHERE guia='$f->guia' AND pagado='N' ";		
+				$d = mysql_query(str_replace("''",'NULL',$sq),$l) or die($sq);
+				}
+			}
+		}
+		
+		$sq = "select id AS folio from liquidacionead where id ='$idliquidacion'";
+		$r=mysql_query($sq,$l)or die($sq); 
+		$registros= array();
+		
+		if (mysql_num_rows($r)>0){
+			while ($f=mysql_fetch_object($r))
+			{
+				$registros[]=$f;	
+			}
+			echo str_replace('null','""',json_encode($registros));
+		}else{
+			echo str_replace('null','""',json_encode(0));
+		}
+		//echo "ok";
+	}
+	
+	if($_GET[accion]==4){
+		$s= "select id AS idsucursal, descripcion,DATE_FORMAT(CURDATE(),'%d/%m/%Y')AS fecha  from catalogosucursal where id = ".$_SESSION[IDSUCURSAL]."";	
+		$r = mysql_query($s,$l) or die($s);
+		$registros = array();
+		if(mysql_num_rows($r)>0){
+				while($f = mysql_fetch_object($r)){
+					$f->descripcion = cambio_texto($f->descripcion);
+					$registros[] = $f;
+				}
+				echo str_replace('null','""',json_encode($registros));
+		}else{
+				echo str_replace('null','""',json_encode(0));
+		}
+	
+	}
+	
+	if($_GET[accion]==5){
+		
+		$s = "SELECT idreparto,entregadas,devueltas,pagadas_credito,pagadas_contado,tpagadas_credito,tpagadas_contado,porcobrar_contado,porcobrar_credito,tporcobrar_contado,tporcobrar_credito,sucursal,entrego,total,date_format(fecha,'%d/%m/%Y')AS fecha,cerro,cantidadentregada,diferencia FROM liquidacionead WHERE id=".$_GET[folio]."";	
+		$r=mysql_query($s,$l)or die($s); 
+			
+		$registros = array();
+		if(mysql_num_rows($r)>0){
+				while($f = mysql_fetch_object($r)){
+					$registros[] = $f;
+				}
+				echo str_replace('null','""',json_encode($registros));
+		}else{
+				echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==6){
+		
+		//$sql = "SELECT * FROM liquidacion_detalleead WHERE idliquidacion=".$_GET[folio]."";
+		$sql="SELECT cs.descripcion AS sector,ld.guia,ld.origen,ld.destinatario,ld.tipoflete,ld.condicionpago,ld.importe,ld.estado,ld.seleccion,ld.motivo,ld.nombre,ld.identificacion,ld.numero_id FROM liquidacion_detalleead ld 
+		INNER JOIN catalogosector cs ON ld.sector=cs.id	WHERE ld.idliquidacion=".$_GET[folio]." group by ld.guia";
+		$r=mysql_query($sql,$l)or die($sql); 
+		$registros= array();
+			
+		if(mysql_num_rows($r)>0){
+				while($f = mysql_fetch_object($r)){
+					$registros[] = $f;
+				}
+				echo str_replace('null','""',json_encode($registros));
+		}else{
+				echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==7){
+		$s = "select id, concat_ws(' ',nombre,apellidopaterno,apellidomaterno) as conductor	from catalogoempleado where 
+		id =".$_GET[idempleado]."";	
+		$r=mysql_query($s,$l)or die($s); 
+		$registros= array();
+			
+		if(mysql_num_rows($r)>0){
+				while($f = mysql_fetch_object($r)){
+					$f->conductor = cambio_texto($f->conductor);
+					$registros[] = $f;
+				}
+				echo str_replace('null','""',json_encode($registros));
+		}else{
+				echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==8){
+	
+		$sql="UPDATE liquidacion_detalle_tmp SET nombre='".$_GET[nombre]."',identificacion='".$_GET[identificacion]."',numero_id='".$_GET[numero]."' WHERE guia='".$_GET[guia]."' AND idusuario='".$_SESSION[IDUSUARIO]."' ";
+		mysql_query($sql,$l) or die($sql);
+		echo "ok";
+	}
+	
+	if($_GET[accion]==9){
+		$s = " SELECT DISTINCT guia FROM liquidacion_detalleead WHERE guia='".$_GET[guia]."'";	
+		$r=mysql_query($s,$l)or die($s); 
+		$registros= array();
+			
+		if(mysql_num_rows($r)>0){
+				while($f = mysql_fetch_object($r)){
+					$registros[] = $f;
+				}
+				echo str_replace('null','""',json_encode($registros));
+		}else{
+				echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==10){
+		$row=folio("liquidacionead","webpmm");
+		$s = "SELECT DATE_FORMAT(CURRENT_DATE,'%d/%m/%Y') AS fecha, (SELECT id FROM catalogosucursal where id=".$_SESSION[IDSUCURSAL].") as idsucursal,(SELECT descripcion FROM catalogosucursal where id=".$_SESSION[IDSUCURSAL].") as sucursal";
+		$r = mysql_query($s,$l) or die($s);
+		$f = mysql_fetch_object($r);
+		$f->sucursal = cambio_texto($f->sucursal);
+		$folio = $row[0];
+//		$resul = str_replace("null",'""',json_encode($f));
+		echo $folio.",".$f->fecha.",".$f->idsucursal.",".$f->sucursal;
+	}
+	
+	if($_GET[accion]==11){
+		$s = "SELECT * FROM liquidacionead WHERE idreparto=".$_GET[folio]."";
+		$r=mysql_query($s,$l)or die($s); 
+		$registros= array();
+		
+		if (mysql_num_rows($r)>0){
+				while ($f=mysql_fetch_object($r)){
+				$registros[]=$f;	
+				}
+			echo str_replace('null','""',json_encode($registros));
+		}else{
+			echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==12){
+		$s = "UPDATE liquidacionead SET cerro=1, cantidadentregada = '$_GET[cantidadentregada]', diferencia = '".(($_GET[diferencia]<0)?0:$_GET[diferencia])."' where idreparto=".$_GET[folio]."";
+		mysql_query($s,$l)or die($s); 
+		
+		echo "ok";
+	
+	}
+	
+	if($_GET[accion]==13){
+		$s = "SELECT id as folio,cerro FROM devolucionmercancia WHERE idreparto=".$_GET[folio]."";
+		$r=mysql_query($s,$l)or die($s); 
+		$registros= array();
+		
+		if (mysql_num_rows($r)>0){
+				while ($f=mysql_fetch_object($r)){
+				$registros[]=$f;	
+				}
+			echo str_replace('null','""',json_encode($registros));
+		}else{
+			echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==14){
+		/*$s="SELECT SUM(ncd.importe)AS importe FROM notacredito nc 
+		INNER JOIN notacreditodetalle ncd ON nc.folio=ncd.folionotacredito  
+		WHERE nc.folio=$_GET[folio] AND nc.cliente=$_GET[cliente] group by nc.folio order by nc.fechanotacredito";*/
+		$s = "SELECT SUM(importe)AS importe FROM notacreditodetalle WHERE folionotacredito=$_GET[folio]";
+		$r=mysql_query($s,$l)or die($s); 
+		$registros= array();
+		
+		if (mysql_num_rows($r)>0){
+				while ($f=mysql_fetch_object($r)){
+				$registros[]=$f;	
+				}
+			echo str_replace('null','""',json_encode($registros));
+		}else{
+			echo str_replace('null','""',json_encode(0));
+		}
+	}
+	
+	if($_GET[accion]==15){
+	
+		$sql="UPDATE liquidacion_detalle_tmp SET efectivo=".$_GET[efectivo].",cheque=".$_GET[cheque].",ncheque=".$_GET[ncheque].",banco=".$_GET[banco].",nnotacredito=".$_GET[nnotacredito].",notacredito=".$_GET[notacredito]." WHERE guia='".$_GET[guia]."' AND idusuario='".$_SESSION[IDUSUARIO]."' ";
+		mysql_query($sql,$l) or die($sql);
+		echo "ok";
+	}
+	
+	if($_GET[accion]==16){
+		
+		$s="SELECT cliente FROM (SELECT cc.id AS cliente
+		FROM liquidacion_detalleead ld 
+		INNER JOIN guiasventanilla gv ON ld.guia=gv.id
+		INNER JOIN catalogocliente cc ON  
+		IF(gv.tipoflete=0, gv.idremitente=cc.id,gv.iddestinatario =cc.id)
+		WHERE ld.tipoflete!='PAGADO' AND ld.condicionpago='CREDITO' AND ld.estado='ENTREGADA' 		        AND ISNULL(gv.factura) AND ld.idliquidacion='".$_GET[folio]."' GROUP BY cc.id	
+	UNION	
+		SELECT cc.id AS cliente
+		FROM liquidacion_detalleead ld 
+		INNER JOIN guiasempresariales ge ON ld.guia=ge.id
+		INNER JOIN catalogocliente cc ON  
+		IF(ge.tipoflete='PAGADA', ge.idremitente=cc.id,ge.iddestinatario =cc.id)
+		WHERE ld.tipoflete!='PAGADO' AND ld.condicionpago='CREDITO' AND ld.estado='ENTREGADA' 		        AND ISNULL(ge.factura) AND ld.idliquidacion='".$_GET[folio]."' GROUP BY cc.id
+		)Tabla GROUP BY cliente";
+		$r=mysql_query($s,$l)or die($s); 
+		$registros= array();
+		
+		if (mysql_num_rows($r)>0){
+				while ($f=mysql_fetch_object($r)){
+				$registros[]=$f;	
+				}
+			echo str_replace('null','""',json_encode($registros));
+		}else{
+			echo str_replace('null','""',json_encode(0));
+		}
+		
+	}
+	
+	if($_GET[accion]==17){
+		
+		$tipos=$_GET[tipo];
+		if ($tipos=="1"){
+			$concatenacion=" AND ISNULL(gv.factura)";
+		}else{
+			$concatenacion="";
+		}
+		
+		$s = "SELECT cc.id as cliente FROM liquidacion_detalleead ld 
+		INNER JOIN guiasventanilla gv ON ld.guia=gv.id
+		INNER JOIN catalogocliente cc ON  
+		IF(gv.tipoflete=0, gv.idremitente=cc.id,gv.iddestinatario =cc.id)
+		WHERE ld.tipoflete!='PAGADO' AND ld.condicionpago='CREDITO' 
+		AND ld.idliquidacion=".$_GET[folio]." $concatenacion GROUP BY cc.id	
+	UNION
+		SELECT cc.id as cliente FROM liquidacion_detalleead ld 
+		INNER JOIN guiasempresariales gv ON ld.guia=gv.id
+		INNER JOIN catalogocliente cc ON  
+		IF(gv.tipoflete='PAGADA', gv.idremitente=cc.id,gv.iddestinatario =cc.id)
+		WHERE ld.tipoflete!='PAGADO' AND ld.condicionpago='CREDITO' 
+		AND ld.idliquidacion=".$_GET[folio]." $concatenacion GROUP BY cc.id";
+		$t = mysql_query($s,$l) or die($s);
+		$tdes = mysql_num_rows($t);
+		echo $tdes;
+}
+?>

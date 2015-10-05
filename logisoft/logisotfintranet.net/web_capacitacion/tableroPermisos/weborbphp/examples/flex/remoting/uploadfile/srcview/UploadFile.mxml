@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="initApp()" layout="absolute" width="549" height="392" viewSourceURL="srcview/index.html">
+<mx:Script>
+	<![CDATA[
+		import mx.utils.URLUtil;
+		import mx.utils.UIDUtil;
+		import mx.controls.Alert;
+
+		public var fileRef:FileReference;
+		public var arrTypes:Array = new Array();
+		
+		[Bindable]
+		public var status:String = "";
+		
+		public function initApp():void
+		{
+			fileRef = new FileReference();
+			fileRef.addEventListener("select", uploadImage);
+			fileRef.addEventListener("ioError", onError);
+			fileRef.addEventListener("complete", onComplete);
+			arrTypes.push(new FileFilter("Images", "*.jpg;*.gif;*.png;*.jpeg"));
+		}
+
+		public function onError(e:IOErrorEvent):void
+		{
+			Alert.show(e.text, "Error");
+		}
+
+		public function onComplete(e:Event):void
+		{
+			progressBar.source = img;
+			callLater(function():void {
+			status = "Downloading";
+			var appUrl:String = Application.application.url;
+			var url:String = appUrl.substr(0,appUrl.length-14)+ "upload/" + fileRef.name;
+			img.source = url;//URLUtil.getFullURL(Application.application.url,"/upload/" + fileRef.name);
+			});
+		}
+
+		public function openFile():void
+		{
+			fileRef.browse(arrTypes);			
+		}
+		
+		public function uploadImage(e:Event):void
+		{
+			var url:URLRequest = new URLRequest("weborb.php");
+			url.method = "POST";
+			progressBar.source = fileRef;
+			status = "Uploading";
+			fileRef.upload(url);
+		}
+
+	]]>
+</mx:Script>
+	<mx:Image id="img" height="340" left="10" right="10" top="10" horizontalAlign="center"/>
+	<mx:Button x="474" label="Upload" bottom="10" click="openFile()"/>
+	<mx:ProgressBar id="progressBar" label="{status} %1 of %2 bytes, %3%%" x="10" width="456" direction="right" themeColor="#A79FFD" labelPlacement="center" height="22" bottom="10" indeterminate="false"/>
+</mx:Application>

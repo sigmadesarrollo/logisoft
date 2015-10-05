@@ -1,0 +1,431 @@
+.style1 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.style2 {
+	color: #464442;
+	font-size:9px;
+	border: 0px none;
+	background:none
+}
+.style3 {
+	font-size: 9px;
+	color: #464442;
+}
+.style4 {color: #025680;font-size:9px }
+.style5 {color: #FFFFFF ; font-size:9px}
+.Balance {background-color: #FFFFFF; border: 0px none}
+.Balance2 {background-color: #DEECFA; border: 0px none;}
+.estilo_relleno{
+	background-color:#006192;
+	color:#FFFFFF;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_relleno2{
+      background-color: #006192; 
+	  border: 0px none;
+	  color:#FFFFFF;
+  	  font-family: tahoma;
+ 	  font-size: 9px;
+	  font-style: normal;
+	  font-weight: bold;
+	  
+	 }
+
+.estilo_div {
+	background: white;  width:200px; height:100px; overflow: scroll;
+	border: 1px solid #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_div2 {
+	background: white;  width:100px; height:40px; overflow: scroll;
+	border: 1px solid #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsup{
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupeizq{
+	border-top-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #006699;
+	border-left-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borizq{
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #006699;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupdelg{
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_borsup_am{
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #006699;
+	background-color: #FFCC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupeizq_am{
+	border-top-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #006699;
+	border-left-color: #006699;
+	background-color: #FFCC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borizq_am{
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #006699;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	background-color: #FFCC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupdelg_am{
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	background-color: #FFCC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_borsup_ve{
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #006699;
+	background-color: #00CC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupeizq_ve{
+	border-top-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #006699;
+	border-left-color: #006699;
+	background-color: #00CC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borizq_ve{
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #006699;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	background-color: #00CC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupdelg_ve{
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	background-color: #00CC00;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_borsup_az{
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #006699;
+	background-color: #3399CC;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupeizq_az{
+	border-top-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #006699;
+	border-left-color: #006699;
+	background-color: #3399CC;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borizq_az{
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #006699;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	background-color: #3399CC;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_borsupdelg_az{
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #006699;
+	background-color: #3399CC;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_selb{
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #FF9900;
+	border-right-width: 2px;
+	border-right-style: solid;
+	border-right-color: #FF9900;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_sela{
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #FF9900;
+	border-left-color: #FF9900;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_selc{
+	border-left-width: 2px;
+	border-left-style: solid;
+	border-left-color: #FF9900;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #FF9900;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_seld{
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #FF9900;
+	border-bottom-color: #FF9900;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.estilo_celvac{
+	background-color:#CCCCCC;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_celvacsup{
+	background-color:#CCCCCC;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_celvacsupizq{
+	background-color:#CCCCCC;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #006699;
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.estilo_celvacizq{
+	background-color:#CCCCCC;
+	border-left-width: thin;
+	border-left-style: solid;
+	border-left-color: #006699;
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.Tablas{
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+}
+.Estilo1 {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: tahoma;
+}
+.FondoTabla {
+	background-color: #016193;
+	font-family: tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.Tablas {
+	font-family: tahoma;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+	
+}
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-top:0px;margin-left:0px;margin-right:0px;margin-bottom:0px;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.bodystyle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.small {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.medium {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.big {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.xbig {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+
+.expanded {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 2px;
+}
+
+.justified {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-align: justify;
+}
+
+.footer {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 9px;
+	color: #999999;
+}
+
+.box1 {
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+	border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+	font-style: italic;
+	word-spacing: 2pt;
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+}
+.boxlookLila {
+	BORDER-RIGHT: #7B71AD 1px groove; BORDER-TOP: #7B71AD 1px groove; CURSOR: hand;  FONT-SIZE: 8pt;FONT-WEIGHT: bold; BORDER-LEFT: #7B71AD 1px groove; COLOR: black; BORDER-BOTTOM: #7B71AD 1px groove; FONT-FAMILY: Arial; BACKGROUND-COLOR: #EFEBF7
+} 

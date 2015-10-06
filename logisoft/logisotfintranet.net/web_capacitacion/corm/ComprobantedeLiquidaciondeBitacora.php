@@ -17,6 +17,7 @@
 	$afavorencontra=$_POST[afavorencontra];
 	$cantidadpre2 =$_POST[cantidadpre2];
 	$gastos2 = $_POST[gastos2];
+	$favorcontra = $_POST[favorcontra];
 	
 	if($_POST['accion'] == ""){
 		$fecha = date('d/m/Y'); 
@@ -40,8 +41,8 @@
 			//INSERTAR TABLA DETALLE
 			for($i=0;$i<$registros;$i++){
 				$sqlins=mysql_query("insert into comprobantedeliquidaciondebitacoradetalle 
-				(comprobantedeliquida, idconcepto,concepto, cantidad, usuario, fecha,sucursal)
-				values('$folio', '".$_POST["tabladetalle_IDCONCEPTO"][$i]."',
+				(afavorencontra,comprobantedeliquida, idconcepto,concepto, cantidad, usuario, fecha,sucursal)
+				values('".$_POST["tabladetalle_afavorencontra"][$i]."','$folio', '".$_POST["tabladetalle_IDCONCEPTO"][$i]."',
 				'".$_POST["tabladetalle_CONCEPTO"][$i]."',
 				".substr(str_replace(',','',$_POST["tabladetalle_CANTIDAD"][$i]),2).",
 				'$usuario', CURRENT_TIMESTAMP,".$_SESSION[IDSUCURSAL].")",$link)
@@ -70,8 +71,8 @@
 		//INSERTAR TABLA DETALLE
 		for($i=0;$i<$registros;$i++){
 			$sqlins=mysql_query("insert into comprobantedeliquidaciondebitacoradetalle 
-					(comprobantedeliquida, idconcepto,concepto, cantidad, usuario, fecha,sucursal)
-					values('$folio', '".$_POST["tabladetalle_IDCONCEPTO"][$i]."',
+					(afavorencontra,comprobantedeliquida, idconcepto,concepto, cantidad, usuario, fecha,sucursal)
+					values('".$_POST["tabladetalle_afavorencontra"][$i]."','$folio', '".$_POST["tabladetalle_IDCONCEPTO"][$i]."',
 					'".$_POST["tabladetalle_CONCEPTO"][$i]."',
 					".substr(str_replace(',','',$_POST["tabladetalle_CANTIDAD"][$i]),2).",
 					'$usuario', CURRENT_TIMESTAMP,".$_SESSION[IDSUCURSAL].")",$link) or die("error en linea ".__LINE__);
@@ -160,7 +161,8 @@ tabla1.setAttributes({
 	campos:[
 		{nombre:"IDCONCEPTO", medida:4,tipo:"oculto", alineacion:"center", datos:"idconcepto"},
 		{nombre:"CONCEPTO", medida:350, alineacion:"left", datos:"concepto"},
-		{nombre:"CANTIDAD", medida:150,tipo:"moneda", alineacion:"right", datos:"cantidad"}
+		{nombre:"CANTIDAD", medida:150,tipo:"moneda", alineacion:"right", datos:"cantidad"},
+		{nombre:"afavorencontra", medida:4,tipo:"oculto", alineacion:"center", datos:"afavorencontra"} 
 	],
 	filasInicial:8,
 	alto:100,
@@ -245,14 +247,14 @@ tabla1.setAttributes({
 
 	function Validar(){
 		<?=$cpermiso->verificarPermiso("312",$_SESSION[IDUSUARIO]);?>
-		u.registros.value = tabla1.getRecordCount();
-		if(u.foliobitacora.value==""){
+		u.registros.value = tabla1.getRecordCount();		
+		/*if(u.foliobitacora.value==""){
 			alerta('Debe Capturar Folio Bitácora','¡Atención!','foliobitacora');
 			return false;
-		}
+		}*/
 		
-		if(u.afavorencontra.value=="0"){//ENCONTRA
-			if(parseFloat(u.totalentregar.value)==0){
+		if(u.afavorencontra.value==""){//ENCONTRA
+			if(u.totalentregar.value==""){
 				if(u.accion.value==""){
 					u.accion.value = "grabar";
 					document.form1.submit();
@@ -457,6 +459,7 @@ function agregarVar(){
 	registro.cantidad 	= document.getElementById('cantidad').value;
 	registro.idconcepto	= document.getElementById('concepto').value;	
 	registro.concepto	= document.getElementById('concepto').options[document.getElementById('concepto').options.selectedIndex].text;
+	registro.afavorencontra	= ((u.r[0].checked == true)?1:0);
 	tabla1.add(registro);
 	
 	u.cantidad.value ="";
@@ -752,7 +755,7 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
             <td><input name="accion" type="hidden" id="accion" value="<?=$accion?>">
               <input name="modificarfila" type="hidden" id="modificarfila">
               <input name="registros" type="hidden" id="registros">
-              <input name="eliminar" type="hidden" id="eliminar">
+<input name="eliminar" type="hidden" id="eliminar">
               <input name="afavorencontra" type="hidden" id="afavorencontra" value="<?=$afavorencontra ?>">
               <input name="estado" type="hidden" id="estado" value="<?=$estado ?>">
               <input name="cantidadpre" type="hidden" id="cantidadpre" value="<?=$cantidadpre ?>"  >

@@ -505,6 +505,13 @@ FROM catalogoempleado WHERE id='".$_GET['id']."'";
 	}else if($_GET['accion']==16){
 		
 		$s = "SELECT  clb.folio,DATE_FORMAT(clb.fecha,'%d/%m/%Y') AS fecha,
+				0 as foliobitacora,clb.idconductor , 0 as gastos, '0000' as unidad, 
+				CONCAT(e.nombre,' ',e.apellidopaterno,' ',e.apellidomaterno) AS nombre,
+				IF(clb.status='COMPROBANTE LIQUIDACION','LIQUIDADO','NO LIQUIDADO') AS estado
+				FROM comprobantedeliquidaciondebitacora clb
+				INNER JOIN catalogoempleado e ON clb.idconductor = e.id
+				WHERE clb.idconductor='".$_GET['folio']."'";
+				/*		$s = "SELECT  clb.folio,DATE_FORMAT(clb.fecha,'%d/%m/%Y') AS fecha,
 				b.folio as foliobitacora,b.conductor1,b.gastos,  b.unidad, 
 				CONCAT(e.nombre,' ',e.apellidopaterno,' ',e.apellidomaterno) AS nombre,
 				IF(clb.status='COMPROBANTE LIQUIDACION','LIQUIDADO','NO LIQUIDADO') AS estado
@@ -512,7 +519,7 @@ FROM catalogoempleado WHERE id='".$_GET['id']."'";
 				INNER JOIN bitacorasalida b ON b.folio=clb.foliobitacora
 				INNER JOIN catalogoempleado e ON b.conductor1 = e.id 
 				INNER JOIN catalogounidad u ON b.unidad = u.numeroeconomico
-				WHERE clb.folio='".$_GET['folio']."' AND clb.sucursal = ".$_SESSION[IDSUCURSAL]."";
+				WHERE clb.folio='".$_GET['folio']."' AND clb.sucursal = ".$_SESSION[IDSUCURSAL]."";*/
 		$r = mysql_query($s,$link) or die("error en linea ".__LINE__);
 		if(mysql_num_rows($r)>0){
 			$f = mysql_fetch_object($r);
@@ -526,7 +533,7 @@ FROM catalogoempleado WHERE id='".$_GET['id']."'";
 			$xml.="<gastos>".cambio_texto($f->gastos)."</gastos>";
 			$xml.="<conductor>".cambio_texto($f->nombre)."</conductor>";
 			$xml.="<estado>".cambio_texto($f->estado)."</estado>";
-			$sqlpre="SELECT folio,IFNULL(cantidad,0)AS cantidad,afavorencontra FROM preliquidaciondebitacora WHERE foliobitacora='".$f->foliobitacora."'";
+			$sqlpre="SELECT comprobantedeliquida,IFNULL(cantidad,0)AS cantidad,afavorencontra FROM comprobantedeliquidaciondebitacoradetalle";
 			$sql_pre=@mysql_query($sqlpre,$link)or die("error en linea ".__LINE__);
 			$row=@mysql_fetch_array($sql_pre);
 			$xml.="<foliopre>".cambio_texto($row[folio])."</foliopre>";
@@ -535,25 +542,39 @@ FROM catalogoempleado WHERE id='".$_GET['id']."'";
 			$xml.="<encontro>".$cant."</encontro>";
 			$xml.="</datosX>";
 			
-			$sqldetalle="select idconcepto,concepto,ifnull(cantidad,0)AS cantidad 
+			$sqldetalle="(select DATE_FORMAT(cd.fecha,'%d/%m/%Y') AS fecha,idconcepto,cd.concepto, 
+							if(afavorencontra=1,cantidad,0) as 'favor',
+							if(afavorencontra=0,cantidad,0) as 'contra' ,afavorencontra,cancelado as cancelada
+							from    comprobantedeliquidaciondebitacoradetalle cd
+							inner join comprobantedeliquidaciondebitacora c on cd.comprobantedeliquida = c.Folio
+							where c.idconductor ='".$_GET['folio']."')
+							union
+							(select DATE_FORMAT(fecha,'%d/%m/%Y') AS fecha, 0 as idconcepto,'GASTOS BITACORA', 0 as favor,gastos as contra, 0 as afavorencontra,cancelada from 							                             bitacorasalida
+							 where conductor1='".$_GET['folio']."' or conductor2 ='".$_GET['folio']."' or conductor3='".$_GET['folio']."')";
+			/*$sqldetalle="select idconcepto,concepto,ifnull(cantidad,0)AS cantidad 
 			from comprobantedeliquidaciondebitacoradetalle 
-			where comprobantedeliquida ='".$_GET['folio']."' AND sucursal = ".$_SESSION[IDSUCURSAL]."";
+			where comprobantedeliquida ='".$_GET['folio']."' AND sucursal = ".$_SESSION[IDSUCURSAL]."";*/
 			$sql_detalle=mysql_query($sqldetalle,$link);
 			$xml.="<datos>";
 			while($r=mysql_fetch_array($sql_detalle)){
+			$xml.="<fecha>".cambio_texto($r['fecha'])."</fecha>";
 			$xml.="<idconcepto>".cambio_texto($r['idconcepto'])."</idconcepto>";
 			$xml.="<concepto>".cambio_texto($r['concepto'])."</concepto>";
-			$xml.="<cantidad>".cambio_texto($r['cantidad'])."</cantidad>";
+			$xml.="<favor>".cambio_texto($r['favor'])."</favor>";
+			$xml.="<contra>".cambio_texto($r['contra'])."</contra>";
+			$xml.="<afavorencontra>".cambio_texto($r['afavorencontra'])."</afavorencontra>";
+			$xml.="<cancelada>".cambio_texto($r['cancelada'])."</cancelada>";
 			}
 			$xml.="</datos>";
 			$xml.="</xml>";		
 		}else{
-			$xml = "<xml version=\"1.0\" standalone=\"yes\" encoding=\"iso-8859-1\"> 
+			$xml ="<xml version=\"1.0\" standalone=\"yes\" encoding=\"iso-8859-1\"> 
 			<datos>
 			<encontro>0</encontro>
 			</datos>
 			</xml>";
 		}echo $xml;
 	}
+	
 
 ?>

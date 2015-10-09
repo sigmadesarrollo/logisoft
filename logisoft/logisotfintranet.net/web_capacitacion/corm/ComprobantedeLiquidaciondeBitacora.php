@@ -5,7 +5,9 @@
 	require_once('../Conectar.php');	
 	$link=Conectarse('webpmm'); 
 	
-	$folio=$_POST['folio'];$fecha=$_POST['fecha'];
+	$folio=$_POST['folio'];
+	$fecha=$_POST['fecha'];
+	$conductor1=$_POST['conductor1'];
 	$foliobitacora=$_POST['foliobitacora'];
 	$unidad=$_POST['unidad'];
 	$gastos=$_POST['gastos'];
@@ -27,9 +29,9 @@
 		
 	}else if($_POST['accion'] == "grabar"){
 		$sqlIns =mysql_query("insert into comprobantedeliquidaciondebitacora 
-		(folio, foliobitacora, usuario, fecha, sucursal)
+		(idconductor,nombreconductor,folio, foliobitacora, usuario, fecha, sucursal)
 		values 
-		(obtenerFolio('comprobantedeliquidaciondebitacora',".$_SESSION[IDSUCURSAL]."), '$foliobitacora', 
+		('$conductor1','$conductor',obtenerFolio('comprobantedeliquidaciondebitacora',".$_SESSION[IDSUCURSAL]."), '$foliobitacora', 
 		'$usuario', CURRENT_DATE,".$_SESSION[IDSUCURSAL].")",$link) or die(mysql_error($link));		
 		$folio = mysql_insert_id();
 		
@@ -60,7 +62,7 @@
 		
 	}else if($_POST['accion'] == "modificar"){
 		$sqlUpd =mysql_query("UPDATE comprobantedeliquidaciondebitacora SET 
-		foliobitacora='$foliobitacora', usuario='$usuario', fecha=CURRENT_DATE 
+		foliobitacora='$foliobitacora',foliobitacora='$foliobitacora',foliobitacora='$foliobitacora', usuario='$usuario', fecha=CURRENT_DATE 
 		WHERE folio='$folio' and sucursal = ".$_SESSION[IDSUCURSAL]."",$link)
 		or die("Error en la linea ".__LINE__.mysql_error($link));
 		
@@ -159,13 +161,16 @@ var tabla1 = new ClaseTabla();
 tabla1.setAttributes({       
 	nombre:"tabladetalle",
 	campos:[
+	    {nombre:"fecha", medida:140, alineacion:"center", datos:"fecha"},
 		{nombre:"IDCONCEPTO", medida:4,tipo:"oculto", alineacion:"center", datos:"idconcepto"},
-		{nombre:"CONCEPTO", medida:350, alineacion:"left", datos:"concepto"},
-		{nombre:"CANTIDAD", medida:150,tipo:"moneda", alineacion:"right", datos:"cantidad"},
-		{nombre:"afavorencontra", medida:4,tipo:"oculto", alineacion:"center", datos:"afavorencontra"} 
+		{nombre:"CONCEPTO", medida:160, alineacion:"left", datos:"concepto"},
+		{nombre:"favor", medida:120,tipo:"moneda", alineacion:"right", datos:"favor"},
+		{nombre:"contra", medida:120,tipo:"moneda", alineacion:"right", datos:"contra"},
+		{nombre:"afavorencontra", medida:30, alineacion:"center", datos:"afavorencontra"},		
+		{nombre:"cancelada", medida:30, alineacion:"right", datos:"cancelada"}
 	],
-	filasInicial:8,
-	alto:100,
+	filasInicial:5,
+	alto:300,
 	seleccion:true,
 	ordenable:true,
 	eventoClickFila:"document.all.eliminar.value=tabla1.getSelectedIdRow()",
@@ -219,10 +224,27 @@ tabla1.setAttributes({
 	
 	function ModificarFila(){
 		var obj = tabla1.getSelectedRow();
-		if(tabla1.getValSelFromField("concepto","CONCEPTO")!=""){
-			document.all.concepto.value			=obj.idconcepto;
-			document.all.cantidad.value			=obj.cantidad;
-			document.all.modificarfila.value	=tabla1.getSelectedIdRow();
+		if(tabla1.getValSelFromField("concepto","CONCEPTO")!="" ){
+			if(tabla1.getValSelFromField("concepto","CONCEPTO")!="GASTOS BITACORA" ){
+			
+				document.all.concepto.value	=obj.idconcepto;
+				
+				if(obj.afavorencontra=="1"){
+					document.all.cantidad.value =obj.favor;
+				}else{
+					document.all.cantidad.value =obj.contra;
+				}
+				if(obj.afavorencontra=="1"){
+						u.r[0].checked=true;
+				}else{
+						u.r[1].checked=true;
+				}
+				
+				document.all.modificarfila.value	=tabla1.getSelectedIdRow();
+			}else{
+					alerta3("No se Pueden modificar los gasto de la Bitacora de salida","Atencion");
+					return false;
+			}
 		}
 	}
 	
@@ -450,16 +472,24 @@ function agregarVar(){
 		u.modificarfila.value="";
 	}
 	var concepto = tabla1.getValuesFromField("idconcepto",":");
-	if(concepto.indexOf(u.concepto.value)!=-1){
+/*	if(concepto.indexOf(u.concepto.value)!=-1){
 		alerta3('El concepto ya fue agregado');
 		return false;
-	}
-
+	}*/
+	var f = new Date();
 	var registro 	= new Object();
-	registro.cantidad 	= document.getElementById('cantidad').value;
 	registro.idconcepto	= document.getElementById('concepto').value;	
 	registro.concepto	= document.getElementById('concepto').options[document.getElementById('concepto').options.selectedIndex].text;
 	registro.afavorencontra	= ((u.r[0].checked == true)?1:0);
+	if(registro.afavorencontra==1){ 
+		registro.favor  = document.getElementById('cantidad').value;
+		registro.contra  = 0;
+	}else{
+		registro.contra  = document.getElementById('cantidad').value;
+		registro.favor  = 0;
+	}
+	registro.cancelada  = 0;
+	registro.fecha	= f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
 	tabla1.add(registro);
 	
 	u.cantidad.value ="";
@@ -471,12 +501,12 @@ shortcut.add("Ctrl+b",function() {
 abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Busqueda')}
 });
 	function OptenerFolioComprobante(folio){
-		consulta("mostrarFolioComprobante","consultaCORM.php?accion=16&folio="+folio+"&sid="+Math.random());
+		consulta("mostrarFolioComprobante","consultaCORM.php?accion=16&folio="+conductor1+"&sid="+Math.random());
 	}
 	
-		function mostrarFolioComprobante(datos){
-				var con = datos.getElementsByTagName('encontro').item(0).firstChild.data;
-				if(con>0){
+	function mostrarFolioComprobante(datos){
+				//var con = datos.getElementsByTagName('encontro').item(0).firstChild.data;
+//				if(con>0){
 					u.folio.value			=datos.getElementsByTagName('folio').item(0).firstChild.data;
 					u.fecha.value			=datos.getElementsByTagName('fecha').item(0).firstChild.data;
 					u.foliobitacora.value	=datos.getElementsByTagName('foliobitacora').item(0).firstChild.data;
@@ -498,21 +528,24 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
 					esNan('cantidadpre2');
 					esNan('cantidadpre');
 					
-					if (u.estado.value=='LIQUIDADO'){
-						u.accion.value = "liquidar";
+//					if (u.estado.value=='LIQUIDADO'){
+//						u.accion.value = "liquidar";
 						u.btnliquidar.style.visibility="hidden";
-						u.tb_guardar.style.visibility="hidden";
-					}else{
+//						u.tb_guardar.style.visibility="hidden";
+//					}else{
 						u.accion.value = "modificar";
-						u.btnliquidar.style.visibility="visible";
-						u.tb_guardar.style.visibility="hidden";
-					}
+//						u.btnliquidar.style.visibility="visible";
+//						u.tb_guardar.style.visibility="hidden";
+//					}
+					//var obj = eval(convertirValoresJson(datos));
+					//tabla1.setJsonData(obj);
+                    //tabla1.setJsonData(datos);
 					tabla1.setXML(datos);
 				
-				}else{
-					alerta3("No se encontro el folio","Busqueda de Folio");
-					Limpiar();
-				}
+//				}else{
+					//alerta3("No se encontro el folio","Busqueda de Folio");
+					//Limpiar();
+//				}
 		}
 	
 	
@@ -596,6 +629,7 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
 			switch(caja){
 				case "1":
 					u.conductor1.value = id;
+					consulta("mostrarFolioComprobante","consultaCORM.php?accion=16&folio="+id+"&sid="+Math.random());
 				break;
 			}
 				consulta("mostrarConductor","consultaCORM.php?accion=2&empleado="+id+"&caja="+caja);
@@ -676,11 +710,13 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
               <tr>
                 <td width="10%">Folio:</td>
                 <td width="33%"><input name="folio" type="text" 
- class="Tablas" id="folio" style="width:100px;" value="<?=$folio ?>" onKeyPress="if(event.keyCode==13){OptenerFolioComprobante(this.value)};" ></td>
-                <td width="7%"><div class="ebtn_buscar" onClick="abrirVentanaFija('../buscadores_generales/buscarComprobantedeliquidaciondeBitacoraGen.php?funcion=OptenerFolioComprobante&tipo=1', 600, 600, 'ventana', 'Busqueda')" ></div></td>
+ 					class="Tablas" id="folio" style="width:100px;" value="<?=$folio ?>" onKeyPress="if(event.keyCode==13){OptenerFolioComprobante(this.value)};" >
+ 				</td>
+                <td width="7%"><div class="ebtn_buscar"  style='display:none;' onClick=		"abrirVentanaFija('../buscadores_generales/buscarComprobantedeliquidaciondeBitacoraGen.php?funcion=OptenerFolioComprobante&tipo=1', 600, 											                600, 'ventana','Busqueda')" ></div></td>
                 <td width="12%">Fecha:</td>
                 <td width="38%"><input name="fecha" type="text" class="Tablas"
- id="fecha" style="width:100px; background:#FF9" value="<?=$fecha ?>" readonly></td>
+ 					id="fecha" style="width:100px; background:#FF9" value="<?=$fecha ?>" readonly>
+                </td>
               </tr>
             </table></td>
           </tr>
@@ -690,10 +726,11 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
                 <td style="width:60px">Conductor</td>
                 <td width="38"><div class="ebtn_buscar" onClick="abrirVentanaFija('buscarConductor.php?caja=1', 600, 500, 'ventana', 'Busqueda')"></div></td>
                 <td width="80"><span class="Tablas">
-                  <input name="conductor1" type="text" class="Tablas" id="conductor1" style="width:100px" onKeyDown="obtenerConductor(event,this.value,1); return tabular(event,this)" value="<?=$conductor1 ?>" onKeyPress="return Numeros(event); " onFocus="foco(this.name)" onBlur="document.getElementById('oculto').value=''; " />
+                  <input name="conductor1" type="text" class="Tablas" id="conductor1" style="width:100px" onKeyDown="obtenerConductor(event,this.value,1); return 	   tabular(event,this)" value="<?=$conductor1 ?>" onKeyPress="return Numeros(event); " onFocus="foco(this.name)" onBlur="document.getElementById('oculto').value=''; " />
                 			</span></td>
                 <td width="80" ><input name="conductor" type="text" class="Tablas"
- 					id="conductor" style="width:315px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$conductor ?>" readonly  ></td>
+ 					id="conductor" style="width:315px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$conductor ?>" readonly  >
+                </td>
               </tr>
             </table></td>
           </tr>
@@ -721,12 +758,6 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
             </table></td>
           </tr>
           <tr>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
-          <tr>
             <td width="13%"><label>
               <input name="r" type="radio" onKeyDown="return tabular(event,this)" value="1" <? if($_POST[r]!='0'){echo "checked"; }?> >
               A Favor</label>
@@ -735,27 +766,32 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
              
           </tr>
 		  <tr>
-            <td align="right"><div class="ebtn_agregar" onClick="agregarVar()"></div></td>
+            <td align="right"><div class="ebtn_agregar" onClick="agregarVar()"></div>
+            </td>
           </tr>
           <tr>
-            <td align="right"><table id="tabladetalle" border="0" cellspacing="0" cellpadding="0">
-            </table></td>
+            <td align="right">
+                <table id="tabladetalle" border="0" cellspacing="0" cellpadding="0">
+                </table>
+            </td>
           </tr>
           <tr>
-            <td align="right" ><div class="ebtn_eliminar" onClick="EliminarFila()"></div></td>
+            <td align="right" ><div class="ebtn_eliminar" onClick="EliminarFila()"></div>
+            </td>
           </tr>
           <tr>
             <td></td>
           </tr>
           <tr>
-             <td>Total a Favor<input name="gastos2" type="text" class="Tablas" id="gastos2" style="width:100px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$gastos2 ?>" readonly  ></td>
+             <td>Total a Favor<input name="gastos2" type="text" class="Tablas" id="gastos2" style="width:100px; background:#FF9" onKeyDown="return tabular(event,this)" 
+                  value="<?=$gastos2?>" readonly  >
+             </td>
           </tr>
           <tr>
-          
             <td><input name="accion" type="hidden" id="accion" value="<?=$accion?>">
               <input name="modificarfila" type="hidden" id="modificarfila">
               <input name="registros" type="hidden" id="registros">
-<input name="eliminar" type="hidden" id="eliminar">
+			  <input name="eliminar" type="hidden" id="eliminar">
               <input name="afavorencontra" type="hidden" id="afavorencontra" value="<?=$afavorencontra ?>">
               <input name="estado" type="hidden" id="estado" value="<?=$estado ?>">
               <input name="cantidadpre" type="hidden" id="cantidadpre" value="<?=$cantidadpre ?>"  >
@@ -763,15 +799,17 @@ abrirVentanaFija('prestamossucursal_buscar.php?tipo=1', 550, 450, 'ventana', 'Bu
               <input name="totalentregar" type="hidden" id="totalentregar" value="<?=$_POST[totalentregar] ?>">
               <span style="width:200px">
               <input name="foliopre" type="hidden" class="Tablas"
- id="foliopre" style="width:180px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$foliopre ?>" readonly >
+ 					id="foliopre" style="width:180px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$foliopre ?>" readonly >
               <input name="cantidadpre2" type="hidden" class="Tablas"
- id="cantidadpre2" style="width:150px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$cantidadpre2 ?>" readonly  >
+ 					id="cantidadpre2" style="width:150px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$cantidadpre2 ?>" readonly  >
               <input name="unidad" type="hidden" class="Tablas"
- id="unidad" style="width:100px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$unidad ?>" readonly >
+					 id="unidad" style="width:100px; background:#FF9" onKeyDown="return tabular(event,this)" value="<?=$unidad ?>" readonly >
               <input name="foliobitacora" type="hidden" class="Tablas"
- id="foliobitacora" style="width:100px" onKeyPress="" onKeyDown="if(event.keyCode=='13'){obtener(this.value);};return tabular(event,this)" value="<?=$foliobitacora ?>" >
+					 id="foliobitacora" style="width:100px" onKeyPress="" onKeyDown="if(event.keyCode=='13'){obtener(this.value);};return tabular(event,this)" 
+                     value="<?=$foliobitacora ?>" >
               </span>
-              <div class="ebtn_buscar" style='display:none;' onClick="abrirVentanaFija('buscarBitacora_ComprobantedeliquidaciondeBitacora.php', 550, 450, 'ventana', 'Busqueda')"></div>
+              <div class="ebtn_buscar" style='display:none;' onClick="abrirVentanaFija('buscarBitacora_ComprobantedeliquidaciondeBitacora.php', 550, 450, 'ventana', 'Busqueda')">
+              </div>
               
               <table width="24%" height="13" border="0" align="right" cellpadding="0" cellspacing="0">
                 <tr>

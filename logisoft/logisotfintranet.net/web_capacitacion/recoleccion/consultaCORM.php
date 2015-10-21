@@ -7,7 +7,7 @@
 	$link = Conectarse('webpmm');
 	
 	if($_GET['accion']==1){//OBTENER BITACORA SALIDA
-	$s = "SELECT b.fechabitacora, b.conductor1, b.conductor2, b.conductor3,
+/*	$s = "SELECT b.fechabitacora, b.conductor1, b.conductor2, b.conductor3,
 	b.gastos, b.licencia_conductor1, b.licencia_conductor2, 
 	b.licencia_conductor3, b.poliza_remolque1, b.poliza_remolque2,
 	b.poliza_unidad, b.remolque1, b.remolque2, b.ruta, b.tarjeta_remolque1,
@@ -30,7 +30,35 @@
 	LEFT JOIN catalogounidad u2 ON b.remolque2 = u2.numeroeconomico
 	INNER JOIN catalogorutadetalle cd on r.id=cd.ruta 
 	WHERE cd.tipo in(1,3) and b.folio='".$_GET['folio']."'
-	GROUP BY b.folio,cd.ruta";	
+	GROUP BY b.folio,cd.ruta";*/
+	$s = "SELECT b.fechabitacora, b.conductor1, b.conductor2, b.conductor3,
+	b.gastos, b.licencia_conductor1, b.licencia_conductor2, 
+	b.licencia_conductor3, b.poliza_remolque1, b.poliza_remolque2,
+	b.poliza_unidad, b.remolque1, b.remolque2, b.ruta, b.tarjeta_remolque1,
+	b.pcd_unidad,pcd_remolque1,pcd_remolque2,
+	b.tarjeta_remolque2, b.tarjeta_unidad, b.unidad, b.vrf_unidad,
+	b.gastos_estatus,b.id_cliente,b.Nombre_Cliente,b.fecha_Bodega,b.Hora_Bodega,
+	r.descripcion AS rdescripcion,
+	CONCAT(e.nombre,' ',e.apellidopaterno,' ',e.apellidomaterno) AS nombre1,
+	CONCAT(e1.nombre,' ',e1.apellidopaterno,' ',e1.apellidomaterno) AS nombre2,
+	CONCAT(e2.nombre,' ',e2.apellidopaterno,' ',e2.apellidomaterno) AS nombre3,b.ruta, 
+    cd.iddestino as origen,cd2.iddestino as destino,
+    (select d.descripcion from catalogodestino d where d.id= cd.iddestino) as nomorigen,  
+    (select d.descripcion from catalogodestino d where d.id= cd2.iddestino) as nomDestino,
+    (select cs.descripcion from catalogosucursal cs where cs.id = cd.sucursal) as almorigen,  
+    (select cs.descripcion from catalogosucursal cs where cs.id =cd2.sucursal) as almdest 
+	FROM bitacorasalida b
+	INNER JOIN catalogoempleado e ON b.conductor1 = e.id 
+	LEFT JOIN catalogoempleado e1 ON b.conductor2 = e1.id 
+	LEFT JOIN catalogoempleado e2 ON b.conductor3 = e2.id 
+	INNER JOIN catalogoruta r ON b.ruta = r.id 
+	INNER JOIN catalogounidad u ON b.unidad = u.numeroeconomico
+	LEFT JOIN catalogounidad u1 ON b.remolque1 = u1.numeroeconomico 
+	LEFT JOIN catalogounidad u2 ON b.remolque2 = u2.numeroeconomico
+	INNER JOIN catalogorutadetalle cd on r.id=cd.ruta and cd.Tipo = 1
+    INNER JOIN catalogorutadetalle cd2 on r.id=cd.ruta and cd2.tipo= 3
+    WHERE cd.iddestino >0 and cd2.iddestino > 0 and b.folio = '".$_GET['folio']."'
+    group by b.ruta";
 	$r = mysql_query($s,$link) or die("error en linea ".__LINE__);
 		if(mysql_num_rows($r)>0){
 			$f = mysql_fetch_object($r);
@@ -73,6 +101,8 @@
 		$xml.="<destino>".cambio_texto($f->destino)."</destino>";
 		$xml.="<nomorigen>".cambio_texto($f->nomorigen)."</nomorigen>";
 		$xml.="<nomDestino>".cambio_texto($f->nomDestino)."</nomDestino>";
+		$xml.="<almorigen>".cambio_texto($f->almorigen)."</almorigen>";
+		$xml.="<almdest>".cambio_texto($f->almdest)."</almdest>";
 		$xml.="<encontro>".$cant."</encontro>";
 		$xml.="</datos>
 				</xml>";		

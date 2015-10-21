@@ -390,7 +390,21 @@
 					$registros[] = $f;
 				}		
 			$recolecciones = str_replace('null','""',json_encode($registros));
-			
+			// CartaPorte 
+			$cartaporte = "";
+			$s = "Select ValorUnitario, ValorDeclarado, TipoViaje, CondicionesPago, CuotaTonelada From cartaporte where IDRecoleccion ='".$_GET['folio']."'";
+			$registros = array();
+			$r = mysql_query($s,$l) or die($s);		
+				while($f = mysql_fetch_object($r)){					
+					$f->ValorUnitario = cambio_texto($f->ValorUnitario);
+					$f->ValorDeclarado = cambio_texto($f->ValorDeclarado);
+					$f->TipoViaje = cambio_texto($f->TipoViaje);
+					$f->CondicionesPago = cambio_texto($f->CondicionesPago);
+					$f->CuotaTonelada = cambio_texto($f->CuotaTonelada);
+					$registros[] = $f;
+				}		
+			$cartaporte = str_replace('null','""',json_encode($registros));
+			//
 			$empresariales = "";
 			$sq = "SELECT foliosempresariales as folio FROM recolecciondetallefolioempresariales 
 			WHERE recoleccion='".$_GET['folio']."' AND sucursal=".$_GET['idsucursal']."";
@@ -402,7 +416,7 @@
 			$empresariales = str_replace('null','""',json_encode($registro));
 			
 			
-			echo "({principal:$pincipal, detalle:$detalle,".(($recolecciones!="")?"recoleccion:$recolecciones,":"")."
+			echo "({cartaporte:$cartaporte,principal:$pincipal, detalle:$detalle,".(($recolecciones!="")?"recoleccion:$recolecciones,":"")."
 			".(($empresariales!="")?"empresarial:$empresariales":"")."})";
 			
 		}else{

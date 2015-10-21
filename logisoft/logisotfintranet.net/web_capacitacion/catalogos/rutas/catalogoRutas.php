@@ -29,7 +29,8 @@
 			{nombre:"SUCTRANSBORDO", medida:4, tipo:"oculto", alineacion:"center",  datos:"suctransbordo"},
 			{nombre:"TIPO", medida:4, tipo:"oculto",  alineacion:"center",  datos:"tipo"},
 			{nombre:"FECHA", medida:4, tipo:"oculto", alineacion:"center",  datos:"fecha"},
-			{nombre:"IDSUCURSAL", medida:4, tipo:"oculto",  alineacion:"center",  datos:"idsucursal"}
+			{nombre:"IDSUCURSAL", medida:4, tipo:"oculto",  alineacion:"center",  datos:"idsucursal"},
+			{nombre:"IDDESTINO", medida:4,tipo:"oculto", alineacion:"center",  datos:"iddestino"}
 		],
 		filasInicial:15,
 		alto:150,
@@ -49,6 +50,29 @@
 	function obtenerGeneral(){
 		consultaTexto("mostrarGeneral","catalogoRutas_con.php?accion=1&s="+Math.random());
 	}
+function obtener(codigo){
+	if(codigo!=""){
+	document.getElementById('origen').value=codigo;
+	var tipo = "destino";
+		consulta("mostrarObtenerDestino","../sucursal/consultaDestino.php?destino="+codigo+"&tipo="+tipo+"&sid="+Math.random());
+	}
+}
+
+//*************MUESTRA DESTINOS*********************//
+function mostrarObtenerDestino(datos){
+		limpiartodo();
+		var u= document.all;
+		u.origen.value = datos.getElementsByTagName('codigo').item(0).firstChild.data;
+		u.sucursal.value = datos.getElementsByTagName('sucursal').item(0).firstChild.data;
+		u.origenb.value = datos.getElementsByTagName('descripcion').item(0).firstChild.data;
+		obtenerSucursalEnter(u.sucursal.value) 
+		//u.idpoblacion.value = datos.getElementsByTagName('idpoblacion').item(0).firstChild.data;
+}
+function limpiartodo(){
+	u.origen.value ="";
+	u.origenb.value="";
+//	u.despoblacion.value="";
+}
 	function mostrarGeneral(datos){
 		u.codigo.value = datos;
 	}
@@ -286,7 +310,7 @@
 	}
 	var v_suc = "";
 	v_suc = tabla1.getValuesFromField("sucursal",",");
-		if(u.modifico.value==""){
+		/*if(u.modifico.value==""){
 			if(v_suc!=""){
 				if(v_suc.indexOf(u.sucursalb.value)>-1){
 					alerta("La sucursal "+u.sucursalb.value+" ya fue agregada","¡Atención!","sucursal");
@@ -307,7 +331,7 @@
 					return false;
 				}
 			}
-		}
+		}*/
 		if(u.rtipo[1].checked == true || u.rtipo[2].checked == true){
 			if(tabla1.getRecordCount()==0){
 				alerta3("Debe capturar primero un Origen","¡Atención!");
@@ -326,6 +350,7 @@
 		obj.siguiente	= ((u.rtipo[2].checked==false)? u.ttsshrs.value+":"+u.ttssmin.value : "");
 		obj.trasbordo	= ((u.transbordo.checked==true)? "SI" : "");
 		obj.suctransbordo = u.hidensucursal2.value;
+		obj.iddestino = document.getElementById('origen').value;
 		if(u.rtipo[0].checked==true){
 			obj.tipo		=  "1";	
 		}else if(u.rtipo[1].checked==true){
@@ -350,12 +375,12 @@
 		if(u.modifico.value==""){
 		obj.fecha	= fechahora(obj.fecha);
 		tabla1.add(obj);
-	consultaTexto("registroRuta","catalogoRutas_con.php?accion=4&tipo="+obj.tipo+"&semana="+semana+"&sucursal="+obj.idsucursal+"&sucursalb="+obj.sucursal+"&llegada="+((obj.llegada!="")?obj.llegada:"00:00:00")+"&descarga="+((obj.descarga!="")?obj.descarga:"00:00:00")+"&carga="+((obj.carga!="")?obj.carga:"00:00:00")+"&salida="+((obj.salida!="")?obj.salida:"00:00:00")+"&ttss="+((obj.siguiente!="")?obj.siguiente:"00:00:00")+"&transbordo="+((obj.trasbordo=="SI")?1:0)+"&hidensucursal2="+obj.suctransbordo+"&fecha="+obj.fecha+"&sid="+Math.random());
+	consultaTexto("registroRuta","catalogoRutas_con.php?accion=4&tipo="+obj.tipo+"&semana="+semana+"&origen="+obj.iddestino+"&sucursal="+obj.idsucursal+"&sucursalb="+obj.sucursal+"&llegada="+((obj.llegada!="")?obj.llegada:"00:00:00")+"&descarga="+((obj.descarga!="")?obj.descarga:"00:00:00")+"&carga="+((obj.carga!="")?obj.carga:"00:00:00")+"&salida="+((obj.salida!="")?obj.salida:"00:00:00")+"&ttss="+((obj.siguiente!="")?obj.siguiente:"00:00:00")+"&transbordo="+((obj.trasbordo=="SI")?1:0)+"&hidensucursal2="+obj.suctransbordo+"&fecha="+obj.fecha+"&sid="+Math.random());
 			
 		}else{
 			u.modifico.value	="";
 			var f = tabla1.getSelectedRow();			
-	consultaTexto("registroRuta","catalogoRutas_con.php?accion=6&tipo="+obj.tipo+"&semana="+semana+"&sucursal="+obj.idsucursal+"&sucursalb="+obj.sucursal+"&llegada="+((obj.llegada!="")?obj.llegada:"00:00:00")+"&descarga="+((obj.descarga!="")?obj.descarga:"00:00:00")+"&carga="+((obj.carga!="")?obj.carga:"00:00:00")+"&salida="+((obj.salida!="")?obj.salida:"00:00:00")+"&ttss="+((obj.siguiente!="")?obj.siguiente:"00:00:00")+"&transbordo="+((obj.trasbordo=="SI")?1:0)+"&hidensucursal2="+obj.suctransbordo+"&fecha="+f.fecha+"&sid="+Math.random()+"&ruta="+((u.accion.value=="modificar")? u.codigo.value : ""));
+	consultaTexto("registroRuta","catalogoRutas_con.php?accion=6&tipo="+obj.tipo+"&semana="+semana+"&origen="+obj.iddestino+"&sucursal="+obj.idsucursal+"&sucursalb="+obj.sucursal+"&llegada="+((obj.llegada!="")?obj.llegada:"00:00:00")+"&descarga="+((obj.descarga!="")?obj.descarga:"00:00:00")+"&carga="+((obj.carga!="")?obj.carga:"00:00:00")+"&salida="+((obj.salida!="")?obj.salida:"00:00:00")+"&ttss="+((obj.siguiente!="")?obj.siguiente:"00:00:00")+"&transbordo="+((obj.trasbordo=="SI")?1:0)+"&hidensucursal2="+obj.suctransbordo+"&fecha="+f.fecha+"&sid="+Math.random()+"&ruta="+((u.accion.value=="modificar")? u.codigo.value : ""));
 			obj.fecha = f.fecha;
 			tabla1.updateRowById(tabla1.getSelectedIdRow(), obj);
 			u.rtipo[0].checked = true; u.rtipo[0].disabled = false;
@@ -628,6 +653,7 @@
 						}
 					}
 				}
+				obtener(obj.iddestino)
 				u.sucursalb.value	= obj.sucursal;
 				u.sucursal.value	= obj.idsucursal;
 				u.rtipo[0].checked	= true;
@@ -655,7 +681,8 @@
 				u.rtipo[2].disabled = true;
 				for(var i=1;i<=7;i++){
 					document.getElementById('checkbox'+i).disabled = true;
-				}		
+				}
+				obtener(obj.iddestino)	
 				u.sucursalb.value	= obj.sucursal;
 				u.sucursal.value	= obj.idsucursal;
 				u.rtipo[1].checked	= true;
@@ -680,6 +707,7 @@
 				}
 			}else if(obj.tipo == 3){
 				u.modifico.value	= "1";
+				obtener(obj.iddestino)
 				u.hllegada.disabled = false;	u.mllegada.disabled = false;
 				u.hsalida.disabled  = true;		u.msalida.disabled	= true;
 				u.cargahrs.disabled = true;		u.cargamin.disabled = true;
@@ -723,7 +751,7 @@
 				u.sucursalesead12.disabled=false;
 				u.sucursalesead1_sel2.disabled = false;			
 			var cansuc = suctransbordo.split(",");
-			
+			obtener(obj.iddestino)
 			u.sucursalesead1_sel2.options.length = 0;
 			var opcion;
 				for(var i=0; i<cansuc.length; i++){
@@ -1051,8 +1079,18 @@ D </label>
           <td>
             <input name="tipounidad" class="Tablas" type="text" id="tipounidad" style="width:80px" value="<?=$tipounidad ?>" onkeypress="if(event.keyCode==13){ obtenerTipoUnidadEnter(this.value);}" />          </td>
           <td colspan="3"><span class="Tablas">
-            <img src="../../img/Buscar_24.gif" width="24" height="23" align="absbottom" style="cursor:pointer" onclick="abrirVentanaFija('catalogosrutas_Buscar.php?tipo=1', 600, 500, 'ventana', 'Busqueda')" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="../../img/Buscar_24.gif" width="24" height="23" align="absbottom" style="cursor:pointer"  title="Buscar Tipo Unidad" onclick="abrirVentanaFija('catalogosrutas_Buscar.php?tipo=1', 600, 500, 'ventana', 'Busqueda')" />&nbsp;&nbsp;&nbsp;&nbsp;
             <input name="tipounidad_des" class="Tablas" type="text" id="tipounidad_des" style="background-color:#FFFF99; text-transform:uppercase;width:250px" value="<?=$tipounidad_des ?>" readonly="" />
+          </span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Origen/Destino:</td>
+          <td>
+            <input name="origen" class="Tablas" type="text" id="origen" style="width:80px" value="<?=$_POST[origen] ?>" onkeypress="if(event.keyCode==13){ obtenerSucursalEnter(this.value);}"/>
+          </td>
+          <td colspan="3"><span class="Tablas"><img src="../../img/Buscar_24.gif" alt="Buscar" width="24" height="23" align="absbottom" style="cursor:pointer" title="Buscar Destino" onClick="abrirVentanaFija('../sucursal/buscarcatdestino.php', 600, 500, 'ventana', 'Busqueda')"/></span><span class="Tablas">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input name="origenb" class="Tablas" type="text" id="origenb" style="background:#FFFF99;width:250px" value="<?=$origenb ?>" readonly="" />
           </span></td>
           <td>&nbsp;</td>
         </tr>

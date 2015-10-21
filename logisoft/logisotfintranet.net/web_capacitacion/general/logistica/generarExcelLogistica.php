@@ -84,13 +84,18 @@
  <Worksheet ss:Name="Hoja1">';
  	$str = $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; 
 
-	if(!ereg("dbserver",$str)){
+/*	if(!ereg("dbserver",$str)){
 		$l = mysql_connect("localhost","pmm","guhAf2eh");
 	}else{
 		$l = mysql_connect("DBSERVER","root","root");
+	}*/
+	if(!ereg("dbserver",$str)){
+		$l = mysql_connect('mysql.hostinger.mx',"u356875594_pmm","gqx64p9n");
+	}else{
+		$l = mysql_connect('mysql.hostinger.mx',"u356875594_pmm","gqx64p9n");
 	}
 	
-	if(ereg("web_pruebas/",$str)){
+/*	if(ereg("web_pruebas/",$str)){
 		mysql_select_db("pmm_dbpruebas", $l);
 	
 	}else if(ereg("web_capacitacion/",$str)){
@@ -101,7 +106,21 @@
 		
 	}else if(ereg("dbserver",$str)){
 		mysql_select_db("webpmm", $l);
+	}*/
+	if(ereg("web_pruebas/",$str)){
+		mysql_select_db("u356875594_pmm", $l);
+	
+	}else if(ereg("web_capacitacion/",$str)){
+		mysql_select_db("u356875594_pmm", $l);
+	
+	}else if(ereg("web/",$str)){
+		mysql_select_db("u356875594_pmm", $l);
+		
+	}else if(ereg("dbserver",$str)){
+		mysql_select_db("u356875594_pmm", $l);
 	}
+		
+
 		
 	$cabezera = '<Row>
     <Cell ss:StyleID="s21"><Data ss:Type="String">TITULO:</Data></Cell>

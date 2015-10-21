@@ -58,7 +58,7 @@ body {
 </style></head>
 <object id=factory viewastext style="display:none"
 classid="clsid:1663ed61-23eb-11d2-b92f-008048fdd814"
-  codebase="https://www.pmmintranet.net/software/smsx.cab#Version=6,5,439,30">
+   codebase="../javascript/smsx.cab#Version=6,5,439,30">
 </object>
 <script> 
 	window.onload = function (){

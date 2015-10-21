@@ -10,6 +10,26 @@
 	$t = mysql_query($s,$l) or die($s);
 	$emp = mysql_fetch_object($t);
 	
+	$s = "SELECT  bs.Folio AS viaje,
+		if(bs.conductor1 > 0,CONCAT_WS(' ',e1.nombre, e1.apellidopaterno, e1.apellidomaterno) ,
+        if(bs.conductor2 > 0,CONCAT_WS(' ',e2.nombre, e2.apellidopaterno, e2.apellidomaterno) ,
+        if(bs.conductor3 > 0,CONCAT_WS(' ',e3.nombre, e3.apellidopaterno, e3.apellidomaterno) ,'no hay conductor'))) as chofer,
+        ct.descripcion as tipotransporte,
+        cp.OrigenNombre as origen , cp.DestinoNombre ,'TINSA' as remitente,Nombre_Cliente as destinatario,DATE_FORMAT(bs.fecha, '%d/%m/%Y') AS fecha, 
+		eto.observacion
+		FROM 	cartaporte cp
+		inner join entregasocurre eto on cp.IDEntregaOcurre = eto.nguia
+		inner join recoleccion r on cp.IDRecoleccion = r.Folio
+		inner join bitacorasalida bs on r.foliobitacora = bs.folio and r.folio = bs.Foliorecoleccion
+        left join catalogoempleado e1 on e1.id = bs.conductor1
+        left join catalogoempleado e2 on e2.id = bs.conductor2
+        left join catalogoempleado e3 on e3.id = bs.conductor3
+        inner join catalogounidad cu on cu.numeroeconomico = bs.unidad
+        inner join catalogotipounidad ct on ct.id = cu.tipounidad 
+		WHERE eto.folio = ".$_GET[folio]."";
+	$t = mysql_query($s,$l) or die($s);
+	$emp2 = mysql_fetch_object($t);
+	
 	$s = "SELECT SUM(paquetes) dat FROM (
 		SELECT SUM(gv.totalpaquetes) paquetes
 		FROM guiasventanilla gv
@@ -53,178 +73,206 @@ body {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+#bcTarget {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-weight: normal;
+}
+body,td,th {
+	font-size: 10px;
 }
 -->
-</style></head>
+</style>
+</head>
 <object id=factory viewastext style="display:none"
 classid="clsid:1663ed61-23eb-11d2-b92f-008048fdd814"
-  codebase="https://www.pmmintranet.net/software/smsx.cab#Version=6,5,439,30">
+  codebase="../activexs/smsx.cab#Version=6,5,439,30">
 </object>
 <script type="text/javascript" src="../javascript/jquery.js"></script>    
 <script type="text/javascript" src="http://barcode-coder.com/js/jquery-barcode-last.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#bcTarget").barcode("8988779699797", "ean13"); 
-});
-</script>
 <script> 
- 
+ 	function codigobarras(){
+		$("#bcTarget").barcode("8988779699797", "code128"); 
+		$("#bcTarget2").barcode("8988779699797", "code128"); 
+	}
 	window.onload = function (){
+		codigobarras();
 		enviarImpresion();
 		window.setTimeout("enviarImpresion()", 500);
 		window.setTimeout("cerrar()", 500);
-		//$("#bcTarget").barcode("1234567890128", "ean13"); 
+		
 	}
 	function enviarImpresion(){
 		factory.printing.header = "";
 		factory.printing.footer = "";
 		factory.printing.portrait = true;
-		factory.printing.leftMargin = 0.5;
-		factory.printing.topMargin = 0;
+		factory.printing.leftMargin = 1;
+		factory.printing.topMargin = 15;
 		factory.printing.rightMargin = 1;
-		factory.printing.bottomMargin = 0;
+		factory.printing.bottomMargin = 1;
 	  	factory.printing.Print(false);
-		//window.close();
+		window.close();
+		
 	}
 	function cerrar(){
 		window.close();
 	}
 </script>
-<body>
-<table width="400" border="0" cellpadding="0" cellspacing="0">
+<body> 
+<table width="875" border="0" cellpadding="0" cellspacing="0">
 <tr>
- 	<td width="266" height="382" valign="top">
-	<table width="398" border="0" cellpadding="0" cellspacing="0">
+    <td width="88" height="382" valign="top">
+    </td>
+ 	<td width="812" height="382" valign="top">
+	<table width="806" border="0" cellpadding="0" cellspacing="0">
 	  <tr>
-        <td width="398" height="5" colspan="2" align="center" > <div  id="bcTarget"></div>
-         
-          </td>
+        <td width="806" height="5" colspan="2" align="LEFT" > 
+        	<div id="bcTarget"></div>         
+        </td>
       </tr>
       <tr>
-      	<td colspan="2"><hr /></td>
+      	<td colspan="2"><hr align="left" width="150" size="3" noshade="noshade" /></td>
       </tr>
- 	  <tr>
-	    <td colspan="2" align="rigth" height="5" ><h6>
-	      Impresión de Entrega de Evidencias de Viaje 
-	      </h6>
-        </td>
-	    </tr>
-	  <tr>
-	    <td colspan="2" align="rigth" height="5" ><h4>
-        Empresa :
-         </h4>
-        </td>
-	    </tr>
        <tr>
-       	<td align="right"><h6>&nbsp;</h6></td>
+       	<td align="right"><h6></h6></td>
        </tr>
+ 	  <tr>
+	    <td height="7" colspan="2" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size: 12px; font-weight: normal;" > 
+	      Impresión de Entrega de Evidencias de Viaje 
+        </td>
+	  </tr>
+	  <tr>
+	    <td height="5" style="font-size: medium; font-weight: bold;" > 
+        EMPRESA :<span style="font-size: medium; font-weight: bolder;"><?=$suc->prefijo; ?>|<?=date("d/m");?>
+        </span></span></td>
+	  </tr>
+ 	    <tr>
+	    <td height="10" style="font-size: medium" > 
+        </td>
+	    </tr>
        <tr>
        	<td>
-         <table width="219" border="0" cellpadding="0" cellspacing="0">
+         <table width="747">
          	<tr>
-            	<td width="56"><h6>SUCURSAL:</h6></td><td width="143" align="right"><h6><?=$suc->prefijo; ?></h6></td>
+            	<td width="772" height="10" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size: 12px; font-weight: normal;">VIAJE NO:<span style="font-weight: bold; font-size: 20px;"><?=$emp2->viaje?>
+            	</span></td>
             </tr>
          	<tr>
-            	<td width="56"><h6>FECHA:</h6></td><td width="143" align="right"><h6><?=date("d/m/Y");?></h6></td>
+            	<td width="772" height="10" style="font-weight: bold; font-size: 20px;">FOLIO EVIDENCIAS: CONTROL DE MABE NO.<?=$_GET[folio] ?>///<span style="font-size: medium; font-weight: bolder;">
+            	  <?=$suc->prefijo; ?>
+            	</span></td>
             </tr>
             <tr>
-            	<td><h6>FOLIO:</h6></td><td align="right"><h6><?=$_GET[folio] ?></h6></td>
+            	<td style="font-weight: normal; font-size: 12px;">IMPRESION EVI: <?=date("d/m/Y H:i:s");?></td>
+            </tr>
+            <tr>
+            	<td width="772">EVIDENCIA RECIBIO:<?=$emp->personaquerecibe?></td>         
+            </tr>
+       <tr>
+       	<td height="20"></td>
+       </tr>
+            <tr>
+            	<td style="font-weight: bold; font-size: 12px;">FECHA VIAJE: <?=$emp2->fecha?></td>
+            </tr>
+             <tr>
+            	<td width="772">CHOFER: <?=$emp2->chofer?></td>         
+            </tr>
+            <tr>
+            	<td width="772">POBLACION: <?=$emp2->DestinoNombre?>
+            	</td>         
+            </tr>
+             <tr>
+            	<td width="772">TIPO TRASNP: <?=$emp2->tipotransporte?></td>         
+            </tr>
+            <tr>
+            	<td width="772">OBSERVACIONES: <?=$emp2->observacion?></td>         
             </tr>
             <tr>
               <td colspan="2"><hr /></td>
             </tr>
+             	    <tr>
+	    <td height="30" style="font-size: medium" > 
+        </td>
          </table>
-         <h6>
-        DETALLE:
-          <table width="219" border="0" cellpadding="0" cellspacing="0">
-        <?
-			$s = "(SELECT gv.id AS folioguia, IF(gv.tipoflete=0,0,gv.total) AS cantidad, gv.totalpaquetes
-			FROM entregasocurre_detalle AS eo
-			INNER JOIN guiasventanilla AS gv ON eo.guia = gv.id
-			WHERE eo.entregaocurre = '$_GET[folio]' and eo.sucursal = ".$_SESSION[IDSUCURSAL].")
-			UNION
-			(SELECT gv.id AS folioguia, IF(gv.tipoflete=0,0,gv.total) AS cantidad, gv.totalpaquetes
-			FROM entregasocurre_detalle AS eo
-			INNER JOIN guiasempresariales AS gv ON eo.guia = gv.id
-			WHERE eo.entregaocurre = '$_GET[folio]' AND eo.sucursal = ".$_SESSION[IDSUCURSAL].")";
-			$r = mysql_query($s,$l) or die($s);
-			$total = 0;
-			while($f = mysql_fetch_object($r)){
-				$total += $f->cantidad;
-		?>
-   		<tr>
-   		  <td width="95"><h6><?=$f->folioguia?><br /><br /></h6></td>
-   		  <td width="95" align="right"><h6><?=$f->totalpaquetes?></h6></td>
-   		  <td width="75" align="right"><h6>$ <?=number_format($f->cantidad,2,'.',',')?><br /><br /></h6></td></tr>
-        <tr>
-   		  <td colspan="3">
-           <table width="216" border="0px" cellpadding="0px" cellspacing="0px">
-           	<?
-				$s = "SELECT cantidad, descripcion 
-				FROM guiaventanilla_detalle WHERE idguia = '$f->folioguia'
-				UNION
-				SELECT cantidad, descripcion 
-				FROM guiasempresariales_detalle WHERE id = '$f->folioguia'";
-				$rd = mysql_query($s,$l) or die($s);
-				while($fd = mysql_fetch_object($rd)){
-			?>
-                <tr>
-                    <td width="10px" height="20"><h6><?=$fd->cantidad?></h6></td>
-                    <td width="170"><h6><?=$fd->descripcion?></h6></td>
-                </tr>
-            <?
-				}
-			?>
-           </table>
-          </td>
-   		</tr>
-        <tr>
-		<? } ?>
-   		  <td align="left"><h6>TOTAL:<br /><br /></h6></td>
-   		  <td align="right"><h6><?=$paquetes?></h6></td>
-   		  <td width="75" align="right"><h6>$ <?=number_format($total,2,'.',',')?><br /><br /></h6></td></tr>
-          </table>
-        <table width="219" border="0" cellpadding="0" cellspacing="0">
-        	<tr>
-            	<td colspan="2"><hr /></td>            
-            </tr>
-        	<tr>
-            	<td width="56"><h6>RECIBE:</h6></td>
-                <td width="143"></td>            
-            </tr>
-        	<tr>
-        	  <td colspan="2" align="right"><h6><?=$emp->personaquerecibe?></h6></td>
-          </tr>
-              <tr>
-        	  <td><h6>&nbsp;</h6></td>
-        	  <td></td>
-      	  </tr>
-           
-        	<tr>
-        	  <td><h6>ELABORO:</h6></td>
-        	  <td></td>
-      	  </tr>
-        	<tr>
-        	  <td colspan="2" align="right"><h6><?=cambio_texto($emp->elaboro); ?></h6></td>
-        	  </tr>
-        	<tr>
-        	  <td></td>
-        	  <td>&nbsp;</td>
-      	  </tr>
-        </table></h6></td>
-      </tr>      	   	  
-	 <tr>
-	    <td colspan="2" >&nbsp;</td>
+ 	  <tr>
+        <td width="806" height="5" colspan="2" align="LEFT" > 
+        	<div id="bcTarget2"></div>         
+        </td>
+      </tr>
+      <tr>
+      	<td colspan="2"><hr align="left" width="150" size="3" noshade="noshade" /></td>
+      </tr>
+       <!-- SEGUNDA PARTE DE LA HOJAS -->
+       <tr>
+       	<td height="30" align="right"></td>
+       </tr>
+ 	  <tr>
+	    <td height="7" colspan="2" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size: 12px; font-weight: normal;" > 
+	      Impresión de Contra Recibo de Viaje 
+        </td>
 	    </tr>
 	  <tr>
-	    <td colspan="2" >&nbsp;</td>
+	    <td height="5" style="font-size: medium; font-weight: bolder;" > 
+        EMPRESA :<span style="font-size: medium; font-weight: bolder;"><?=$suc->prefijo; ?></span></span><span style="font-size: medium; font-weight: bold;">|<?=date("d/m");?>
+        </span></span></td>
 	    </tr>
-	  <tr>
-        <td colspan="2" ><hr /></td>
-      </tr> 
+ 	    <tr>
+	    <td height="10" style="font-size: medium" > 
+        </td>
+	    </tr>
+       <tr>
+       	<td>
+         <table width="754">
+         	<tr>
+            	<td width="790" height="10" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size: 12px; font-weight: normal;">
+                VIAJE NO:<?=$emp2->viaje?>
+                </td>
+            </tr>
+         	<tr>
+            	<td width="790" height="10" style="font-weight: bold; font-size: 20px;">FOLIO EVIDENCIAS: CONTROL DE MABE NO.
+            	  <?=$_GET[folio] ?>
+            	  ////<span style="font-size: medium; font-weight: bolder;">
+                  <?=$suc->prefijo; ?>
+                </span></td>
+            </tr>
+            <tr>
+            	<td style="font-weight: normal; font-size: 12px;">IMPRESION EVI: <?=date("d/m/Y H:i:s");?></td>
+            </tr>
+            <tr>
+            	<td width="790">EVIDENCIA RECIBIO: <?=$emp->personaquerecibe?></td>         
+            </tr>
+       <tr>
+       	<td height="20"></td>
+       </tr>
+           <tr>
+            	<td style="font-weight: bold; font-size: 12px;">FECHA VIAJE: <?=$emp2->fecha?></td>
+            </tr>
+             <tr>
+            	<td width="772">CHOFER: <?=$emp2->chofer?></td>         
+            </tr>
+            <tr>
+            	<td width="772">POBLACION: <?=$emp2->DestinoNombre?>
+            	</td>         
+            </tr>
+             <tr>
+            	<td width="772">TIPO TRASNP: <?=$emp2->tipotransporte?></td>         
+            </tr>
+            <tr>
+            	<td width="772">OBSERVACIONES: <?=$emp2->observacion?></td>         
+            </tr>
+          </table> 
+
     </table>
 	</td>
 </tr>
 </table>
+<!--<input name="sucursal1" type="hidden" id="sucursal1" value="011" />-->
+<!--<input name="oculto" type="hidden" id="oculto3" value="<?=$oculto ?>" />
+<input name="oculto" type="hidden" id="oculto3" value="<?=$oculto ?>" />
+<input name="oculto" type="hidden" id="oculto3" value="<?=$oculto ?>" />
+<input name="oculto" type="hidden" id="oculto3" value="<?=$oculto ?>" />-->
 </body>
 </html>

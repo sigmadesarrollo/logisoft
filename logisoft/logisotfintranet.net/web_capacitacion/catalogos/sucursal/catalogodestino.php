@@ -457,20 +457,20 @@ shortcut.add("Ctrl+b",function() {
 <form name="form1" method="post">  
   <table width="100%" border="0" align="left" cellpadding="0" cellspacing="0"> 
  <tr>
-      <td height="50"><br><table width="353" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#016193">
+      <td height="50"><br><table width="403" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#016193">
                 <tr>
                   <td width="96%" bordercolor="#016193" class="FondoTabla">CATÁLOGO DESTINOS</td>
                 </tr>
                 <tr>
-                  <td height="209"><table width="339" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <td height="209"><table width="401" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="62" class="Tablas">Código:</td>
-                      <td width="277" class="Tablas"><input name="codigo" type="text" id="codigo" class="Tablas" style="background:#FFFF99; font:tahoma; font-size:9px" value="<?=$codigo; ?>" size="10" maxlength="0" onFocus="foco(this.name)" onBlur="document.getElementById('oculto').value=''" >
+                      <td width="309" class="Tablas"><input name="codigo" type="text" id="codigo" class="Tablas" style="background:#FFFF99; font:tahoma; font-size:9px" value="<?=$codigo; ?>" size="10" maxlength="0" onFocus="foco(this.name)" onBlur="document.getElementById('oculto').value=''" >
                       <img src="../../img/Buscar_24.gif" alt="Buscar" width="24" height="23" align="absbottom" style="cursor:pointer" title="Buscar Destino" onClick="abrirVentanaFija('buscarcatdestino.php', 600, 500, 'ventana', 'Busqueda')"/></td>
                     </tr>
                     <tr>
                       <td colspan="2" class="Tablas"><div id="txtHint">
-                <table width="335" cellpadding="0" cellspacing="0">
+                <table width="400" cellpadding="0" cellspacing="0">
                   <tr>
                     <td width="62" class="Tablas">Descripci&oacute;n:</td>
                     <td colspan="2"><input name="descripcion" type="text" class="Tablas" id="descripcion" style="font-size:9px; text-transform:uppercase; width:250px" onKeyPress="return tabular(event,this)" value="<?=$descripcion; ?>" maxlength="60"></td>

@@ -25,12 +25,16 @@ echo "<script language='javascript' type='text/javascript'>document.location.hre
         <tr>
           <td width="7%" class="FondoTabla">ID</td>
           <td width="85%" class="FondoTabla">Descripci&oacute;n</td>
+          
         </tr>
         <tr>
           <td colspan="2" height="300px" valign="top">
               <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <?		
-		$get = mysql_query('select * from catalogodestino ORDER BY descripcion  ASC
+		$get = mysql_query('select cd.id, cd.descripcion, s.prefijo as sucursal, cp.descripcion as Poblacion from catalogodestino cd
+							inner join catalogosucursal s on s.id = cd.sucursal
+							inner join catalogopoblacion cp on cp.id = cd.poblacion 
+							ORDER BY cd.descripcion  ASC
  limit '.$st.','.$pp,$link);
 		while($row=@mysql_fetch_array($get)){
 	?>
@@ -38,7 +42,9 @@ echo "<script language='javascript' type='text/javascript'>document.location.hre
                   <td width="52"><span style="cursor:pointer;color:#0000FF" onclick="window.parent.obtener('<?= $row['id'];?>');parent.VentanaModal.cerrar();">
                     <?= $row['id'];?>
                   </span></td>
-                  <td width="420" class="Tablas"><?= $row['descripcion']; ?></td>
+                  <td width="150" class="Tablas"><?= $row['descripcion']; ?></td>
+                  <td width="130" class="Tablas"><?= $row['sucursal']; ?></td>
+                  <td width="120" class="Tablas"><?= $row['Poblacion']; ?></td>
                   <td width="22"></td>
                 </tr>
                 <? } ?>

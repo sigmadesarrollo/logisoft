@@ -68,7 +68,7 @@
 			$sucursalestransbordo=substr($_GET['hidensucursal2'],0,-1);	
 		}
 		$s = "UPDATE catalogorutadetalletmp SET tipo='".$_GET['tipo']."', diasalidas='".$_GET['semana']."',
-		sucursal='".$_GET['sucursal']."', horasllegada='".$_GET['llegada']."',
+		sucursal='".$_GET['sucursal']."', horasllegada='".$_GET['llegada']."', iddestino='".$_GET['origen']."',
 		tiempodescarga='".$_GET['descarga']."',	tiempocarga='".$_GET['carga']."',
 		horasalida='".$_GET['salida']."', trayectosucursal='".$_GET['ttss']."',
 		transbordo='".$_GET['transbordo']."',sucursalestransbordo='$sucursalestransbordo',
@@ -94,7 +94,7 @@
 			$s = "INSERT INTO catalogorutadetalle
 			SELECT 0 AS id, ".$codigo." AS ruta, tipo, diasalidas, sucursal, horasllegada,
 			tiempodescarga, tiempocarga, horasalida, trayectosucursal, transbordo,
-			sucursalestransbordo, idusuario, usuario, fecha
+			sucursalestransbordo, idusuario, usuario, fecha, iddestino
 			FROM catalogorutadetalletmp
 			WHERE idusuario=".$_SESSION[IDUSUARIO]."
 			 ORDER BY fecha ASC";
@@ -148,7 +148,7 @@
 			$s = "INSERT INTO catalogorutadetalle
 			SELECT 0 AS id, ".$_GET[ruta]." AS ruta, tipo, diasalidas, sucursal, horasllegada,
 			tiempodescarga, tiempocarga, horasalida, trayectosucursal, transbordo,
-			sucursalestransbordo, idusuario, usuario, fecha
+			sucursalestransbordo, idusuario, usuario, fecha, iddestino
 			FROM catalogorutadetalletmp
 			WHERE idusuario=".$_SESSION[IDUSUARIO]."
 			order by catalogorutadetalletmp.id asc";
@@ -298,7 +298,7 @@
 			$s = "INSERT INTO catalogorutadetalletmp
 			SELECT 0 AS id, tipo, diasalidas, sucursal, horasllegada, tiempodescarga, tiempocarga,
 			horasalida, trayectosucursal, transbordo, sucursalestransbordo, ".$_SESSION[IDUSUARIO]." AS idusuario,
-			'".$_SESSION[NOMBREUSUARIO]."' AS usuario, fecha FROM catalogorutadetalle WHERE ruta=".$_GET[ruta]."
+			'".$_SESSION[NOMBREUSUARIO]."' AS usuario, fecha, iddestino FROM catalogorutadetalle WHERE ruta=".$_GET[ruta]."
 			order by id asc";
 			mysql_query($s,$l) or die($s);
 			$detalle = "";
@@ -309,7 +309,7 @@
 			IF(cd.horasalida='00:00:00','',TIME_FORMAT(cd.horasalida,'%H:%i')) AS salida,
 			IF(cd.trayectosucursal='00:00:00','',TIME_FORMAT(cd.trayectosucursal,'%H:%i')) AS siguiente,
 			IF(cd.transbordo=0,'','SI') AS trasbordo, cd.sucursalestransbordo AS suctransbordo,
-			cs.prefijo AS sucursal, cd.fecha FROM catalogorutadetalletmp cd
+			cs.prefijo AS sucursal, cd.fecha,cd.iddestino FROM catalogorutadetalletmp cd
 			INNER JOIN catalogosucursal cs ON cd.sucursal = cs.id
 			WHERE idusuario=".$_SESSION[IDUSUARIO]."
 			order by cd.id asc";

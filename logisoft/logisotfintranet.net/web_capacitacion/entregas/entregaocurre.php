@@ -297,6 +297,7 @@ function obtenerSucursal(id,sucursal){
 			+"&nguia="+u.nguia.value
 			+"&cliente="+u.cliente.value
 			+"&nombre="+u.nombre.value
+			+"&observacion="+u.observacion.value
 			+"&total="+u.total.value.replace("$ ","").replace(/,/,"")
 			+"&precibe="+u.precibe.value
 			+"&nidentificacion="+u.nidentificacion.value
@@ -350,6 +351,7 @@ function limpiar(){
 	u.folio.value	="";
 	u.id_sucursal.value="";
 	u.sucursal.value="";
+	u.observacion.value="";
 	u.nguia.value	="";
 	u.cliente.value ="";
 	u.nombre.value	="";
@@ -380,6 +382,7 @@ function limpiarDatos(){
 	u.nguia.value	="";
 	u.cliente.value ="";
 	u.nombre.value	="";
+	u.observacion.value	="";
 	u.total.value	="";
 	u.precibe.value	="";
 	u.identificacion.value	="";
@@ -412,6 +415,7 @@ function MostrarPedirCliente(datos){
 		u.cargado.value 	= "SI";
 		u.cliente.value 	= obj.datoscliente.cliente;
 		u.nombre.value 		= obj.datoscliente.nombre;
+		u.observacion.value = obj.datoscliente.observacion;
 		u.folio.value 		= obj.datoscliente.folio;
 		u.nguia.value 		= obj.datoscliente.nguia;
 		u.precibe.value		= obj.datoscliente.personaquerecibe;
@@ -626,6 +630,13 @@ function mostrarformapago(){
           &nbsp;&nbsp;No. Identificacion:
           <input name="nidentificacion" class="Tablas" type="text" style="width:80px" id="nidentificacion" value="<?=$nidentificacion ?>" /></td>
       </tr>
+      <tr>
+        <td height="42" colspan="2">
+            <p><b>Observacion</b></p>
+              <textarea class="Tablas" name="observacion" rows="4" id="observacion" style="width:350px; text-transform:uppercase" ><?=$observacion ?></textarea>
+        </td>
+
+      </tr>   
       <tr>
         <td colspan="2">
             <b>Se recepciono envio</b>

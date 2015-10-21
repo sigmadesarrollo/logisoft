@@ -3,7 +3,7 @@
 	if(!$_SESSION[IDUSUARIO]!=""){
 		die("<script>parent.document.location.href = 'http://www.pmmentuempresa.com';</script>");
 	}
-	require_once("../Conectar.php");
+	require_once("Conectar.php");
 	$l = Conectarse("webpmm");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -13,29 +13,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Principal</title>
 <link href="nestiloguia.css" rel="stylesheet" type="text/css">
-<!--
+
 <link href="puntovta.css" rel="stylesheet" type="text/css">
-<link href="../css/Tablas.css" rel="stylesheet" type="text/css" />
-<link href="../css/FondoTabla.css" rel="stylesheet" type="text/css" />
-<link href="estilo_guia.css" rel="stylesheet" type="text/css" />-->
-<!-- estilos y funciones para ventana modal -->
-<link href="../javascript/ventanas/css/ventana-modal.css" rel="stylesheet" type="text/css">
-<link href="../javascript/ventanas/css/style.css" rel="stylesheet" type="text/css">
-<link href="../javascript/ajaxlist/ajaxlist_estilos.css" rel="stylesheet" type="text/css">
-<link href="../javascript/estiloclasetablas.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="../javascript/ventanas/js/ventana-modal-1.1.1.js"></script>
-<script type="text/javascript" src="../javascript/ventanas/js/abrir-ventana-fija.js"></script>
-<script type="text/javascript" src="../javascript/ventanas/js/abrir-ventana-alertas.js"></script>
-<script type="text/javascript" src="../javascript/ajaxlist/ajax-dynamic-list.js"></script>
-<script type="text/javascript" src="../javascript/ajaxlist/ajax.js"></script>
+<link href="css/Tablas.css" rel="stylesheet" type="text/css" />
+<link href="css/FondoTabla.css" rel="stylesheet" type="text/css" />
+<link href="estilo_guia.css" rel="stylesheet" type="text/css" />
+
+<link href="javascript/ventanas/css/ventana-modal.css" rel="stylesheet" type="text/css">
+<link href="javascript/ventanas/css/style.css" rel="stylesheet" type="text/css">
+<link href="javascript/ajaxlist/ajaxlist_estilos.css" rel="stylesheet" type="text/css">
+<link href="javascript/estiloclasetablas.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="javascript/ventanas/js/ventana-modal-1.1.1.js"></script>
+<script type="text/javascript" src="javascript/ventanas/js/abrir-ventana-fija.js"></script>
+<script type="text/javascript" src="javascript/ventanas/js/abrir-ventana-alertas.js"></script>
+<script type="text/javascript" src="javascript/ajaxlist/ajax-dynamic-list.js"></script>
+<script type="text/javascript" src="javascript/ajaxlist/ajax.js"></script>
 <!-- funciones para ajax -->
-<script type="text/javascript" src="../javascript/ajax.js"></script>
-<script type="text/javascript" src="../javascript/ClaseTabla.js"></script>
-<script type="text/javascript" src="../convenio/validacionesConvenio.js"></script>
-<link href="../sobreImagenes.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="javascript/ajax.js"></script>
+<script type="text/javascript" src="javascript/ClaseTabla.js"></script>
+<script type="text/javascript" src="convenio/validacionesConvenio.js"></script>
+<link href="sobreImagenes.css" rel="stylesheet" type="text/css" />
 <OBJECT ID="Metodos" style="visibility:hidden"
 CLASSID="CLSID:21B8DA59-7F02-40B9-A5E9-FC848C3DB134"
-CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
+CODEBASE="activexs/Impresion.CAB#version=1,1,0,0">
 </OBJECT>
 <script>
 	//declaracion de tablas
@@ -1228,7 +1228,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
 				alerta("El Cliente no tiene direccion","","iddestinatario");
 			}
 			if(u.desconvenio.value!="1"){
-			consultaTexto("paraConvenio", "../convenio/validaconvenio.php?accion=1&idremitente="+u.idremitente.value
+			consultaTexto("paraConvenio", "convenio/validaconvenio.php?accion=1&idremitente="+u.idremitente.value
 						  +"&iddestinatario="+u.iddestinatario.value+"&iddestino="+u.destino_hidden.value+"&fevaluacion="+u.folioevaluacion.value
 						  +"&idsucdestino="+u.sucdestino_hidden.value+"&valran="+Math.random());
 			}
@@ -1438,7 +1438,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
 	}
 	
 	function mostrarFacturacion(){
-		document.location.href = "../facturacion/Facturacion.php?funcion=pedirCliente("+((u.lstflete.value==0)?u.idremitente.value:u.iddestinatario.value)+")";
+		document.location.href = "facturacion/Facturacion.php?funcion=pedirCliente("+((u.lstflete.value==0)?u.idremitente.value:u.iddestinatario.value)+")";
 	}
 	
 	function valcreditodisponible(){
@@ -1511,7 +1511,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
     	<td>
         	<table width="729" border="0" cellpadding="0" cellspacing="0">
             	<tr>
-                	<td width="253"><img src="../img/Boton_Detalle.gif" style="cursor:pointer"
+                	<td width="253"><img src="img/Boton_Detalle.gif" style="cursor:pointer"
         onclick="abrirVentanaFija('informacionextra.php?tipo=1&amp;folio='+document.all.folioSeleccionado.innerHTML, 660, 418, 'ventana', 'Detalle')" /></td>
                     <td width="229">&nbsp;</td>
                     <td width="257" id="danosfaltantes" class="fuenteCabecera"></td>
@@ -1615,7 +1615,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
                         	<td width="56" class="fuentePloma" align="left">Cliente
                    	    <input type="hidden" name="rem_personamoral" /></td>
                             <td width="152" align="left"><table border="0" cellpadding="0" cellspacing="0">
-                              <tr><td width="100"><input class="estiloCajas" name="idremitente" type="text" onkeypress="if(event.keyCode==13 &amp;&amp; this.readOnly==false){ devolverRemitente(this.value)}else{return solonumeros(event)}" value="<?=$remitente ?>" /></td><td width="20"><img id="b_remitente" src="../img/Buscar_17.gif" alt="Buscar Nick" align="absbottom" onclick="abrirVentanaFija('../buscadores_generales/buscarClienteGen.php?funcion=devolverRemitente', 625, 418, 'ventana', 'Busqueda')" /></td></tr></table></td>
+                              <tr><td width="100"><input class="estiloCajas" name="idremitente" type="text" onkeypress="if(event.keyCode==13 &amp;&amp; this.readOnly==false){ devolverRemitente(this.value)}else{return solonumeros(event)}" value="<?=$remitente ?>" /></td><td width="20"><img id="b_remitente" src="img/Buscar_17.gif" alt="Buscar Nick" align="absbottom" onclick="abrirVentanaFija('../buscadores_generales/buscarClienteGen.php?funcion=devolverRemitente', 625, 418, 'ventana', 'Busqueda')" /></td></tr></table></td>
                         </tr>
                     	<tr>
                     	  <td class="fuentePloma" align="left">R.F.C.</td>
@@ -1627,7 +1627,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
                     	    <tr>
                     	      <td width="100"><input class="estiloCajas" name="rem_cliente" readonly="true" type="text" 
                     value="<?=$rcliente ?>" /></td>
-                    	      <td width="20" align="left" valign="middle"><img id="b_remitente_dir" src="../img/Boton_Agregarchico17.gif" alt="Agregar Dirección" style="cursor:hand" onclick="if(document.all.idremitente.value==''){ alerta('Proporcione el id del remitente','¡Atencion!','idremitente') }else{ abrirVentanaFija('../buscadores_generales/agregarDireccion.php?funcion=devolverRemitente('+document.all.idremitente.value+')&amp;idcliente='+document.all.idremitente.value, 460, 395, 'ventana', 'DATOS DIRECCION')}" /></td>
+                    	      <td width="20" align="left" valign="middle"><img id="b_remitente_dir" src="img/Boton_Agregarchico17.gif" alt="Agregar Dirección" style="cursor:hand" onclick="if(document.all.idremitente.value==''){ alerta('Proporcione el id del remitente','¡Atencion!','idremitente') }else{ abrirVentanaFija('../buscadores_generales/agregarDireccion.php?funcion=devolverRemitente('+document.all.idremitente.value+')&amp;idcliente='+document.all.idremitente.value, 460, 395, 'ventana', 'DATOS DIRECCION')}" /></td>
                   	      </tr>
                   	    </table></td>
                   	  </tr>
@@ -1689,7 +1689,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
                           <input type="hidden" name="des_personamoral" />
                           <input type="hidden" name="paraconveniotxt" value="0" /></td>
                         <td width="149" align="left"><input class="estiloCajas" name="iddestinatario" onkeypress="if(event.keyCode==13 &amp;&amp; this.readOnly==false){devolverDestinatario(this.value)}else{return solonumeros(event)}" type="text" value="<?=$remitente ?>" />
-                          <img id="b_destinatario" src="../img/Buscar_17.gif" alt="Buscar Nick" align="absbottom" onclick="abrirVentanaFija('../buscadores_generales/buscarClienteGen.php?funcion=devolverDestinatario', 625, 418, 'ventana', 'Busqueda')"/></td>
+                          <img id="b_destinatario" src="img/Buscar_17.gif" alt="Buscar Nick" align="absbottom" onclick="abrirVentanaFija('buscadores_generales/buscarClienteGen.php?funcion=devolverDestinatario', 625, 418, 'ventana', 'Busqueda')"/></td>
                       </tr>
                       <tr>
                         <td class="fuentePloma" align="left">R.F.C.</td>
@@ -1701,7 +1701,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
                           <tr>
                             <td width="96"><input name="des_cliente" readonly="true" type="text" 
                    class="estiloCajas" value="<?=$rcliente ?>"/></td>
-                            <td width="18" align="right" valign="middle"><img id="b_destinatario_dir" src="../img/Boton_Agregarchico17.gif" alt="Agregar Dirección" style="cursor:hand" onclick="if(document.all.iddestinatario.value==''){ alerta('Proporcione el id del remitente','¡Atencion!','iddestinatario') }else{ abrirVentanaFija('../buscadores_generales/agregarDireccion.php?funcion=devolverDestinatario('+document.all.iddestinatario.value+')&amp;idcliente='+document.all.iddestinatario.value, 460, 395, 'ventana', 'DATOS DIRECCION')}" /></td>
+                            <td width="18" align="right" valign="middle"><img id="b_destinatario_dir" src="img/Boton_Agregarchico17.gif" alt="Agregar Dirección" style="cursor:hand" onclick="if(document.all.iddestinatario.value==''){ alerta('Proporcione el id del remitente','¡Atencion!','iddestinatario') }else{ abrirVentanaFija('../buscadores_generales/agregarDireccion.php?funcion=devolverDestinatario('+document.all.iddestinatario.value+')&amp;idcliente='+document.all.iddestinatario.value, 460, 395, 'ventana', 'DATOS DIRECCION')}" /></td>
                           </tr>
                         </table></td>
                       </tr>
@@ -1800,7 +1800,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
       <tr>
         <td  class="fuenteBlanca" align="left">Descuento:</td>
         <td align="left"><input readonly="true" name="t_txtdescuento1" type="text" style="font:tahoma; font-size:9px; text-align:right; width:94px" value="<?=$rrfc ?>" onkeypress="if(event.keyCode==13 &amp;&amp; this.readOnly==false){ if(parseFloat(this.value)&gt;parseFloat(document.all.pc_maximodescuento.value)){ this.value=document.all.pc_maximodescuento.value; alerta('El maximo descuento permitido es '+document.all.pc_maximodescuento.value+' %','¡Atencion!','t_txtdescuento1')} calcularDescuento()}else{return solonumeros(event);}" /></td>
-        <td ><img id="img_descuento" src="../img/update.gif" onclick="if(validarDescuento()){ abrirVentanaFija('../buscadores_generales/logueo_permisos.php?modulo=GuiaVentanilla&amp;usuario=Admin&amp;funcion=permitirDescuento', 370, 500, 'ventana', 'Inicio de Sesión Secundaria');}" style="cursor:hand" /></td>
+        <td ><img id="img_descuento" src="img/update.gif" onclick="if(validarDescuento()){ abrirVentanaFija('buscadores_generales/logueo_permisos.php?modulo=GuiaVentanilla&amp;usuario=Admin&amp;funcion=permitirDescuento', 370, 500, 'ventana', 'Inicio de Sesión Secundaria');}" style="cursor:hand" /></td>
 </tr>
       <tr>
         <td  class="fuenteBlanca" align="left">Importe</td>
@@ -2025,7 +2025,7 @@ CODEBASE="../activexs/Impresion.CAB#version=1,1,0,0">
             	<tr>
             	  <td colspan="3"><table width="281" border="0" align="left" cellpadding="0" cellspacing="0">
             	    <tr>
-            	      <td width="281" align="center" valign="middle" id="idsguardar"><img src="../img/Boton_Guardar.gif" style="cursor:hand" onclick="if(validarDatos() &amp;&amp; valcreditodisponible()){ if(document.all.lstflete.value==0 &amp;&amp; document.all.lstpago.value==0){ mostrarformapago(); }else{ ejecutarSubmit(); } };" />&nbsp;&nbsp; <img src="../img/Boton_Nuevo.gif" style="cursor:hand" onclick="limpiar_evaluacion();limpiar_destinatario();limpiar_remitente();" /></td>
+            	      <td width="281" align="center" valign="middle" id="idsguardar"><img src="img/Boton_Guardar.gif" style="cursor:hand" onclick="if(validarDatos() &amp;&amp; valcreditodisponible()){ if(document.all.lstflete.value==0 &amp;&amp; document.all.lstpago.value==0){ mostrarformapago(); }else{ ejecutarSubmit(); } };" />&nbsp;&nbsp; <img src="img/Boton_Nuevo.gif" style="cursor:hand" onclick="limpiar_evaluacion();limpiar_destinatario();limpiar_remitente();" /></td>
           	      </tr>
           	    </table></td>
           	  </tr>

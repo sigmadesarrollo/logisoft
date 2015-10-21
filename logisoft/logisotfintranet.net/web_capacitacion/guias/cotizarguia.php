@@ -362,86 +362,21 @@
 	function mostrarTodo(datos){
 		if(datos.indexOf("no encontro")<0){
 			var objeto = eval(convertirValoresJson(datos));
-			u.idcliente.value		= objeto.principal.cliente;
-			u.nombrecliente.value		= objeto.principal.ncliente;
+			u.idcliente.value = objeto.principal.cliente;
+			u.nombrecliente.value = objeto.principal.ncliente;
 			u.desde.value 	= objeto.principal.origen;
 			u.hasta.value = objeto.principal.destino;
 			u.origen.value = objeto.principal.desori;
 			u.destino.value = objeto.principal.desdes;
-			u.fecha.value = objeto.principal.fecharegistro
+			u.fecha.value = objeto.principal.fecharegistro;
+			u.valorunitario.value  	= objeto.cartaporte.ValorUnitario;
+			u.valordeclarado2.value = objeto.cartaporte.ValorDeclarado;
+			u.tiporviaje.value  	= objeto.cartaporte.TipoViaje;
+			u.condicionespago.value	= objeto.cartaporte.CondicionesPago;
+			u.cuotatonelada.value 	= objeto.cartaporte.CuotaTonelada;
 					
-		/*	u.folio.value			= objeto.principal.folio;
-			u.estado_hidden.value	= objeto.principal.estado;
-			u.colEstado.innerHTML	= objeto.principal.estado;
-			u.idsucursal.value  	= objeto.principal.sucursal;
-			u.sucursal.value		= objeto.principal.dessuc;
-			u.sucursalant.value 	= objeto.principal.sucursal;
-			u.folioant.value		= objeto.principal.folio;
-			u.origen_hidden.value 	= objeto.principal.origen;
-			u.fecha.value = ((objeto.principal.estado=="REALIZADO")?objeto.principal.fecharecoleccion:objeto.principal.fecharegistro);
-			v_origen = objeto.principal.origen;
-			v_fechaant = objeto.principal.fecharegistro;
-			if(u.origen_hidden.value==0){
-				u.origen.value		= "VARIOS";
-			}else{
-				u.origen.value		= objeto.principal.desori;
-			}	
-			
-			u.destino_hidden.value = objeto.principal.destino;
-			v_destino = objeto.principal.destino;
-			if(u.destino_hidden.value==0){
-				u.destino.value		= "VARIOS";
-			}else{
-				u.destino.value		= objeto.principal.desdes;
-			}	
-			u.npedidos.value	= objeto.principal.npedidos;
-			u.dirigido.value	= objeto.principal.dirigido;
-								
-			u.llama.value		= objeto.principal.llama;
-			u.telefono.value	= objeto.principal.telefono;
-			u.comentarios.value	= objeto.principal.comentarios;
-			
-			
-			u.calle.value		= objeto.principal.calle;
-			u.numero.value		= objeto.principal.numero;
-			u.crucecalles.value	= objeto.principal.crucecalles;
-			u.cp.value			= objeto.principal.cp;
-			u.colonia.value		= objeto.principal.colonia;
-			u.poblacion.value	= objeto.principal.poblacion;
-			u.municipio.value	= objeto.principal.municipio;
-			u.telefono2.value	= objeto.principal.telefono2;
-			
-			u.sector.value		= objeto.principal.sector;
-			u.unidad.value		= objeto.principal.unidad;
-			v_multiple			= objeto.principal.multiple;
-			
-			u.h1.value			= objeto.principal.horario;
-			u.c1.value			= objeto.principal.hrcomida;
-						
-			if(objeto.principal.estado=="NO TRANSMITIDO"){
-				u.accion.value	= "modificar";
-			}
-			
-			if(objeto.principal.estado=="REALIZADO" || objeto.principal.estado=="TRANSMITIDO"){
-				u.destino.readOnly = true;
-				u.origen.readOnly = true;
-			}
-			if(objeto.principal.estado=="REALIZADO"){
-				u.multiple.checked = ((objeto.principal.multiple==1)?true:false);
-				if(objeto.recoleccion[0] != undefined){					
-					u.d_agregarRec.style.visibility = "hidden";
-					agregarValores(u.recolecciones,objeto.recoleccion);
-					u.recolecciones.disabled = true;
-				}
-				if(objeto.empresarial[0] != undefined){
-					u.d_agregarEmp.style.visibility = "hidden";
-					agregarValores(u.empresarial,objeto.empresarial);
-					u.empresarial.disabled = true;
-				}
-			}*/
-			
 			tabla1.setJsonData(objeto.detalle);
-			//validarEstados();
+		
 		}
 	}
 	

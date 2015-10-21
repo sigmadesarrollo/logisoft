@@ -23,11 +23,12 @@
 		}
 		
 		
-		$slq="INSERT INTO entregasocurre (folio,idsucursal,sucursal,nguia,cliente,nombre,recepcion,chkliste,cartaporte,contrarecibocarga,facturascarga,recibomaniobras,
+		$slq="INSERT INTO entregasocurre (folio,idsucursal,sucursal,nguia,cliente,nombre,observacion,recepcion,chkliste,cartaporte,contrarecibocarga,facturascarga,recibomaniobras,
 			total,efectivo,cheque,banco,nocheque,tarjeta,transferencia, tipodeidentificacion,numeroidentificacion,personaquerecibe,usuario, idusuario,fecha)	VALUES
 			(obtenerFolio('entregasocurre',".$_SESSION[IDSUCURSAL]."),'".$_POST['idsucursal']."',
 			UCASE('".$_POST['sucursal']."'),UCASE('".$_POST['nguia']."'),'".$_POST['cliente']."',
 			UCASE('".$_POST['nombre']."'),
+			UCASE('".$_POST['observacion']."'),
 			UCASE('".$_POST['recepcion']."'),
 			UCASE('".$_POST['chkliste']."'),
 			UCASE('".$_POST['cartaporte']."'),
@@ -101,12 +102,9 @@
 		echo "guardado,".$fo->folio;
 		
 	}else if($_POST[accion]==4){
-		
-		
-		
 		$slq="UPDATE entregasocurre
-			SET total='$_POST[total]', efectivo='$_POST[efectivo]', cheque='$_POST[cheque]', banco='$_POST[banco]',recepcion='$_POST[recepcion]',chkliste='$_POST[chkliste]',cartaporte='$_POST[cartaporte]',  
-			contrarecibocarga='$_POST[contrarecibocarga]',facturascarga='$_POST[facturascarga]',recibomaniobras='$_POST[recibomaniobras]',
+			SET total='$_POST[total]',observacion='$_POST[observacion]', efectivo='$_POST[efectivo]', cheque='$_POST[cheque]', banco='$_POST[banco]',recepcion='$_POST[recepcion]',chkliste='$_POST[chkliste]'
+			,cartaporte='$_POST[cartaporte]', contrarecibocarga='$_POST[contrarecibocarga]',facturascarga='$_POST[facturascarga]',recibomaniobras='$_POST[recibomaniobras]',
 			nocheque='$_POST[ncheque]', tarjeta='$_POST[tarjeta]', transferencia='$_POST[transferencia]'
 			where folio = '$_POST[folio]' and idsucursal = '$_SESSION[IDSUCURSAL]'";
 		$s=mysql_query(str_replace("''","NULL",$slq),$l) or die($slq." <BR> Error en la linea ".__LINE__);

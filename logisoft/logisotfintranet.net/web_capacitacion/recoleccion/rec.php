@@ -94,9 +94,9 @@
 	var v_folioant = "";
 	var v_fechaant = "";
 	var mens = new ClaseMensajes();
-	//var combo1 = "<select name='origen' id='origen' onChange='obtenerDiaRecoleccion(this.value)' class='Tablas' style='visibility:hidden' onKeyPress='return tabular(event,this)'>";
+	var combo1 = "<select name='origen' id='origen' onChange='obtenerDiaRecoleccion(this.value)' class='Tablas' style='visibility:hidden' onKeyPress='return tabular(event,this)'>";
 
-	var combo1 = "<select name='origen' id='origen' onChange='obtenerDiaRecoleccion(this.value)' class='Tablas' style='width:100px' onKeyPress='return tabular(event,this)'>";
+//	var combo1 = "<select name='origen' id='origen' onChange='obtenerDiaRecoleccion(this.value)' class='Tablas' style='width:100px' onKeyPress='return tabular(event,this)'>";
 	var txtOrigen = '<input name="origen" type="text" class="Tablas" id="origen" style="width:100px" value="<?=$_POST[origen] ?>" autocomplete="array:ori" onKeyPress="if(event.keyCode==13){obtenerDiaRecoleccion(document.all.origen_hidden.value);}"/>';
 	mens.iniciar('../javascript',false);	
 	var hr = new Date();	
@@ -563,6 +563,9 @@
 			
 			u.destino_hidden.value = datos.getElementsByTagName('destino').item(0).firstChild.data;
 			u.destino.value		= datos.getElementsByTagName('nomDestino').item(0).firstChild.data;
+			
+			u.almorigen.value		= datos.getElementsByTagName('almorigen').item(0).firstChild.data;
+			u.almdest.value		= datos.getElementsByTagName('almdest').item(0).firstChild.data;
 
 			 
 	}
@@ -610,9 +613,9 @@
 			}
 			 combo.value = obj.origenes.id;
 		 	u.origen_hidden.value = obj.origenes.id; 
-			/*u.celOrigen.innerHTML 	= txtOrigen;
+			u.celOrigen.innerHTML 	= txtOrigen;
 			u.origen_hidden.value	= obj.origen[0].id;
-			u.origen.value			= obj.origen[0].destino;	*/		
+			u.origen.value			= obj.origen[0].destino;			
 		}
 		
 		var v_horario 		= obj.horarios.horariolimite;
@@ -1145,9 +1148,9 @@
 				combo.add(uOpcion);			
 				combo.value = obj.origenes.id;
 				u.origen_hidden.value = obj.origenes.id;
-				/*u.celOrigen.innerHTML 	= txtOrigen;
+				u.celOrigen.innerHTML 	= txtOrigen;
 				u.origen_hidden.value	= obj.origen[0].id;
-				u.origen.value			= obj.origen[0].destino;*/
+				u.origen.value			= obj.origen[0].destino;
 			}
 		u.folio.value = obj.folio;
 	}
@@ -1479,10 +1482,10 @@
       </table>
           <table width="572" border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td colspan="3" onclick="obtenerfecha()">Buscar Bitacora Salida:<span class="Tablas">
-              <input name="folio1" type="text" class="Tablas" id="folio2" style="width:50px; text-align:right" value="<?=$folio1 ?>"
-				  onkeypress="if(event.keyCode=='13'){obtener(this.value);}"/>
-              <img src="../img/Buscar_24.gif" alt="buscar" width="24" height="23" align="absbottom" style="cursor:pointer" title="Buscar Prospecto" onclick="abrirVentanaFija('buscarBitacora.php', 600, 500, 'ventana', 'Busqueda')"/></span></td>
+              <td colspan="3" >Buscar Bitacora Salida:<span class="Tablas">
+              <input name="folio1" type="text" class="Tablas" id="folio2" style="width:50px; text-align:right" value="<?=$folio1 ?>"onkeypress="if(event.keyCode=='13'){obtener(this.value);}"/>
+              <img src="../img/Buscar_24.gif" alt="buscar" width="24" height="23" align="absbottom" style="cursor:pointer" title="Buscar Bitacora" onclick="abrirVentanaFija('buscarBitacora.php', 600, 500, 'ventana', 'Busqueda')"/></span>
+              </td>
               <td width="262" align="right"><label></label>                <img src="../img/Boton_Cliente.gif" width="70" height="20" align="absbottom" style="cursor:pointer" onclick="mens.popup('../catalogos/cliente/client.php?recoleccion=1', 630, 550, 'v1', 'Cat&aacute;logo Cliente');" /></td>
             </tr>
             <tr>
@@ -1532,6 +1535,24 @@
                   </tr>
               </table></td>
             </tr>
+           <!--aqui-->
+            <tr>
+              <td colspan="4"><table width="580" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="36"><span class="Tablas"></td>
+                    <td width="129">
+                    </td>
+                    <td width="42" align="right">Almacen<span class="Tablas">
+                    </td>
+                    <td width="153"><input name="almorigen" type="text" class="Tablas" id="almorigen" style="width:130px; text-align:left" value="<?=$almorigen?>"/>
+                    </td>
+                    <td width="17"></td>
+                    <td width="42">Almacen</td>
+                    <td width="140"><span class="Tablas"><input name="almdest" type="text" class="Tablas" id="almdest" style="width:130px; text-align:left" value="<?=$almdest?>"/>
+                    </td>
+                  </tr>
+              </table></td>
+            </tr>
             <tr>
               <td colspan="4" class="FondoTabla Estilo4">Mercanc&iacute;a</td>
             </tr>
@@ -1551,9 +1572,7 @@
           <tr>
             <td width="93" class="Tablas">Cantidad:</td>
             <td colspan="4" class="Tablas"><label>
-              <input name="cantidad" type="text" class="Tablas" id="cantidad" onKeyPress="return SoloND(event,this.value)
-
-" onKeyUp="if(event.keyCode==13){document.all.descripcion.focus();}" value="<?=$cantidad ?>" size="5" maxlength="5" />
+              <input name="cantidad" type="text" class="Tablas" id="cantidad" onKeyPress="return SoloND(event,this.value)" onKeyUp="if(event.keyCode==13){document.all.descripcion.focus();}" value="<?=$cantidad ?>" size="5" maxlength="5" />
               <input name="pesounit" type="checkbox" onClick="CalcularUnitarioCheck()" id="pesounit" value="1" <? if($pesounit==1){ echo 'checked';} ?>>
               Peso y Medidas Unitarias </label></td>
           </tr>

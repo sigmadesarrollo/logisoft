@@ -14,10 +14,10 @@ $convert_to   = 'utf8_unicode_ci';
 // character set of new collation:
 $character_set= 'utf8';
 // DB login information - *modify before use*
-$username = 'pmm';
+$username = 'u356875594_pmm';
 $password = 'gqx64p9n';
-$database = 'pmm_curso';
-$host	 = 'localhost';
+$database = 'u356875594_pmm';
+$host	 = 'mysql.hostinger.mx';
 //-- usually, there is nothing to modify below this line --//
 // show TABLE alteration queries?
 $show_alter_table = true;

@@ -7,8 +7,8 @@
 
 	<?
 		if(isset($_POST['o'])){
-			require_once("../Conectar.php");
-			$link=Conectarse('webpmm');
+			require_once("Conectar.php");
+			$link=Conectarse('u356875594_pmm');
 		}
 	?>
 <body>	

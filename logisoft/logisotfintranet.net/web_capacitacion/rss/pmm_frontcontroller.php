@@ -2,7 +2,7 @@
 //include 'php/sessionmanager.php';
 include 'php/rssmanager.php';
 include '../Conectar.php';
-$enlace=conectarse('pmm_dbpruebas');
+$enlace=conectarse('u356875594_pmm');
     switch (@$_REQUEST['action']) {
         case 'isloged':    
 

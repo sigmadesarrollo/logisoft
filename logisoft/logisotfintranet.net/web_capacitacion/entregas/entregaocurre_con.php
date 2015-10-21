@@ -239,7 +239,7 @@
 		total,efectivo,cheque,banco,nocheque,tarjeta,transferencia,
 		tipodeidentificacion,numeroidentificacion,personaquerecibe,
 		usuario,idusuario,fecha, if(current_date=fecha,'SI','NO') modificable,
-		recepcion, chkliste, cartaporte, contrarecibocarga, facturascarga, recibomaniobras
+		recepcion, chkliste, cartaporte, contrarecibocarga, facturascarga, recibomaniobras,observacion
 		FROM entregasocurre
 		WHERE folio = $_GET[folio] AND idsucursal =  ".$_SESSION[IDSUCURSAL]."";
 		$r = mysql_query($s,$l) or die($s);
